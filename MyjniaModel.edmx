@@ -1,0 +1,664 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MyjniaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Car">
+          <Key>
+            <PropertyRef Name="ID_car" />
+          </Key>
+          <Property Name="ID_car" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Mark" Type="nvarchar" MaxLength="32" />
+          <Property Name="Model" Type="nvarchar" MaxLength="32" />
+          <Property Name="License_number" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="256" />
+          <Property Name="Report_date" Type="date" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID_customer" />
+          </Key>
+          <Property Name="ID_customer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="32" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="32" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="12" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID_employee" />
+          </Key>
+          <Property Name="ID_employee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="32" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="32" />
+          <Property Name="PESEL" Type="nvarchar" MaxLength="11" />
+          <Property Name="Job_title" Type="nvarchar" MaxLength="32" />
+          <Property Name="Salary" Type="money" />
+        </EntityType>
+        <EntityType Name="Fault">
+          <Key>
+            <PropertyRef Name="ID_fault" />
+          </Key>
+          <Property Name="ID_fault" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Report_date" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Myjnia.dbo.Have' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Have">
+          <Key>
+            <PropertyRef Name="ID_customer" />
+            <PropertyRef Name="ID_car" />
+          </Key>
+          <Property Name="ID_customer" Type="int" Nullable="false" />
+          <Property Name="ID_car" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="ID_order" />
+          </Key>
+          <Property Name="ID_order" Type="int" Nullable="false" />
+          <Property Name="ID_employee" Type="int" Nullable="false" />
+          <Property Name="ID_customer" Type="int" Nullable="false" />
+          <Property Name="ID_car" Type="int" Nullable="false" />
+          <Property Name="ID_document" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Order_date" Type="date" />
+          <Property Name="Start_time" Type="time" Precision="7" />
+          <Property Name="End_time" Type="time" Precision="7" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Workplace_nr" Type="int" />
+          <Property Name="Payment_type" Type="bit" />
+          <Property Name="Document_type" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Myjnia.dbo.Order_detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Order_detail">
+          <Key>
+            <PropertyRef Name="ID_order" />
+            <PropertyRef Name="ID_service" />
+          </Key>
+          <Property Name="ID_order" Type="int" Nullable="false" />
+          <Property Name="ID_service" Type="int" Nullable="false" />
+          <Property Name="Discount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Myjnia.dbo.Realization' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Realization">
+          <Key>
+            <PropertyRef Name="ID_order" />
+            <PropertyRef Name="ID_employee" />
+          </Key>
+          <Property Name="ID_order" Type="int" Nullable="false" />
+          <Property Name="ID_employee" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Myjnia.dbo.Report' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="ID_order" />
+            <PropertyRef Name="ID_fault" />
+          </Key>
+          <Property Name="ID_order" Type="int" Nullable="false" />
+          <Property Name="ID_fault" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ID_service" />
+          </Key>
+          <Property Name="ID_service" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="32" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Realization_time" Type="time" Precision="7" />
+        </EntityType>
+        <Association Name="FK_Have_car">
+          <End Role="Car" Type="Self.Car" Multiplicity="1" />
+          <End Role="Have" Type="Self.Have" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Car">
+              <PropertyRef Name="ID_car" />
+            </Principal>
+            <Dependent Role="Have">
+              <PropertyRef Name="ID_car" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Have_customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Have" Type="Self.Have" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID_customer" />
+            </Principal>
+            <Dependent Role="Have">
+              <PropertyRef Name="ID_customer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_car">
+          <End Role="Car" Type="Self.Car" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Car">
+              <PropertyRef Name="ID_car" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID_car" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID_customer" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID_customer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_detail_order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="Order_detail" Type="Self.Order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID_order" />
+            </Principal>
+            <Dependent Role="Order_detail">
+              <PropertyRef Name="ID_order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_detail_service">
+          <End Role="Service" Type="Self.Service" Multiplicity="1" />
+          <End Role="Order_detail" Type="Self.Order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ID_service" />
+            </Principal>
+            <Dependent Role="Order_detail">
+              <PropertyRef Name="ID_service" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_employee" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID_employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Realization_employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Realization" Type="Self.Realization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_employee" />
+            </Principal>
+            <Dependent Role="Realization">
+              <PropertyRef Name="ID_employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Realization_order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="Realization" Type="Self.Realization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID_order" />
+            </Principal>
+            <Dependent Role="Realization">
+              <PropertyRef Name="ID_order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Report_fault">
+          <End Role="Fault" Type="Self.Fault" Multiplicity="1" />
+          <End Role="Report" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fault">
+              <PropertyRef Name="ID_fault" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="ID_fault" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Report_order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="Report" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID_order" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="ID_order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MyjniaModelStoreContainer">
+          <EntitySet Name="Car" EntityType="Self.Car" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fault" EntityType="Self.Fault" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Have" EntityType="Self.Have" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Have].[ID_customer] AS [ID_customer], 
+    [Have].[ID_car] AS [ID_car]
+    FROM [dbo].[Have] AS [Have]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Order_detail" EntityType="Self.Order_detail" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Order_detail].[ID_order] AS [ID_order], 
+    [Order_detail].[ID_service] AS [ID_service], 
+    [Order_detail].[Discount] AS [Discount]
+    FROM [dbo].[Order_detail] AS [Order_detail]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Realization" EntityType="Self.Realization" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Realization].[ID_order] AS [ID_order], 
+    [Realization].[ID_employee] AS [ID_employee]
+    FROM [dbo].[Realization] AS [Realization]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Report" EntityType="Self.Report" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Report].[ID_order] AS [ID_order], 
+    [Report].[ID_fault] AS [ID_fault]
+    FROM [dbo].[Report] AS [Report]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Have_car" Association="Self.FK_Have_car">
+            <End Role="Car" EntitySet="Car" />
+            <End Role="Have" EntitySet="Have" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Have_customer" Association="Self.FK_Have_customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Have" EntitySet="Have" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_car" Association="Self.FK_Order_car">
+            <End Role="Car" EntitySet="Car" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_customer" Association="Self.FK_Order_customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_detail_order" Association="Self.FK_Order_detail_order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Order_detail" EntitySet="Order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_detail_service" Association="Self.FK_Order_detail_service">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Order_detail" EntitySet="Order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_employee" Association="Self.FK_Order_employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Realization_employee" Association="Self.FK_Realization_employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Realization" EntitySet="Realization" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Realization_order" Association="Self.FK_Realization_order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Realization" EntitySet="Realization" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Report_fault" Association="Self.FK_Report_fault">
+            <End Role="Fault" EntitySet="Fault" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Report_order" Association="Self.FK_Report_order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyjniaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Car">
+          <Key>
+            <PropertyRef Name="ID_car" />
+          </Key>
+          <Property Name="ID_car" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Mark" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="License_number" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Report_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Order_car" FromRole="Car" ToRole="Order" />
+          <NavigationProperty Name="Customer" Relationship="Self.Have" FromRole="Car" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID_customer" />
+          </Key>
+          <Property Name="ID_customer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Order_customer" FromRole="Customer" ToRole="Order" />
+          <NavigationProperty Name="Car" Relationship="Self.Have" FromRole="Customer" ToRole="Car" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID_employee" />
+          </Key>
+          <Property Name="ID_employee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PESEL" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Job_title" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Order_employee" FromRole="Employee" ToRole="Order" />
+          <NavigationProperty Name="Order1" Relationship="Self.Realization" FromRole="Employee" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Fault">
+          <Key>
+            <PropertyRef Name="ID_fault" />
+          </Key>
+          <Property Name="ID_fault" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Report_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Order" Relationship="Self.Report" FromRole="Fault" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="ID_order" />
+          </Key>
+          <Property Name="ID_order" Type="Int32" Nullable="false" />
+          <Property Name="ID_employee" Type="Int32" Nullable="false" />
+          <Property Name="ID_customer" Type="Int32" Nullable="false" />
+          <Property Name="ID_car" Type="Int32" Nullable="false" />
+          <Property Name="ID_document" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Order_date" Type="DateTime" Precision="0" />
+          <Property Name="Start_time" Type="Time" Precision="7" />
+          <Property Name="End_time" Type="Time" Precision="7" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Workplace_nr" Type="Int32" />
+          <Property Name="Payment_type" Type="Boolean" />
+          <Property Name="Document_type" Type="Boolean" />
+          <NavigationProperty Name="Car" Relationship="Self.FK_Order_car" FromRole="Order" ToRole="Car" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Order_customer" FromRole="Order" ToRole="Customer" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Order_employee" FromRole="Order" ToRole="Employee" />
+          <NavigationProperty Name="Order_detail" Relationship="Self.FK_Order_detail_order" FromRole="Order" ToRole="Order_detail" />
+          <NavigationProperty Name="Employee1" Relationship="Self.Realization" FromRole="Order" ToRole="Employee" />
+          <NavigationProperty Name="Fault" Relationship="Self.Report" FromRole="Order" ToRole="Fault" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ID_service" />
+          </Key>
+          <Property Name="ID_service" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Realization_time" Type="Time" Precision="7" />
+          <NavigationProperty Name="Order_detail" Relationship="Self.FK_Order_detail_service" FromRole="Service" ToRole="Order_detail" />
+        </EntityType>
+        <EntityType Name="Order_detail">
+          <Key>
+            <PropertyRef Name="ID_order" />
+            <PropertyRef Name="ID_service" />
+          </Key>
+          <Property Name="ID_order" Type="Int32" Nullable="false" />
+          <Property Name="ID_service" Type="Int32" Nullable="false" />
+          <Property Name="Discount" Type="Int32" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Order_detail_order" FromRole="Order_detail" ToRole="Order" />
+          <NavigationProperty Name="Service" Relationship="Self.FK_Order_detail_service" FromRole="Order_detail" ToRole="Service" />
+        </EntityType>
+        <Association Name="FK_Order_car">
+          <End Role="Car" Type="Self.Car" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Car">
+              <PropertyRef Name="ID_car" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID_car" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID_customer" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID_customer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_employee" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID_employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_detail_order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="Order_detail" Type="Self.Order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID_order" />
+            </Principal>
+            <Dependent Role="Order_detail">
+              <PropertyRef Name="ID_order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_detail_service">
+          <End Role="Service" Type="Self.Service" Multiplicity="1" />
+          <End Role="Order_detail" Type="Self.Order_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ID_service" />
+            </Principal>
+            <Dependent Role="Order_detail">
+              <PropertyRef Name="ID_service" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Have">
+          <End Role="Car" Type="Self.Car" Multiplicity="*" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+        </Association>
+        <Association Name="Realization">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+        </Association>
+        <Association Name="Report">
+          <End Role="Fault" Type="Self.Fault" Multiplicity="*" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="MyjniaEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Car" EntityType="Self.Car" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="Fault" EntityType="Self.Fault" />
+          <EntitySet Name="Order" EntityType="Self.Order" />
+          <EntitySet Name="Service" EntityType="Self.Service" />
+          <EntitySet Name="Order_detail" EntityType="Self.Order_detail" />
+          <AssociationSet Name="FK_Order_car" Association="Self.FK_Order_car">
+            <End Role="Car" EntitySet="Car" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_customer" Association="Self.FK_Order_customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_employee" Association="Self.FK_Order_employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_detail_order" Association="Self.FK_Order_detail_order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Order_detail" EntitySet="Order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_detail_service" Association="Self.FK_Order_detail_service">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Order_detail" EntitySet="Order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="Have" Association="Self.Have">
+            <End Role="Car" EntitySet="Car" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="Realization" Association="Self.Realization">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="Report" Association="Self.Report">
+            <End Role="Fault" EntitySet="Fault" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyjniaModelStoreContainer" CdmEntityContainer="MyjniaEntities1">
+          <EntitySetMapping Name="Car">
+            <EntityTypeMapping TypeName="MyjniaModel.Car">
+              <MappingFragment StoreEntitySet="Car">
+                <ScalarProperty Name="ID_car" ColumnName="ID_car" />
+                <ScalarProperty Name="Mark" ColumnName="Mark" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="License_number" ColumnName="License_number" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Report_date" ColumnName="Report_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="MyjniaModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="ID_customer" ColumnName="ID_customer" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="MyjniaModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="ID_employee" ColumnName="ID_employee" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="Job_title" ColumnName="Job_title" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fault">
+            <EntityTypeMapping TypeName="MyjniaModel.Fault">
+              <MappingFragment StoreEntitySet="Fault">
+                <ScalarProperty Name="ID_fault" ColumnName="ID_fault" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Report_date" ColumnName="Report_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="MyjniaModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="ID_order" ColumnName="ID_order" />
+                <ScalarProperty Name="ID_employee" ColumnName="ID_employee" />
+                <ScalarProperty Name="ID_customer" ColumnName="ID_customer" />
+                <ScalarProperty Name="ID_car" ColumnName="ID_car" />
+                <ScalarProperty Name="ID_document" ColumnName="ID_document" />
+                <ScalarProperty Name="Order_date" ColumnName="Order_date" />
+                <ScalarProperty Name="Start_time" ColumnName="Start_time" />
+                <ScalarProperty Name="End_time" ColumnName="End_time" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Workplace_nr" ColumnName="Workplace_nr" />
+                <ScalarProperty Name="Payment_type" ColumnName="Payment_type" />
+                <ScalarProperty Name="Document_type" ColumnName="Document_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service">
+            <EntityTypeMapping TypeName="MyjniaModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="ID_service" ColumnName="ID_service" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Realization_time" ColumnName="Realization_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_detail">
+            <EntityTypeMapping TypeName="MyjniaModel.Order_detail">
+              <MappingFragment StoreEntitySet="Order_detail">
+                <ScalarProperty Name="ID_order" ColumnName="ID_order" />
+                <ScalarProperty Name="ID_service" ColumnName="ID_service" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Have" TypeName="MyjniaModel.Have" StoreEntitySet="Have">
+            <EndProperty Name="Car">
+              <ScalarProperty Name="ID_car" ColumnName="ID_car" />
+            </EndProperty>
+            <EndProperty Name="Customer">
+              <ScalarProperty Name="ID_customer" ColumnName="ID_customer" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Realization" TypeName="MyjniaModel.Realization" StoreEntitySet="Realization">
+            <EndProperty Name="Employee">
+              <ScalarProperty Name="ID_employee" ColumnName="ID_employee" />
+            </EndProperty>
+            <EndProperty Name="Order">
+              <ScalarProperty Name="ID_order" ColumnName="ID_order" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Report" TypeName="MyjniaModel.Report" StoreEntitySet="Report">
+            <EndProperty Name="Fault">
+              <ScalarProperty Name="ID_fault" ColumnName="ID_fault" />
+            </EndProperty>
+            <EndProperty Name="Order">
+              <ScalarProperty Name="ID_order" ColumnName="ID_order" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

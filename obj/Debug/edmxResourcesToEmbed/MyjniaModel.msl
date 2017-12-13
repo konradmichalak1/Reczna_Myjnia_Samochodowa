@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyjniaModelStoreContainer" CdmEntityContainer="MyjniaEntities1">
+    <EntitySetMapping Name="Car">
+      <EntityTypeMapping TypeName="MyjniaModel.Car">
+        <MappingFragment StoreEntitySet="Car">
+          <ScalarProperty Name="ID_car" ColumnName="ID_car" />
+          <ScalarProperty Name="Mark" ColumnName="Mark" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="License_number" ColumnName="License_number" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Report_date" ColumnName="Report_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer">
+      <EntityTypeMapping TypeName="MyjniaModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="ID_customer" ColumnName="ID_customer" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="MyjniaModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="ID_employee" ColumnName="ID_employee" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+          <ScalarProperty Name="Job_title" ColumnName="Job_title" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fault">
+      <EntityTypeMapping TypeName="MyjniaModel.Fault">
+        <MappingFragment StoreEntitySet="Fault">
+          <ScalarProperty Name="ID_fault" ColumnName="ID_fault" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Report_date" ColumnName="Report_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="MyjniaModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="ID_order" ColumnName="ID_order" />
+          <ScalarProperty Name="ID_employee" ColumnName="ID_employee" />
+          <ScalarProperty Name="ID_customer" ColumnName="ID_customer" />
+          <ScalarProperty Name="ID_car" ColumnName="ID_car" />
+          <ScalarProperty Name="ID_document" ColumnName="ID_document" />
+          <ScalarProperty Name="Order_date" ColumnName="Order_date" />
+          <ScalarProperty Name="Start_time" ColumnName="Start_time" />
+          <ScalarProperty Name="End_time" ColumnName="End_time" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Workplace_nr" ColumnName="Workplace_nr" />
+          <ScalarProperty Name="Payment_type" ColumnName="Payment_type" />
+          <ScalarProperty Name="Document_type" ColumnName="Document_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service">
+      <EntityTypeMapping TypeName="MyjniaModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="ID_service" ColumnName="ID_service" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Realization_time" ColumnName="Realization_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_detail">
+      <EntityTypeMapping TypeName="MyjniaModel.Order_detail">
+        <MappingFragment StoreEntitySet="Order_detail">
+          <ScalarProperty Name="ID_order" ColumnName="ID_order" />
+          <ScalarProperty Name="ID_service" ColumnName="ID_service" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Have" TypeName="MyjniaModel.Have" StoreEntitySet="Have">
+      <EndProperty Name="Car">
+        <ScalarProperty Name="ID_car" ColumnName="ID_car" />
+      </EndProperty>
+      <EndProperty Name="Customer">
+        <ScalarProperty Name="ID_customer" ColumnName="ID_customer" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Realization" TypeName="MyjniaModel.Realization" StoreEntitySet="Realization">
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="ID_employee" ColumnName="ID_employee" />
+      </EndProperty>
+      <EndProperty Name="Order">
+        <ScalarProperty Name="ID_order" ColumnName="ID_order" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Report" TypeName="MyjniaModel.Report" StoreEntitySet="Report">
+      <EndProperty Name="Fault">
+        <ScalarProperty Name="ID_fault" ColumnName="ID_fault" />
+      </EndProperty>
+      <EndProperty Name="Order">
+        <ScalarProperty Name="ID_order" ColumnName="ID_order" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
