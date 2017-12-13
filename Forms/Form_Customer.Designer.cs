@@ -50,6 +50,7 @@
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telephoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Sort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myjniaDataSet1)).BeginInit();
             this.gb_Customers.SuspendLayout();
@@ -85,9 +86,9 @@
             this.gb_Customers.Controls.Add(this.tb_CustomerName);
             this.gb_Customers.Controls.Add(this.tb_CustomerSurname);
             this.gb_Customers.Controls.Add(this.tb_CustomerID);
-            this.gb_Customers.Location = new System.Drawing.Point(12, 74);
+            this.gb_Customers.Location = new System.Drawing.Point(12, 128);
             this.gb_Customers.Name = "gb_Customers";
-            this.gb_Customers.Size = new System.Drawing.Size(249, 224);
+            this.gb_Customers.Size = new System.Drawing.Size(249, 174);
             this.gb_Customers.TabIndex = 2;
             this.gb_Customers.TabStop = false;
             this.gb_Customers.Text = "Klient";
@@ -95,7 +96,7 @@
             // lb_CustomerTelephone
             // 
             this.lb_CustomerTelephone.AutoSize = true;
-            this.lb_CustomerTelephone.Location = new System.Drawing.Point(52, 136);
+            this.lb_CustomerTelephone.Location = new System.Drawing.Point(54, 101);
             this.lb_CustomerTelephone.Name = "lb_CustomerTelephone";
             this.lb_CustomerTelephone.Size = new System.Drawing.Size(43, 13);
             this.lb_CustomerTelephone.TabIndex = 14;
@@ -103,14 +104,14 @@
             // 
             // tb_CustomerTelephone
             // 
-            this.tb_CustomerTelephone.Location = new System.Drawing.Point(102, 132);
+            this.tb_CustomerTelephone.Location = new System.Drawing.Point(104, 97);
             this.tb_CustomerTelephone.Name = "tb_CustomerTelephone";
             this.tb_CustomerTelephone.Size = new System.Drawing.Size(100, 20);
             this.tb_CustomerTelephone.TabIndex = 13;
             // 
             // btn_UpdateCustomer
             // 
-            this.btn_UpdateCustomer.Location = new System.Drawing.Point(165, 178);
+            this.btn_UpdateCustomer.Location = new System.Drawing.Point(167, 143);
             this.btn_UpdateCustomer.Name = "btn_UpdateCustomer";
             this.btn_UpdateCustomer.Size = new System.Drawing.Size(75, 23);
             this.btn_UpdateCustomer.TabIndex = 12;
@@ -120,7 +121,7 @@
             // 
             // btn_DeleteCustomer
             // 
-            this.btn_DeleteCustomer.Location = new System.Drawing.Point(84, 178);
+            this.btn_DeleteCustomer.Location = new System.Drawing.Point(86, 143);
             this.btn_DeleteCustomer.Name = "btn_DeleteCustomer";
             this.btn_DeleteCustomer.Size = new System.Drawing.Size(75, 23);
             this.btn_DeleteCustomer.TabIndex = 11;
@@ -130,7 +131,7 @@
             // 
             // btn_InsertCustomer
             // 
-            this.btn_InsertCustomer.Location = new System.Drawing.Point(3, 178);
+            this.btn_InsertCustomer.Location = new System.Drawing.Point(5, 143);
             this.btn_InsertCustomer.Name = "btn_InsertCustomer";
             this.btn_InsertCustomer.Size = new System.Drawing.Size(75, 23);
             this.btn_InsertCustomer.TabIndex = 10;
@@ -141,7 +142,7 @@
             // lb_CustomerSurname
             // 
             this.lb_CustomerSurname.AutoSize = true;
-            this.lb_CustomerSurname.Location = new System.Drawing.Point(42, 110);
+            this.lb_CustomerSurname.Location = new System.Drawing.Point(44, 75);
             this.lb_CustomerSurname.Name = "lb_CustomerSurname";
             this.lb_CustomerSurname.Size = new System.Drawing.Size(53, 13);
             this.lb_CustomerSurname.TabIndex = 8;
@@ -150,7 +151,7 @@
             // lb_CustomerName
             // 
             this.lb_CustomerName.AutoSize = true;
-            this.lb_CustomerName.Location = new System.Drawing.Point(69, 84);
+            this.lb_CustomerName.Location = new System.Drawing.Point(71, 49);
             this.lb_CustomerName.Name = "lb_CustomerName";
             this.lb_CustomerName.Size = new System.Drawing.Size(26, 13);
             this.lb_CustomerName.TabIndex = 7;
@@ -159,7 +160,7 @@
             // lb_CustomerID
             // 
             this.lb_CustomerID.AutoSize = true;
-            this.lb_CustomerID.Location = new System.Drawing.Point(78, 31);
+            this.lb_CustomerID.Location = new System.Drawing.Point(80, 22);
             this.lb_CustomerID.Name = "lb_CustomerID";
             this.lb_CustomerID.Size = new System.Drawing.Size(18, 13);
             this.lb_CustomerID.TabIndex = 5;
@@ -167,21 +168,21 @@
             // 
             // tb_CustomerName
             // 
-            this.tb_CustomerName.Location = new System.Drawing.Point(102, 80);
+            this.tb_CustomerName.Location = new System.Drawing.Point(104, 45);
             this.tb_CustomerName.Name = "tb_CustomerName";
             this.tb_CustomerName.Size = new System.Drawing.Size(100, 20);
             this.tb_CustomerName.TabIndex = 3;
             // 
             // tb_CustomerSurname
             // 
-            this.tb_CustomerSurname.Location = new System.Drawing.Point(102, 106);
+            this.tb_CustomerSurname.Location = new System.Drawing.Point(104, 71);
             this.tb_CustomerSurname.Name = "tb_CustomerSurname";
             this.tb_CustomerSurname.Size = new System.Drawing.Size(100, 20);
             this.tb_CustomerSurname.TabIndex = 2;
             // 
             // tb_CustomerID
             // 
-            this.tb_CustomerID.Location = new System.Drawing.Point(102, 28);
+            this.tb_CustomerID.Location = new System.Drawing.Point(104, 19);
             this.tb_CustomerID.Name = "tb_CustomerID";
             this.tb_CustomerID.Size = new System.Drawing.Size(100, 20);
             this.tb_CustomerID.TabIndex = 0;
@@ -232,11 +233,22 @@
             this.telephoneDataGridViewTextBoxColumn1.HeaderText = "Telephone";
             this.telephoneDataGridViewTextBoxColumn1.Name = "telephoneDataGridViewTextBoxColumn1";
             // 
+            // btn_Sort
+            // 
+            this.btn_Sort.Location = new System.Drawing.Point(95, 355);
+            this.btn_Sort.Name = "btn_Sort";
+            this.btn_Sort.Size = new System.Drawing.Size(75, 23);
+            this.btn_Sort.TabIndex = 4;
+            this.btn_Sort.Text = "Sortuj";
+            this.btn_Sort.UseVisualStyleBackColor = true;
+            this.btn_Sort.Click += new System.EventHandler(this.btn_Sort_Click);
+            // 
             // Form_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 427);
+            this.Controls.Add(this.btn_Sort);
             this.Controls.Add(this.CustomerGridView);
             this.Controls.Add(this.gb_Customers);
             this.Name = "Form_Customer";
@@ -275,5 +287,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn telephoneDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource myjniaDataSet1BindingSource;
+        private System.Windows.Forms.Button btn_Sort;
     }
 }

@@ -33,20 +33,19 @@ namespace Reczna_Myjnia_Samochodowa
         {
             try
             {
-                connection.Open();
-                DateTime localDate = DateTime.Now;
-                Customer customer = new Customer()
+                using (var command = new SqlCommand("InsertCustomer", connection)
                 {
-                    Name = tb_CustomerName.Text,
-                    Surname = tb_CustomerSurname.Text,
-                    Telephone = tb_CustomerTelephone.Text
-
-                };
-                myjnia.Customer.Add(customer);
-                myjnia.SaveChanges();
-                connection.Close();
-
-                display_customer();
+                    CommandType = CommandType.StoredProcedure
+                })
+                {
+                    connection.Open();
+                    command.Parameters.Add("@Name", SqlDbType.VarChar).Value = tb_CustomerName.Text;
+                    command.Parameters.Add("@Surname", SqlDbType.VarChar).Value = tb_CustomerSurname.Text;
+                    command.Parameters.Add("@Telephone", SqlDbType.VarChar).Value = tb_CustomerTelephone.Text;
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    display_customer();
+                }
             }
             catch (Exception ex)
             {
@@ -60,16 +59,15 @@ namespace Reczna_Myjnia_Samochodowa
         {
             try
             {
-                if (tb_CustomerID.Text == "" || tb_CustomerID.Text == " ") throw new Exception("Podaj ID klienta lub zaznacz rekord z tabeli!");
-                connection.Open();
-                int id = Convert.ToInt32(tb_CustomerID.Text);
-                List<Customer> usun = myjnia.Customer.Where
-                                      (p => (p.ID_customer == id)).ToList();
-                foreach (var p in usun)
+                using (var command = new SqlCommand("DeleteCustomer", connection)
                 {
-                    myjnia.Customer.Remove(p);
+                    CommandType = CommandType.StoredProcedure
+                })
+                {
+                    connection.Open();
+                    command.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(tb_CustomerID.Text);
+                    command.ExecuteNonQuery();
                 }
-                myjnia.SaveChanges();
                 connection.Close();
                 display_customer();
             }
@@ -78,6 +76,7 @@ namespace Reczna_Myjnia_Samochodowa
             {
                 if (ex.InnerException == null) MessageBox.Show(ex.Message);
                 else MessageBox.Show(ex.InnerException.InnerException.Message);
+                connection.Close();
             }
         }
 
@@ -117,11 +116,23 @@ namespace Reczna_Myjnia_Samochodowa
                 object value = CustomerGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
 
                 tb_CustomerID.Text = CustomerGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                tb_CustomerName.Text = CustomerGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-                tb_CustomerSurname.Text = CustomerGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
-                tb_CustomerTelephone.Text = CustomerGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                tb_CustomerName.Text = CustomerGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                tb_CustomerSurname.Text = CustomerGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                tb_CustomerTelephone.Text = CustomerGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
             }
             catch (Exception ex) { }
+        }
+
+        private void btn_Sort_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            using (var command = new SqlCommand("SELECT * FROM [dbo].[CustomersBySurname]", connection))
+            {
+
+                CustomerGridView.DataSource = command.ExecuteReader();
+            }
+
+            connection.Close();
         }
     }
 }

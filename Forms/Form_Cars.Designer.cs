@@ -30,32 +30,32 @@
         {
             this.components = new System.ComponentModel.Container();
             this.CarGridView = new System.Windows.Forms.DataGridView();
-            this.myjniaDataSet = new Reczna_Myjnia_Samochodowa.MyjniaDataSet();
-            this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carTableAdapter = new Reczna_Myjnia_Samochodowa.MyjniaDataSetTableAdapters.CarTableAdapter();
             this.iDcarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.markDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.licensenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.myjniaDataSet = new Reczna_Myjnia_Samochodowa.MyjniaDataSet();
+            this.carTableAdapter = new Reczna_Myjnia_Samochodowa.MyjniaDataSetTableAdapters.CarTableAdapter();
             this.gb_Cars = new System.Windows.Forms.GroupBox();
-            this.tb_CarID = new System.Windows.Forms.TextBox();
-            this.tb_CarMark = new System.Windows.Forms.TextBox();
-            this.tb_CarLicense = new System.Windows.Forms.TextBox();
-            this.tb_CarModel = new System.Windows.Forms.TextBox();
-            this.tb_CarNote = new System.Windows.Forms.TextBox();
-            this.lb_CarID = new System.Windows.Forms.Label();
-            this.lb_CarMark = new System.Windows.Forms.Label();
-            this.lb_CarModel = new System.Windows.Forms.Label();
-            this.lb_CarLicense = new System.Windows.Forms.Label();
-            this.lb_CarNote = new System.Windows.Forms.Label();
-            this.btn_InsertCar = new System.Windows.Forms.Button();
-            this.btn_DeleteCar = new System.Windows.Forms.Button();
             this.btn_UpdateCar = new System.Windows.Forms.Button();
+            this.btn_DeleteCar = new System.Windows.Forms.Button();
+            this.btn_InsertCar = new System.Windows.Forms.Button();
+            this.lb_CarNote = new System.Windows.Forms.Label();
+            this.lb_CarLicense = new System.Windows.Forms.Label();
+            this.lb_CarModel = new System.Windows.Forms.Label();
+            this.lb_CarMark = new System.Windows.Forms.Label();
+            this.lb_CarID = new System.Windows.Forms.Label();
+            this.tb_CarNote = new System.Windows.Forms.TextBox();
+            this.tb_CarModel = new System.Windows.Forms.TextBox();
+            this.tb_CarLicense = new System.Windows.Forms.TextBox();
+            this.tb_CarMark = new System.Windows.Forms.TextBox();
+            this.tb_CarID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myjniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myjniaDataSet)).BeginInit();
             this.gb_Cars.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,20 +76,6 @@
             this.CarGridView.Size = new System.Drawing.Size(645, 351);
             this.CarGridView.TabIndex = 0;
             this.CarGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarGridView_CellContentClick);
-            // 
-            // myjniaDataSet
-            // 
-            this.myjniaDataSet.DataSetName = "MyjniaDataSet";
-            this.myjniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // carBindingSource
-            // 
-            this.carBindingSource.DataMember = "Car";
-            this.carBindingSource.DataSource = this.myjniaDataSet;
-            // 
-            // carTableAdapter
-            // 
-            this.carTableAdapter.ClearBeforeFill = true;
             // 
             // iDcarDataGridViewTextBoxColumn
             // 
@@ -128,6 +114,20 @@
             this.reportdateDataGridViewTextBoxColumn.HeaderText = "Report_date";
             this.reportdateDataGridViewTextBoxColumn.Name = "reportdateDataGridViewTextBoxColumn";
             // 
+            // carBindingSource
+            // 
+            this.carBindingSource.DataMember = "Car";
+            this.carBindingSource.DataSource = this.myjniaDataSet;
+            // 
+            // myjniaDataSet
+            // 
+            this.myjniaDataSet.DataSetName = "MyjniaDataSet";
+            this.myjniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // carTableAdapter
+            // 
+            this.carTableAdapter.ClearBeforeFill = true;
+            // 
             // gb_Cars
             // 
             this.gb_Cars.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -151,96 +151,15 @@
             this.gb_Cars.TabStop = false;
             this.gb_Cars.Text = "Samochód";
             // 
-            // tb_CarID
+            // btn_UpdateCar
             // 
-            this.tb_CarID.Location = new System.Drawing.Point(84, 21);
-            this.tb_CarID.Name = "tb_CarID";
-            this.tb_CarID.Size = new System.Drawing.Size(100, 20);
-            this.tb_CarID.TabIndex = 0;
-            // 
-            // tb_CarMark
-            // 
-            this.tb_CarMark.Location = new System.Drawing.Point(84, 47);
-            this.tb_CarMark.Name = "tb_CarMark";
-            this.tb_CarMark.Size = new System.Drawing.Size(100, 20);
-            this.tb_CarMark.TabIndex = 1;
-            // 
-            // tb_CarLicense
-            // 
-            this.tb_CarLicense.Location = new System.Drawing.Point(84, 99);
-            this.tb_CarLicense.Name = "tb_CarLicense";
-            this.tb_CarLicense.Size = new System.Drawing.Size(100, 20);
-            this.tb_CarLicense.TabIndex = 2;
-            // 
-            // tb_CarModel
-            // 
-            this.tb_CarModel.Location = new System.Drawing.Point(84, 73);
-            this.tb_CarModel.Name = "tb_CarModel";
-            this.tb_CarModel.Size = new System.Drawing.Size(100, 20);
-            this.tb_CarModel.TabIndex = 3;
-            // 
-            // tb_CarNote
-            // 
-            this.tb_CarNote.Location = new System.Drawing.Point(6, 147);
-            this.tb_CarNote.Multiline = true;
-            this.tb_CarNote.Name = "tb_CarNote";
-            this.tb_CarNote.Size = new System.Drawing.Size(234, 55);
-            this.tb_CarNote.TabIndex = 4;
-            // 
-            // lb_CarID
-            // 
-            this.lb_CarID.AutoSize = true;
-            this.lb_CarID.Location = new System.Drawing.Point(60, 28);
-            this.lb_CarID.Name = "lb_CarID";
-            this.lb_CarID.Size = new System.Drawing.Size(18, 13);
-            this.lb_CarID.TabIndex = 5;
-            this.lb_CarID.Text = "ID";
-            // 
-            // lb_CarMark
-            // 
-            this.lb_CarMark.AutoSize = true;
-            this.lb_CarMark.Location = new System.Drawing.Point(41, 50);
-            this.lb_CarMark.Name = "lb_CarMark";
-            this.lb_CarMark.Size = new System.Drawing.Size(37, 13);
-            this.lb_CarMark.TabIndex = 6;
-            this.lb_CarMark.Text = "Marka";
-            // 
-            // lb_CarModel
-            // 
-            this.lb_CarModel.AutoSize = true;
-            this.lb_CarModel.Location = new System.Drawing.Point(42, 76);
-            this.lb_CarModel.Name = "lb_CarModel";
-            this.lb_CarModel.Size = new System.Drawing.Size(36, 13);
-            this.lb_CarModel.TabIndex = 7;
-            this.lb_CarModel.Text = "Model";
-            // 
-            // lb_CarLicense
-            // 
-            this.lb_CarLicense.AutoSize = true;
-            this.lb_CarLicense.Location = new System.Drawing.Point(18, 99);
-            this.lb_CarLicense.Name = "lb_CarLicense";
-            this.lb_CarLicense.Size = new System.Drawing.Size(60, 13);
-            this.lb_CarLicense.TabIndex = 8;
-            this.lb_CarLicense.Text = "Rejestracja";
-            // 
-            // lb_CarNote
-            // 
-            this.lb_CarNote.AutoSize = true;
-            this.lb_CarNote.Location = new System.Drawing.Point(3, 131);
-            this.lb_CarNote.Name = "lb_CarNote";
-            this.lb_CarNote.Size = new System.Drawing.Size(40, 13);
-            this.lb_CarNote.TabIndex = 9;
-            this.lb_CarNote.Text = "Uwagi:";
-            // 
-            // btn_InsertCar
-            // 
-            this.btn_InsertCar.Location = new System.Drawing.Point(3, 223);
-            this.btn_InsertCar.Name = "btn_InsertCar";
-            this.btn_InsertCar.Size = new System.Drawing.Size(75, 23);
-            this.btn_InsertCar.TabIndex = 10;
-            this.btn_InsertCar.Text = "Dodaj";
-            this.btn_InsertCar.UseVisualStyleBackColor = true;
-            this.btn_InsertCar.Click += new System.EventHandler(this.btn_CreateCar_Click);
+            this.btn_UpdateCar.Location = new System.Drawing.Point(165, 223);
+            this.btn_UpdateCar.Name = "btn_UpdateCar";
+            this.btn_UpdateCar.Size = new System.Drawing.Size(75, 23);
+            this.btn_UpdateCar.TabIndex = 12;
+            this.btn_UpdateCar.Text = "Aktualizuj";
+            this.btn_UpdateCar.UseVisualStyleBackColor = true;
+            this.btn_UpdateCar.Click += new System.EventHandler(this.btn_UpdateCar_Click);
             // 
             // btn_DeleteCar
             // 
@@ -252,15 +171,96 @@
             this.btn_DeleteCar.UseVisualStyleBackColor = true;
             this.btn_DeleteCar.Click += new System.EventHandler(this.btn_DeleteCar_Click);
             // 
-            // btn_UpdateCar
+            // btn_InsertCar
             // 
-            this.btn_UpdateCar.Location = new System.Drawing.Point(165, 223);
-            this.btn_UpdateCar.Name = "btn_UpdateCar";
-            this.btn_UpdateCar.Size = new System.Drawing.Size(75, 23);
-            this.btn_UpdateCar.TabIndex = 12;
-            this.btn_UpdateCar.Text = "Aktualizuj";
-            this.btn_UpdateCar.UseVisualStyleBackColor = true;
-            this.btn_UpdateCar.Click += new System.EventHandler(this.btn_UpdateCar_Click);
+            this.btn_InsertCar.Location = new System.Drawing.Point(3, 223);
+            this.btn_InsertCar.Name = "btn_InsertCar";
+            this.btn_InsertCar.Size = new System.Drawing.Size(75, 23);
+            this.btn_InsertCar.TabIndex = 10;
+            this.btn_InsertCar.Text = "Dodaj";
+            this.btn_InsertCar.UseVisualStyleBackColor = true;
+            this.btn_InsertCar.Click += new System.EventHandler(this.btn_CreateCar_Click);
+            // 
+            // lb_CarNote
+            // 
+            this.lb_CarNote.AutoSize = true;
+            this.lb_CarNote.Location = new System.Drawing.Point(3, 131);
+            this.lb_CarNote.Name = "lb_CarNote";
+            this.lb_CarNote.Size = new System.Drawing.Size(40, 13);
+            this.lb_CarNote.TabIndex = 9;
+            this.lb_CarNote.Text = "Uwagi:";
+            // 
+            // lb_CarLicense
+            // 
+            this.lb_CarLicense.AutoSize = true;
+            this.lb_CarLicense.Location = new System.Drawing.Point(18, 99);
+            this.lb_CarLicense.Name = "lb_CarLicense";
+            this.lb_CarLicense.Size = new System.Drawing.Size(60, 13);
+            this.lb_CarLicense.TabIndex = 8;
+            this.lb_CarLicense.Text = "Rejestracja";
+            // 
+            // lb_CarModel
+            // 
+            this.lb_CarModel.AutoSize = true;
+            this.lb_CarModel.Location = new System.Drawing.Point(42, 76);
+            this.lb_CarModel.Name = "lb_CarModel";
+            this.lb_CarModel.Size = new System.Drawing.Size(36, 13);
+            this.lb_CarModel.TabIndex = 7;
+            this.lb_CarModel.Text = "Model";
+            // 
+            // lb_CarMark
+            // 
+            this.lb_CarMark.AutoSize = true;
+            this.lb_CarMark.Location = new System.Drawing.Point(41, 50);
+            this.lb_CarMark.Name = "lb_CarMark";
+            this.lb_CarMark.Size = new System.Drawing.Size(37, 13);
+            this.lb_CarMark.TabIndex = 6;
+            this.lb_CarMark.Text = "Marka";
+            // 
+            // lb_CarID
+            // 
+            this.lb_CarID.AutoSize = true;
+            this.lb_CarID.Location = new System.Drawing.Point(60, 28);
+            this.lb_CarID.Name = "lb_CarID";
+            this.lb_CarID.Size = new System.Drawing.Size(18, 13);
+            this.lb_CarID.TabIndex = 5;
+            this.lb_CarID.Text = "ID";
+            // 
+            // tb_CarNote
+            // 
+            this.tb_CarNote.Location = new System.Drawing.Point(6, 147);
+            this.tb_CarNote.Multiline = true;
+            this.tb_CarNote.Name = "tb_CarNote";
+            this.tb_CarNote.Size = new System.Drawing.Size(234, 55);
+            this.tb_CarNote.TabIndex = 4;
+            // 
+            // tb_CarModel
+            // 
+            this.tb_CarModel.Location = new System.Drawing.Point(84, 73);
+            this.tb_CarModel.Name = "tb_CarModel";
+            this.tb_CarModel.Size = new System.Drawing.Size(100, 20);
+            this.tb_CarModel.TabIndex = 3;
+            // 
+            // tb_CarLicense
+            // 
+            this.tb_CarLicense.Location = new System.Drawing.Point(84, 99);
+            this.tb_CarLicense.Name = "tb_CarLicense";
+            this.tb_CarLicense.Size = new System.Drawing.Size(100, 20);
+            this.tb_CarLicense.TabIndex = 2;
+            // 
+            // tb_CarMark
+            // 
+            this.tb_CarMark.Location = new System.Drawing.Point(84, 47);
+            this.tb_CarMark.Name = "tb_CarMark";
+            this.tb_CarMark.Size = new System.Drawing.Size(100, 20);
+            this.tb_CarMark.TabIndex = 1;
+            // 
+            // tb_CarID
+            // 
+            this.tb_CarID.Location = new System.Drawing.Point(84, 21);
+            this.tb_CarID.Name = "tb_CarID";
+            this.tb_CarID.Size = new System.Drawing.Size(100, 20);
+            this.tb_CarID.TabIndex = 0;
             // 
             // Form_Cars
             // 
@@ -274,8 +274,8 @@
             this.Text = "Form_Cars";
             this.Load += new System.EventHandler(this.Form_Cars_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myjniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myjniaDataSet)).EndInit();
             this.gb_Cars.ResumeLayout(false);
             this.gb_Cars.PerformLayout();
             this.ResumeLayout(false);

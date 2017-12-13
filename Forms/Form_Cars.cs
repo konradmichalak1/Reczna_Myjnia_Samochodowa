@@ -41,26 +41,23 @@ namespace Reczna_Myjnia_Samochodowa
                 else if (tb_CarLicense.Text.Length < 7) { throw new Exception("Nieprawidłowy numer rejestracyjny!"); }
 
                 connection.Open();
-                DateTime localDate = DateTime.Now;
                 Car samochod = new Car()
                 {
                     Mark = tb_CarMark.Text,
                     Model = tb_CarModel.Text,
                     License_number = tb_CarLicense.Text,
                     Note = tb_CarNote.Text,
-                    Report_date = localDate
-                    
                 };
                 myjnia.Car.Add(samochod);
                 myjnia.SaveChanges();
                 connection.Close();
-
                 display_samochod();
             }
             catch (Exception ex)
             {
                 if (ex.InnerException == null) MessageBox.Show(ex.Message);
                 else MessageBox.Show(ex.InnerException.InnerException.Message);
+                connection.Close();
             }
         }
 
@@ -128,5 +125,7 @@ namespace Reczna_Myjnia_Samochodowa
             }
             connection.Close();
         }
+
+
     }
 }
