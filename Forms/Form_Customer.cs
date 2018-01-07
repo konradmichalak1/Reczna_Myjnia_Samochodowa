@@ -109,7 +109,19 @@ namespace Reczna_Myjnia_Samochodowa
             connection.Close();
         }
 
-        private void CustomerGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btn_Sort_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            using (var command = new SqlCommand("SELECT * FROM [dbo].[CustomersBySurname]", connection))
+            {
+
+                CustomerGridView.DataSource = command.ExecuteReader();
+            }
+
+            connection.Close();
+        }
+
+        private void CustomerGridView_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
@@ -121,18 +133,6 @@ namespace Reczna_Myjnia_Samochodowa
                 tb_CustomerTelephone.Text = CustomerGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
             }
             catch (Exception ex) { }
-        }
-
-        private void btn_Sort_Click(object sender, EventArgs e)
-        {
-            connection.Open();
-            using (var command = new SqlCommand("SELECT * FROM [dbo].[CustomersBySurname]", connection))
-            {
-
-                CustomerGridView.DataSource = command.ExecuteReader();
-            }
-
-            connection.Close();
         }
     }
 }

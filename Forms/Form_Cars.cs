@@ -86,20 +86,6 @@ namespace Reczna_Myjnia_Samochodowa
             }
         }
 
-        private void CarGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                object value = CarGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-
-                tb_CarID.Text = CarGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                tb_CarMark.Text = CarGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-                tb_CarModel.Text = CarGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-                tb_CarLicense.Text = CarGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
-                tb_CarNote.Text = CarGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
-            }
-            catch (Exception ex) { }
-        }
 
         private void btn_UpdateCar_Click(object sender, EventArgs e)
         {
@@ -126,6 +112,19 @@ namespace Reczna_Myjnia_Samochodowa
             connection.Close();
         }
 
+        private void CarGridView_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                object value = CarGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
 
+                tb_CarID.Text = CarGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                tb_CarMark.Text = CarGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                tb_CarModel.Text = CarGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                tb_CarLicense.Text = CarGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                tb_CarNote.Text = CarGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+            }
+            catch (Exception ex) { }
+        }
     }
 }

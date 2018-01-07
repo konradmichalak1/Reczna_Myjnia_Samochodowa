@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Cars));
             this.CarGridView = new System.Windows.Forms.DataGridView();
             this.iDcarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.markDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,19 +76,19 @@
             this.CarGridView.Name = "CarGridView";
             this.CarGridView.Size = new System.Drawing.Size(645, 351);
             this.CarGridView.TabIndex = 0;
-            this.CarGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarGridView_CellContentClick);
+            this.CarGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CarGridView_CellContentClick);
             // 
             // iDcarDataGridViewTextBoxColumn
             // 
             this.iDcarDataGridViewTextBoxColumn.DataPropertyName = "ID_car";
-            this.iDcarDataGridViewTextBoxColumn.HeaderText = "ID_car";
+            this.iDcarDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDcarDataGridViewTextBoxColumn.Name = "iDcarDataGridViewTextBoxColumn";
             this.iDcarDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // markDataGridViewTextBoxColumn
             // 
             this.markDataGridViewTextBoxColumn.DataPropertyName = "Mark";
-            this.markDataGridViewTextBoxColumn.HeaderText = "Mark";
+            this.markDataGridViewTextBoxColumn.HeaderText = "Marka";
             this.markDataGridViewTextBoxColumn.Name = "markDataGridViewTextBoxColumn";
             // 
             // modelDataGridViewTextBoxColumn
@@ -99,19 +100,19 @@
             // licensenumberDataGridViewTextBoxColumn
             // 
             this.licensenumberDataGridViewTextBoxColumn.DataPropertyName = "License_number";
-            this.licensenumberDataGridViewTextBoxColumn.HeaderText = "License_number";
+            this.licensenumberDataGridViewTextBoxColumn.HeaderText = "Rejestracja";
             this.licensenumberDataGridViewTextBoxColumn.Name = "licensenumberDataGridViewTextBoxColumn";
             // 
             // noteDataGridViewTextBoxColumn
             // 
             this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
-            this.noteDataGridViewTextBoxColumn.HeaderText = "Note";
+            this.noteDataGridViewTextBoxColumn.HeaderText = "Notatka";
             this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
             // 
             // reportdateDataGridViewTextBoxColumn
             // 
             this.reportdateDataGridViewTextBoxColumn.DataPropertyName = "Report_date";
-            this.reportdateDataGridViewTextBoxColumn.HeaderText = "Report_date";
+            this.reportdateDataGridViewTextBoxColumn.HeaderText = "Data";
             this.reportdateDataGridViewTextBoxColumn.Name = "reportdateDataGridViewTextBoxColumn";
             // 
             // carBindingSource
@@ -153,16 +154,20 @@
             // 
             // btn_UpdateCar
             // 
+            this.btn_UpdateCar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_UpdateCar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_UpdateCar.BackgroundImage")));
             this.btn_UpdateCar.Location = new System.Drawing.Point(165, 223);
             this.btn_UpdateCar.Name = "btn_UpdateCar";
             this.btn_UpdateCar.Size = new System.Drawing.Size(75, 23);
             this.btn_UpdateCar.TabIndex = 12;
             this.btn_UpdateCar.Text = "Aktualizuj";
-            this.btn_UpdateCar.UseVisualStyleBackColor = true;
+            this.btn_UpdateCar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_UpdateCar.UseVisualStyleBackColor = false;
             this.btn_UpdateCar.Click += new System.EventHandler(this.btn_UpdateCar_Click);
             // 
             // btn_DeleteCar
             // 
+            this.btn_DeleteCar.Image = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Delete_Button;
             this.btn_DeleteCar.Location = new System.Drawing.Point(84, 223);
             this.btn_DeleteCar.Name = "btn_DeleteCar";
             this.btn_DeleteCar.Size = new System.Drawing.Size(75, 23);
@@ -173,6 +178,7 @@
             // 
             // btn_InsertCar
             // 
+            this.btn_InsertCar.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Add_Button;
             this.btn_InsertCar.Location = new System.Drawing.Point(3, 223);
             this.btn_InsertCar.Name = "btn_InsertCar";
             this.btn_InsertCar.Size = new System.Drawing.Size(75, 23);
@@ -271,7 +277,7 @@
             this.Controls.Add(this.gb_Cars);
             this.Controls.Add(this.CarGridView);
             this.Name = "Form_Cars";
-            this.Text = "Form_Cars";
+            this.Text = "Samochody";
             this.Load += new System.EventHandler(this.Form_Cars_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).EndInit();
@@ -288,12 +294,6 @@
         private MyjniaDataSet myjniaDataSet;
         private System.Windows.Forms.BindingSource carBindingSource;
         private MyjniaDataSetTableAdapters.CarTableAdapter carTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDcarDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn markDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn licensenumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reportdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox gb_Cars;
         private System.Windows.Forms.Label lb_CarID;
         private System.Windows.Forms.TextBox tb_CarNote;
@@ -308,5 +308,11 @@
         private System.Windows.Forms.Label lb_CarLicense;
         private System.Windows.Forms.Label lb_CarModel;
         private System.Windows.Forms.Label lb_CarMark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDcarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn markDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn licensenumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reportdateDataGridViewTextBoxColumn;
     }
 }
