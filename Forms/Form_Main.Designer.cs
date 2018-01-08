@@ -41,7 +41,7 @@
             this.btn_cars.Location = new System.Drawing.Point(12, 86);
             this.btn_cars.Name = "btn_cars";
             this.btn_cars.Size = new System.Drawing.Size(112, 55);
-            this.btn_cars.TabIndex = 0;
+            this.btn_cars.TabIndex = 2;
             this.btn_cars.Text = "Samochody";
             this.btn_cars.UseVisualStyleBackColor = true;
             this.btn_cars.Click += new System.EventHandler(this.btn_cars_Click);
@@ -61,14 +61,14 @@
             this.btn_orders.Location = new System.Drawing.Point(12, 25);
             this.btn_orders.Name = "btn_orders";
             this.btn_orders.Size = new System.Drawing.Size(112, 55);
-            this.btn_orders.TabIndex = 2;
+            this.btn_orders.TabIndex = 0;
             this.btn_orders.Text = "Zamówienia";
             this.btn_orders.UseVisualStyleBackColor = true;
             this.btn_orders.Click += new System.EventHandler(this.btn_orders_Click);
             // 
             // btn_Employers
             // 
-            this.btn_Employers.Location = new System.Drawing.Point(334, 25);
+            this.btn_Employers.Location = new System.Drawing.Point(139, 25);
             this.btn_Employers.Name = "btn_Employers";
             this.btn_Employers.Size = new System.Drawing.Size(112, 55);
             this.btn_Employers.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             // btn_services
             // 
-            this.btn_services.Location = new System.Drawing.Point(334, 86);
+            this.btn_services.Location = new System.Drawing.Point(139, 86);
             this.btn_services.Name = "btn_services";
             this.btn_services.Size = new System.Drawing.Size(112, 55);
             this.btn_services.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // btn_faults
             // 
-            this.btn_faults.Location = new System.Drawing.Point(334, 147);
+            this.btn_faults.Location = new System.Drawing.Point(139, 147);
             this.btn_faults.Name = "btn_faults";
             this.btn_faults.Size = new System.Drawing.Size(112, 55);
             this.btn_faults.TabIndex = 5;
@@ -97,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 261);
+            this.ClientSize = new System.Drawing.Size(271, 261);
             this.Controls.Add(this.btn_faults);
             this.Controls.Add(this.btn_services);
             this.Controls.Add(this.btn_Employers);

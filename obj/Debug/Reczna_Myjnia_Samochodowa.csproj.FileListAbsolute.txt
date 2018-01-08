@@ -15,3 +15,6 @@ C:\Users\Konrad\source\repos\Reczna_Myjnia_Samochodowa\Reczna_Myjnia_Samochodowa
 C:\Users\Konrad\source\repos\Reczna_Myjnia_Samochodowa\Reczna_Myjnia_Samochodowa\obj\Debug\Reczna_Myjnia_Samochodowa.Form_Cars.resources
 C:\Users\Konrad\source\repos\Reczna_Myjnia_Samochodowa\Reczna_Myjnia_Samochodowa\obj\Debug\Reczna_Myjnia_Samochodowa.Form_Customer.resources
 C:\Users\Konrad\source\repos\Reczna_Myjnia_Samochodowa\Reczna_Myjnia_Samochodowa\obj\Debug\Reczna_Myjnia_Samochodowa.Form_Orders.resources
+C:\Users\Konrad\source\repos\Reczna_Myjnia_Samochodowa\Reczna_Myjnia_Samochodowa\obj\Debug\Reczna_Myjnia_Samochodowa.Form_Employers.resources
+C:\Users\Konrad\source\repos\Reczna_Myjnia_Samochodowa\Reczna_Myjnia_Samochodowa\obj\Debug\Reczna_Myjnia_Samochodowa.Form_Faults.resources
+C:\Users\Konrad\source\repos\Reczna_Myjnia_Samochodowa\Reczna_Myjnia_Samochodowa\obj\Debug\Reczna_Myjnia_Samochodowa.Form_Services.resources
