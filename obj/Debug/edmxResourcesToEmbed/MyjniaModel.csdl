@@ -76,7 +76,7 @@
     <Property Name="ID_service" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
     <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="Realization_time" Type="Time" Precision="7" />
+    <Property Name="Realization_time" Type="Int32" />
     <NavigationProperty Name="Order_detail" Relationship="Self.FK_Order_detail_service" FromRole="Service" ToRole="Order_detail" />
   </EntityType>
   <EntityType Name="Order_detail">

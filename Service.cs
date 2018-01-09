@@ -23,7 +23,7 @@ namespace Reczna_Myjnia_Samochodowa
         public int ID_service { get; set; }
         public string Name { get; set; }
         public Nullable<decimal> Price { get; set; }
-        public Nullable<System.TimeSpan> Realization_time { get; set; }
+        public Nullable<int> Realization_time { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_detail> Order_detail { get; set; }

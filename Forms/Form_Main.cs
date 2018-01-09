@@ -39,5 +39,23 @@ namespace Reczna_Myjnia_Samochodowa
             Form_Orders ord = new Form_Orders();
             ord.Show();
         }
+
+        private void btn_Employers_Click(object sender, EventArgs e)
+        {
+            Form_Employers emp = new Form_Employers();
+            emp.Show();
+        }
+
+        private void btn_services_Click(object sender, EventArgs e)
+        {
+            Form_Services serv = new Form_Services();
+            serv.Show();
+        }
+
+        private void btn_faults_Click(object sender, EventArgs e)
+        {
+            Form_Faults fau = new Form_Faults();
+            fau.Show();
+        }
     }
 }

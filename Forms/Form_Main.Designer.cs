@@ -74,6 +74,7 @@
             this.btn_Employers.TabIndex = 3;
             this.btn_Employers.Text = "Pracownicy";
             this.btn_Employers.UseVisualStyleBackColor = true;
+            this.btn_Employers.Click += new System.EventHandler(this.btn_Employers_Click);
             // 
             // btn_services
             // 
@@ -83,6 +84,7 @@
             this.btn_services.TabIndex = 4;
             this.btn_services.Text = "Usługi";
             this.btn_services.UseVisualStyleBackColor = true;
+            this.btn_services.Click += new System.EventHandler(this.btn_services_Click);
             // 
             // btn_faults
             // 
@@ -92,6 +94,7 @@
             this.btn_faults.TabIndex = 5;
             this.btn_faults.Text = "Usterki";
             this.btn_faults.UseVisualStyleBackColor = true;
+            this.btn_faults.Click += new System.EventHandler(this.btn_faults_Click);
             // 
             // Form_Main
             // 

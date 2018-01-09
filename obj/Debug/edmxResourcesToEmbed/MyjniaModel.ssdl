@@ -104,7 +104,7 @@ warning 6002: The table/view 'Myjnia.dbo.Report' does not have a primary key def
     <Property Name="ID_service" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="32" />
     <Property Name="Price" Type="money" />
-    <Property Name="Realization_time" Type="time" Precision="7" />
+    <Property Name="Realization_time" Type="int" />
   </EntityType>
   <Association Name="FK_Have_car">
     <End Role="Car" Type="Self.Car" Multiplicity="1" />
@@ -163,18 +163,6 @@ warning 6002: The table/view 'Myjnia.dbo.Report' does not have a primary key def
       </Principal>
       <Dependent Role="Order_detail">
         <PropertyRef Name="ID_order" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Order_detail_service">
-    <End Role="Service" Type="Self.Service" Multiplicity="1" />
-    <End Role="Order_detail" Type="Self.Order_detail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Service">
-        <PropertyRef Name="ID_service" />
-      </Principal>
-      <Dependent Role="Order_detail">
-        <PropertyRef Name="ID_service" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -288,10 +276,6 @@ warning 6002: The table/view 'Myjnia.dbo.Report' does not have a primary key def
     </AssociationSet>
     <AssociationSet Name="FK_Order_detail_order" Association="Self.FK_Order_detail_order">
       <End Role="Order" EntitySet="Order" />
-      <End Role="Order_detail" EntitySet="Order_detail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Order_detail_service" Association="Self.FK_Order_detail_service">
-      <End Role="Service" EntitySet="Service" />
       <End Role="Order_detail" EntitySet="Order_detail" />
     </AssociationSet>
     <AssociationSet Name="FK_Order_employee" Association="Self.FK_Order_employee">

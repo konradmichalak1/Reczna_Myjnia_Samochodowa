@@ -63,8 +63,18 @@
     <Compile Include="Employee.cs">
       <DependentUpon>MyjniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmployersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployersDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Fault.cs">
       <DependentUpon>MyjniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FaultsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FaultsDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form_Main.cs">
       <SubType>Form</SubType>
@@ -147,6 +157,11 @@
     <Compile Include="Service.cs">
       <DependentUpon>MyjniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ServicesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Form_Customer.resx">
       <DependentUpon>Form_Customer.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +193,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="EmployersDataSet.xsc">
+      <DependentUpon>EmployersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmployersDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmployersDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EmployersDataSet.xss">
+      <DependentUpon>EmployersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FaultsDataSet.xsc">
+      <DependentUpon>FaultsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FaultsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FaultsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FaultsDataSet.xss">
+      <DependentUpon>FaultsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="MyjniaDataSet.xsc">
       <DependentUpon>MyjniaDataSet.xsd</DependentUpon>
     </None>
@@ -217,6 +254,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ServicesDataSet.xsc">
+      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ServicesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ServicesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ServicesDataSet.xss">
+      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
