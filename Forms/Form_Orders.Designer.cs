@@ -351,6 +351,7 @@
             this.btn_CarIDChoose.TabIndex = 20;
             this.btn_CarIDChoose.Text = "Wyszukaj";
             this.btn_CarIDChoose.UseVisualStyleBackColor = true;
+            this.btn_CarIDChoose.Click += new System.EventHandler(this.btn_CarIDChoose_Click);
             // 
             // btn_CustomerIDChoose
             // 
@@ -604,7 +605,6 @@
         private System.Windows.Forms.TextBox tb_DocumentID;
         private System.Windows.Forms.Label lb_OrderFault;
         private System.Windows.Forms.Label lb_OrderServices;
-        private System.Windows.Forms.TextBox tb_CarID;
         private System.Windows.Forms.TextBox tb_EndTime;
         private System.Windows.Forms.TextBox tb_StartTime;
         private System.Windows.Forms.Button btn_CarIDChoose;
@@ -633,5 +633,6 @@
         private System.Windows.Forms.Button btn_undoEnd;
         private System.Windows.Forms.Button btn_undoStart;
         private System.Windows.Forms.Label lb_time_in_memory;
+        public System.Windows.Forms.TextBox tb_CarID;
     }
 }
