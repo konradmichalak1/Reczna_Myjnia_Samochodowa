@@ -34,6 +34,14 @@ namespace Reczna_Myjnia_Samochodowa
             frm.Show();
         }
 
+        private void btn_CarIDChoose_Click(object sender, EventArgs e)
+        {
+            Form_Cars frm = new Form_Cars();
+            frm.sendOrdersObjectToCar(this);
+            frm.Show();
+        }
+
+
         private void btn_SetEmployee_Click(object sender, EventArgs e)
         {
             connection.Open();
@@ -213,5 +221,7 @@ namespace Reczna_Myjnia_Samochodowa
             tb_EndTime.Text = lb_time_in_memory.Text;
             btn_undoEnd.Visible = false;
         }
+
+
     }
 }

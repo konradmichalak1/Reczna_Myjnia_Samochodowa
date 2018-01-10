@@ -137,7 +137,7 @@ namespace Reczna_Myjnia_Samochodowa
         {
             if (frmOrders != null)
             {
-                frmOrders.tb_CustomerID.Text = CarGridView.CurrentRow.Cells[0].Value.ToString();
+                frmOrders.tb_CarID.Text = CarGridView.CurrentRow.Cells[0].Value.ToString();
                 this.Close();
             }
             else
