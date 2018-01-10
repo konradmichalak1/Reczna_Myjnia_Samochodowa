@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.gb_Orders = new System.Windows.Forms.GroupBox();
+            this.btn_undoEnd = new System.Windows.Forms.Button();
+            this.btn_undoStart = new System.Windows.Forms.Button();
+            this.btn_przelicz = new System.Windows.Forms.Button();
+            this.btn_okService = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_servicelist = new System.Windows.Forms.ComboBox();
+            this.tb_employerlist = new System.Windows.Forms.ComboBox();
             this.btn_okEmployers = new System.Windows.Forms.Button();
             this.tb_Fault = new System.Windows.Forms.TextBox();
             this.btn_SetFault = new System.Windows.Forms.Button();
@@ -65,15 +73,7 @@
             this.lb_OrderEmployee = new System.Windows.Forms.Label();
             this.lb_id_order = new System.Windows.Forms.Label();
             this.checklist_employers = new System.Windows.Forms.CheckedListBox();
-            this.tb_employerlist = new System.Windows.Forms.ComboBox();
-            this.tb_servicelist = new System.Windows.Forms.ComboBox();
             this.checklist_services = new System.Windows.Forms.CheckedListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btn_okService = new System.Windows.Forms.Button();
-            this.btn_przelicz = new System.Windows.Forms.Button();
-            this.btn_undoStart = new System.Windows.Forms.Button();
-            this.btn_undoEnd = new System.Windows.Forms.Button();
             this.lb_time_in_memory = new System.Windows.Forms.Label();
             this.gb_Orders.SuspendLayout();
             this.SuspendLayout();
@@ -129,6 +129,85 @@
             this.gb_Orders.TabIndex = 1;
             this.gb_Orders.TabStop = false;
             this.gb_Orders.Text = "Zamówienie";
+            // 
+            // btn_undoEnd
+            // 
+            this.btn_undoEnd.Location = new System.Drawing.Point(235, 149);
+            this.btn_undoEnd.Name = "btn_undoEnd";
+            this.btn_undoEnd.Size = new System.Drawing.Size(47, 23);
+            this.btn_undoEnd.TabIndex = 42;
+            this.btn_undoEnd.Text = "Cofnij";
+            this.btn_undoEnd.UseVisualStyleBackColor = true;
+            this.btn_undoEnd.Visible = false;
+            this.btn_undoEnd.Click += new System.EventHandler(this.btn_undoEnd_Click);
+            // 
+            // btn_undoStart
+            // 
+            this.btn_undoStart.Location = new System.Drawing.Point(235, 127);
+            this.btn_undoStart.Name = "btn_undoStart";
+            this.btn_undoStart.Size = new System.Drawing.Size(47, 23);
+            this.btn_undoStart.TabIndex = 41;
+            this.btn_undoStart.Text = "Cofnij";
+            this.btn_undoStart.UseVisualStyleBackColor = true;
+            this.btn_undoStart.Visible = false;
+            this.btn_undoStart.Click += new System.EventHandler(this.btn_undoStart_Click);
+            // 
+            // btn_przelicz
+            // 
+            this.btn_przelicz.Location = new System.Drawing.Point(243, 323);
+            this.btn_przelicz.Name = "btn_przelicz";
+            this.btn_przelicz.Size = new System.Drawing.Size(61, 23);
+            this.btn_przelicz.TabIndex = 40;
+            this.btn_przelicz.Text = "Przelicz";
+            this.btn_przelicz.UseVisualStyleBackColor = true;
+            this.btn_przelicz.Click += new System.EventHandler(this.btn_przelicz_Click);
+            // 
+            // btn_okService
+            // 
+            this.btn_okService.Location = new System.Drawing.Point(255, 249);
+            this.btn_okService.Name = "btn_okService";
+            this.btn_okService.Size = new System.Drawing.Size(35, 23);
+            this.btn_okService.TabIndex = 39;
+            this.btn_okService.Text = "OK";
+            this.btn_okService.UseVisualStyleBackColor = true;
+            this.btn_okService.Visible = false;
+            this.btn_okService.Click += new System.EventHandler(this.btn_okService_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(222, 329);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 13);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "%";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(114, 330);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 13);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "zł";
+            // 
+            // tb_servicelist
+            // 
+            this.tb_servicelist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tb_servicelist.FormattingEnabled = true;
+            this.tb_servicelist.Location = new System.Drawing.Point(74, 252);
+            this.tb_servicelist.Name = "tb_servicelist";
+            this.tb_servicelist.Size = new System.Drawing.Size(107, 21);
+            this.tb_servicelist.TabIndex = 36;
+            // 
+            // tb_employerlist
+            // 
+            this.tb_employerlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tb_employerlist.FormattingEnabled = true;
+            this.tb_employerlist.Location = new System.Drawing.Point(74, 224);
+            this.tb_employerlist.Name = "tb_employerlist";
+            this.tb_employerlist.Size = new System.Drawing.Size(107, 21);
+            this.tb_employerlist.TabIndex = 35;
             // 
             // btn_okEmployers
             // 
@@ -465,24 +544,6 @@
             this.checklist_employers.TabIndex = 2;
             this.checklist_employers.Visible = false;
             // 
-            // tb_employerlist
-            // 
-            this.tb_employerlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tb_employerlist.FormattingEnabled = true;
-            this.tb_employerlist.Location = new System.Drawing.Point(74, 224);
-            this.tb_employerlist.Name = "tb_employerlist";
-            this.tb_employerlist.Size = new System.Drawing.Size(107, 21);
-            this.tb_employerlist.TabIndex = 35;
-            // 
-            // tb_servicelist
-            // 
-            this.tb_servicelist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tb_servicelist.FormattingEnabled = true;
-            this.tb_servicelist.Location = new System.Drawing.Point(74, 252);
-            this.tb_servicelist.Name = "tb_servicelist";
-            this.tb_servicelist.Size = new System.Drawing.Size(107, 21);
-            this.tb_servicelist.TabIndex = 36;
-            // 
             // checklist_services
             // 
             this.checklist_services.CheckOnClick = true;
@@ -492,67 +553,6 @@
             this.checklist_services.Size = new System.Drawing.Size(74, 109);
             this.checklist_services.TabIndex = 3;
             this.checklist_services.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(114, 330);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 13);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "zł";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(222, 329);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 13);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "%";
-            // 
-            // btn_okService
-            // 
-            this.btn_okService.Location = new System.Drawing.Point(255, 249);
-            this.btn_okService.Name = "btn_okService";
-            this.btn_okService.Size = new System.Drawing.Size(35, 23);
-            this.btn_okService.TabIndex = 39;
-            this.btn_okService.Text = "OK";
-            this.btn_okService.UseVisualStyleBackColor = true;
-            this.btn_okService.Visible = false;
-            this.btn_okService.Click += new System.EventHandler(this.btn_okService_Click);
-            // 
-            // btn_przelicz
-            // 
-            this.btn_przelicz.Location = new System.Drawing.Point(243, 323);
-            this.btn_przelicz.Name = "btn_przelicz";
-            this.btn_przelicz.Size = new System.Drawing.Size(61, 23);
-            this.btn_przelicz.TabIndex = 40;
-            this.btn_przelicz.Text = "Przelicz";
-            this.btn_przelicz.UseVisualStyleBackColor = true;
-            this.btn_przelicz.Click += new System.EventHandler(this.btn_przelicz_Click);
-            // 
-            // btn_undoStart
-            // 
-            this.btn_undoStart.Location = new System.Drawing.Point(235, 127);
-            this.btn_undoStart.Name = "btn_undoStart";
-            this.btn_undoStart.Size = new System.Drawing.Size(47, 23);
-            this.btn_undoStart.TabIndex = 41;
-            this.btn_undoStart.Text = "Cofnij";
-            this.btn_undoStart.UseVisualStyleBackColor = true;
-            this.btn_undoStart.Visible = false;
-            this.btn_undoStart.Click += new System.EventHandler(this.btn_undoStart_Click);
-            // 
-            // btn_undoEnd
-            // 
-            this.btn_undoEnd.Location = new System.Drawing.Point(235, 149);
-            this.btn_undoEnd.Name = "btn_undoEnd";
-            this.btn_undoEnd.Size = new System.Drawing.Size(47, 23);
-            this.btn_undoEnd.TabIndex = 42;
-            this.btn_undoEnd.Text = "Cofnij";
-            this.btn_undoEnd.UseVisualStyleBackColor = true;
-            this.btn_undoEnd.Visible = false;
-            this.btn_undoEnd.Click += new System.EventHandler(this.btn_undoEnd_Click);
             // 
             // lb_time_in_memory
             // 
