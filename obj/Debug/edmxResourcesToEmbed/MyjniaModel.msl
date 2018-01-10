@@ -51,7 +51,6 @@
           <ScalarProperty Name="ID_employee" ColumnName="ID_employee" />
           <ScalarProperty Name="ID_customer" ColumnName="ID_customer" />
           <ScalarProperty Name="ID_car" ColumnName="ID_car" />
-          <ScalarProperty Name="ID_document" ColumnName="ID_document" />
           <ScalarProperty Name="Order_date" ColumnName="Order_date" />
           <ScalarProperty Name="Start_time" ColumnName="Start_time" />
           <ScalarProperty Name="End_time" ColumnName="End_time" />

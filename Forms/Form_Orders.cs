@@ -222,6 +222,98 @@ namespace Reczna_Myjnia_Samochodowa
             btn_undoEnd.Visible = false;
         }
 
+        private void btn_InsertOrder_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            TimeSpan startTime = TimeSpan.Parse(tb_StartTime.Text);
+            TimeSpan endTime = TimeSpan.Parse(tb_EndTime.Text);
+            string index = "";
+            foreach (var x in tb_employerlist.Items)
+            {
+                string pom = x.ToString();
+                
+                for(int i = 0; i < pom.Length; i++)
+                {
+                    if (pom[i] == 32) break;
+                    else
+                    {
+                        index += pom[i];
+                    }
+                }
+            }
+            bool payment;
+            string p = cb_OrderPaymenttype.CheckState.ToString();
+            if (p == "Checked")
+                payment = true;
+            else
+                payment = false;
 
+            bool document;
+            string d = cb_OrderDocumenttype.CheckState.ToString();
+            if (d == "Checked")
+                document = true;
+            else
+                document = false;
+
+            Order order = new Order()
+            {
+                ID_employee = Convert.ToInt32(index),
+                ID_customer = Convert.ToInt32(tb_CustomerID.Text),
+                ID_car = Convert.ToInt32(tb_CarID.Text),
+                Order_date = DateTime.Now,
+                Start_time = startTime,
+                End_time = endTime,
+                Price = Convert.ToDecimal(tb_Price.Text),
+                Workplace_nr = Convert.ToInt32(cb_orderWorkspaceNr.Text),
+                Payment_type = payment,
+                Document_type = document
+            };
+            myjnia.Order.Add(order);
+            myjnia.SaveChanges();
+            connection.Close();
+            index = "";
+            foreach (var x in tb_employerlist.Items)
+            {
+                string pom = x.ToString();
+
+                for (int i = 0; i < pom.Length; i++)
+                {
+                    if (pom[i] == 32)
+                    {
+                        try
+                        {
+                            using (var command = new SqlCommand("AddToRealization", connection)
+                            {
+                                CommandType = CommandType.StoredProcedure
+                            })
+                            {
+                                connection.Open();
+                                MessageBox.Show(index);
+                                command.Parameters.Add("@ID_order", SqlDbType.VarChar).Value = order.ID_order;
+                                command.Parameters.Add("@ID_Employee", SqlDbType.VarChar).Value = Convert.ToInt32(index);
+                                index = "";
+                                command.ExecuteNonQuery();
+                                connection.Close();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            if (ex.InnerException == null) MessageBox.Show(ex.Message);
+                            else MessageBox.Show(ex.InnerException.InnerException.Message);
+                            connection.Close();
+                        }
+
+                        break;
+                    }
+                       
+                    else
+                    {
+                        index += pom[i];
+                    }
+                }
+            }
+
+
+        }
     }
 }

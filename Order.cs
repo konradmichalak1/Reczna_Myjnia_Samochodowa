@@ -26,7 +26,6 @@ namespace Reczna_Myjnia_Samochodowa
         public int ID_employee { get; set; }
         public int ID_customer { get; set; }
         public int ID_car { get; set; }
-        public int ID_document { get; set; }
         public Nullable<System.DateTime> Order_date { get; set; }
         public Nullable<System.TimeSpan> Start_time { get; set; }
         public Nullable<System.TimeSpan> End_time { get; set; }

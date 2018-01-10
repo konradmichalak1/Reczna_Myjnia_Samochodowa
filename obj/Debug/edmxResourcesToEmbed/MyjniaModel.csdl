@@ -54,7 +54,6 @@
     <Property Name="ID_employee" Type="Int32" Nullable="false" />
     <Property Name="ID_customer" Type="Int32" Nullable="false" />
     <Property Name="ID_car" Type="Int32" Nullable="false" />
-    <Property Name="ID_document" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Order_date" Type="DateTime" Precision="0" />
     <Property Name="Start_time" Type="Time" Precision="7" />
     <Property Name="End_time" Type="Time" Precision="7" />
