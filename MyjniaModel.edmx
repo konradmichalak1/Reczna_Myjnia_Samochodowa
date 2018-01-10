@@ -58,11 +58,10 @@ warning 6002: The table/view 'Myjnia.dbo.Have' does not have a primary key defin
           <Key>
             <PropertyRef Name="ID_order" />
           </Key>
-          <Property Name="ID_order" Type="int" Nullable="false" />
+          <Property Name="ID_order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ID_employee" Type="int" Nullable="false" />
           <Property Name="ID_customer" Type="int" Nullable="false" />
           <Property Name="ID_car" Type="int" Nullable="false" />
-          <Property Name="ID_document" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Order_date" Type="date" />
           <Property Name="Start_time" Type="time" Precision="7" />
           <Property Name="End_time" Type="time" Precision="7" />
@@ -362,7 +361,6 @@ warning 6002: The table/view 'Myjnia.dbo.Report' does not have a primary key def
           <Property Name="ID_employee" Type="Int32" Nullable="false" />
           <Property Name="ID_customer" Type="Int32" Nullable="false" />
           <Property Name="ID_car" Type="Int32" Nullable="false" />
-          <Property Name="ID_document" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Order_date" Type="DateTime" Precision="0" />
           <Property Name="Start_time" Type="Time" Precision="7" />
           <Property Name="End_time" Type="Time" Precision="7" />
@@ -567,7 +565,6 @@ warning 6002: The table/view 'Myjnia.dbo.Report' does not have a primary key def
                 <ScalarProperty Name="ID_employee" ColumnName="ID_employee" />
                 <ScalarProperty Name="ID_customer" ColumnName="ID_customer" />
                 <ScalarProperty Name="ID_car" ColumnName="ID_car" />
-                <ScalarProperty Name="ID_document" ColumnName="ID_document" />
                 <ScalarProperty Name="Order_date" ColumnName="Order_date" />
                 <ScalarProperty Name="Start_time" ColumnName="Start_time" />
                 <ScalarProperty Name="End_time" ColumnName="End_time" />

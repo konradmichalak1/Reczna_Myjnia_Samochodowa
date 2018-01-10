@@ -57,7 +57,6 @@
             this.tb_CustomerID = new System.Windows.Forms.TextBox();
             this.lb_OrderFault = new System.Windows.Forms.Label();
             this.lb_OrderServices = new System.Windows.Forms.Label();
-            this.tb_DocumentID = new System.Windows.Forms.TextBox();
             this.tb_OrderID = new System.Windows.Forms.TextBox();
             this.cb_orderWorkspaceNr = new System.Windows.Forms.ComboBox();
             this.cb_OrderDocumenttype = new System.Windows.Forms.CheckBox();
@@ -67,7 +66,6 @@
             this.lb_OrderPrice = new System.Windows.Forms.Label();
             this.lb_OrderEndTime = new System.Windows.Forms.Label();
             this.lb_OrderStartTime = new System.Windows.Forms.Label();
-            this.lb_OrderIDDocument = new System.Windows.Forms.Label();
             this.lb_OrdersIDCar = new System.Windows.Forms.Label();
             this.lb_OrdersIDCustomer = new System.Windows.Forms.Label();
             this.lb_OrderEmployee = new System.Windows.Forms.Label();
@@ -108,7 +106,6 @@
             this.gb_Orders.Controls.Add(this.tb_CustomerID);
             this.gb_Orders.Controls.Add(this.lb_OrderFault);
             this.gb_Orders.Controls.Add(this.lb_OrderServices);
-            this.gb_Orders.Controls.Add(this.tb_DocumentID);
             this.gb_Orders.Controls.Add(this.tb_OrderID);
             this.gb_Orders.Controls.Add(this.cb_orderWorkspaceNr);
             this.gb_Orders.Controls.Add(this.cb_OrderDocumenttype);
@@ -118,7 +115,6 @@
             this.gb_Orders.Controls.Add(this.lb_OrderPrice);
             this.gb_Orders.Controls.Add(this.lb_OrderEndTime);
             this.gb_Orders.Controls.Add(this.lb_OrderStartTime);
-            this.gb_Orders.Controls.Add(this.lb_OrderIDDocument);
             this.gb_Orders.Controls.Add(this.lb_OrdersIDCar);
             this.gb_Orders.Controls.Add(this.lb_OrdersIDCustomer);
             this.gb_Orders.Controls.Add(this.lb_OrderEmployee);
@@ -394,13 +390,6 @@
             this.lb_OrderServices.TabIndex = 15;
             this.lb_OrderServices.Text = "Usługi:";
             // 
-            // tb_DocumentID
-            // 
-            this.tb_DocumentID.Location = new System.Drawing.Point(213, 25);
-            this.tb_DocumentID.Name = "tb_DocumentID";
-            this.tb_DocumentID.Size = new System.Drawing.Size(77, 20);
-            this.tb_DocumentID.TabIndex = 14;
-            // 
             // tb_OrderID
             // 
             this.tb_OrderID.Location = new System.Drawing.Point(27, 25);
@@ -488,15 +477,6 @@
             this.lb_OrderStartTime.Size = new System.Drawing.Size(72, 13);
             this.lb_OrderStartTime.TabIndex = 5;
             this.lb_OrderStartTime.Text = "Rozpoczęcie:";
-            // 
-            // lb_OrderIDDocument
-            // 
-            this.lb_OrderIDDocument.AutoSize = true;
-            this.lb_OrderIDDocument.Location = new System.Drawing.Point(133, 28);
-            this.lb_OrderIDDocument.Name = "lb_OrderIDDocument";
-            this.lb_OrderIDDocument.Size = new System.Drawing.Size(74, 13);
-            this.lb_OrderIDDocument.TabIndex = 4;
-            this.lb_OrderIDDocument.Text = "ID dokumentu";
             // 
             // lb_OrdersIDCar
             // 
@@ -596,12 +576,10 @@
         private System.Windows.Forms.Label lb_OrderPrice;
         private System.Windows.Forms.Label lb_OrderEndTime;
         private System.Windows.Forms.Label lb_OrderStartTime;
-        private System.Windows.Forms.Label lb_OrderIDDocument;
         private System.Windows.Forms.Label lb_OrdersIDCar;
         private System.Windows.Forms.Label lb_OrdersIDCustomer;
         private System.Windows.Forms.Label lb_OrderEmployee;
         private System.Windows.Forms.TextBox tb_OrderID;
-        private System.Windows.Forms.TextBox tb_DocumentID;
         private System.Windows.Forms.Label lb_OrderFault;
         private System.Windows.Forms.Label lb_OrderServices;
         private System.Windows.Forms.TextBox tb_CarID;
