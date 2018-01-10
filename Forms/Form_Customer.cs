@@ -136,6 +136,12 @@ namespace Reczna_Myjnia_Samochodowa
             catch (Exception ex) { }
         }
 
+
+        public void send_OrdersObject(Form_Orders frm)
+        {
+            frmOrders = frm;
+        }
+
         private void btn_Ok_Click(object sender, EventArgs e)
         {
             if (frmOrders != null)
@@ -145,10 +151,6 @@ namespace Reczna_Myjnia_Samochodowa
             }
             else
                 this.Close();
-        }
-        public void send_OrdersObject(Form_Orders frm)
-        {
-            frmOrders = frm;
         }
     }
 }

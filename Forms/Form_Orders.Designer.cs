@@ -275,6 +275,7 @@
             this.btn_CustomerIDChoose.TabIndex = 19;
             this.btn_CustomerIDChoose.Text = "Wyszukaj";
             this.btn_CustomerIDChoose.UseVisualStyleBackColor = true;
+            this.btn_CustomerIDChoose.Click += new System.EventHandler(this.btn_CustomerIDChoose_Click);
             // 
             // tb_CarID
             // 

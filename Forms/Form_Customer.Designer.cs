@@ -50,6 +50,7 @@
             this.surnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telephoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.myjniaDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_Ok = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myjniaDataSet1)).BeginInit();
             this.gb_Customers.SuspendLayout();
@@ -241,11 +242,22 @@
             this.myjniaDataSet1BindingSource.DataSource = this.myjniaDataSet1;
             this.myjniaDataSet1BindingSource.Position = 0;
             // 
+            // btn_Ok
+            // 
+            this.btn_Ok.Location = new System.Drawing.Point(98, 328);
+            this.btn_Ok.Name = "btn_Ok";
+            this.btn_Ok.Size = new System.Drawing.Size(75, 23);
+            this.btn_Ok.TabIndex = 4;
+            this.btn_Ok.Text = "Ok";
+            this.btn_Ok.UseVisualStyleBackColor = true;
+            this.btn_Ok.Click += new System.EventHandler(this.btn_Ok_Click);
+            // 
             // Form_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 427);
+            this.Controls.Add(this.btn_Ok);
             this.Controls.Add(this.CustomerGridView);
             this.Controls.Add(this.gb_Customers);
             this.Name = "Form_Customer";
@@ -284,5 +296,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn telephoneDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Button btn_Ok;
     }
 }
