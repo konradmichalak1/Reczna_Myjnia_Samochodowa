@@ -302,6 +302,7 @@
             this.btn_InsertOrder.TabIndex = 13;
             this.btn_InsertOrder.Text = "Dodaj";
             this.btn_InsertOrder.UseVisualStyleBackColor = true;
+            this.btn_InsertOrder.Click += new System.EventHandler(this.btn_InsertOrder_Click);
             // 
             // btn_EndTimeSet
             // 
