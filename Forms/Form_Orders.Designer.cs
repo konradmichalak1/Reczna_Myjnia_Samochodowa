@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.gb_Orders = new System.Windows.Forms.GroupBox();
+            this.btn_okEmployers = new System.Windows.Forms.Button();
             this.tb_Fault = new System.Windows.Forms.TextBox();
-            this.cb_ServiceList = new System.Windows.Forms.ComboBox();
-            this.cb_EmployeeList = new System.Windows.Forms.ComboBox();
             this.btn_SetFault = new System.Windows.Forms.Button();
             this.btn_SetService = new System.Windows.Forms.Button();
             this.btn_SetEmployee = new System.Windows.Forms.Button();
@@ -66,14 +65,31 @@
             this.lb_OrderEmployee = new System.Windows.Forms.Label();
             this.lb_id_order = new System.Windows.Forms.Label();
             this.checklist_employers = new System.Windows.Forms.CheckedListBox();
+            this.tb_employerlist = new System.Windows.Forms.ComboBox();
+            this.tb_servicelist = new System.Windows.Forms.ComboBox();
+            this.checklist_services = new System.Windows.Forms.CheckedListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_okService = new System.Windows.Forms.Button();
+            this.btn_przelicz = new System.Windows.Forms.Button();
+            this.btn_undoStart = new System.Windows.Forms.Button();
+            this.btn_undoEnd = new System.Windows.Forms.Button();
+            this.lb_time_in_memory = new System.Windows.Forms.Label();
             this.gb_Orders.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb_Orders
             // 
+            this.gb_Orders.Controls.Add(this.btn_undoEnd);
+            this.gb_Orders.Controls.Add(this.btn_undoStart);
+            this.gb_Orders.Controls.Add(this.btn_przelicz);
+            this.gb_Orders.Controls.Add(this.btn_okService);
+            this.gb_Orders.Controls.Add(this.label2);
+            this.gb_Orders.Controls.Add(this.label1);
+            this.gb_Orders.Controls.Add(this.tb_servicelist);
+            this.gb_Orders.Controls.Add(this.tb_employerlist);
+            this.gb_Orders.Controls.Add(this.btn_okEmployers);
             this.gb_Orders.Controls.Add(this.tb_Fault);
-            this.gb_Orders.Controls.Add(this.cb_ServiceList);
-            this.gb_Orders.Controls.Add(this.cb_EmployeeList);
             this.gb_Orders.Controls.Add(this.btn_SetFault);
             this.gb_Orders.Controls.Add(this.btn_SetService);
             this.gb_Orders.Controls.Add(this.btn_SetEmployee);
@@ -114,6 +130,17 @@
             this.gb_Orders.TabStop = false;
             this.gb_Orders.Text = "Zamówienie";
             // 
+            // btn_okEmployers
+            // 
+            this.btn_okEmployers.Location = new System.Drawing.Point(255, 221);
+            this.btn_okEmployers.Name = "btn_okEmployers";
+            this.btn_okEmployers.Size = new System.Drawing.Size(35, 23);
+            this.btn_okEmployers.TabIndex = 34;
+            this.btn_okEmployers.Text = "OK";
+            this.btn_okEmployers.UseVisualStyleBackColor = true;
+            this.btn_okEmployers.Visible = false;
+            this.btn_okEmployers.Click += new System.EventHandler(this.btn_okEmployers_Click);
+            // 
             // tb_Fault
             // 
             this.tb_Fault.Enabled = false;
@@ -121,33 +148,6 @@
             this.tb_Fault.Name = "tb_Fault";
             this.tb_Fault.Size = new System.Drawing.Size(92, 20);
             this.tb_Fault.TabIndex = 32;
-            // 
-            // cb_ServiceList
-            // 
-            this.cb_ServiceList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_ServiceList.FormattingEnabled = true;
-            this.cb_ServiceList.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cb_ServiceList.Location = new System.Drawing.Point(74, 252);
-            this.cb_ServiceList.Name = "cb_ServiceList";
-            this.cb_ServiceList.Size = new System.Drawing.Size(91, 21);
-            this.cb_ServiceList.Sorted = true;
-            this.cb_ServiceList.TabIndex = 31;
-            // 
-            // cb_EmployeeList
-            // 
-            this.cb_EmployeeList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_EmployeeList.FormattingEnabled = true;
-            this.cb_EmployeeList.Location = new System.Drawing.Point(74, 222);
-            this.cb_EmployeeList.Name = "cb_EmployeeList";
-            this.cb_EmployeeList.Size = new System.Drawing.Size(91, 21);
-            this.cb_EmployeeList.Sorted = true;
-            this.cb_EmployeeList.TabIndex = 30;
-            this.cb_EmployeeList.DropDown += new System.EventHandler(this.cb_EmployeeList_DropDown);
             // 
             // btn_SetFault
             // 
@@ -166,6 +166,7 @@
             this.btn_SetService.TabIndex = 28;
             this.btn_SetService.Text = "Przypisz";
             this.btn_SetService.UseVisualStyleBackColor = true;
+            this.btn_SetService.Click += new System.EventHandler(this.btn_SetService_Click);
             // 
             // btn_SetEmployee
             // 
@@ -175,6 +176,7 @@
             this.btn_SetEmployee.TabIndex = 27;
             this.btn_SetEmployee.Text = "Przypisz";
             this.btn_SetEmployee.UseVisualStyleBackColor = true;
+            this.btn_SetEmployee.Click += new System.EventHandler(this.btn_SetEmployee_Click);
             // 
             // btn_UpdateOrder
             // 
@@ -190,11 +192,12 @@
             // 
             // tb_Discount
             // 
-            this.tb_Discount.Enabled = false;
             this.tb_Discount.Location = new System.Drawing.Point(182, 325);
             this.tb_Discount.Name = "tb_Discount";
-            this.tb_Discount.Size = new System.Drawing.Size(67, 20);
+            this.tb_Discount.Size = new System.Drawing.Size(34, 20);
             this.tb_Discount.TabIndex = 26;
+            this.tb_Discount.Text = "0";
+            this.tb_Discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Discount_KeyPress);
             // 
             // btn_DeleteOrder
             // 
@@ -209,10 +212,11 @@
             // tb_Price
             // 
             this.tb_Price.Enabled = false;
-            this.tb_Price.Location = new System.Drawing.Point(44, 326);
+            this.tb_Price.Location = new System.Drawing.Point(38, 326);
             this.tb_Price.Name = "tb_Price";
-            this.tb_Price.Size = new System.Drawing.Size(92, 20);
+            this.tb_Price.Size = new System.Drawing.Size(74, 20);
             this.tb_Price.TabIndex = 25;
+            this.tb_Price.Text = "0,00";
             // 
             // btn_InsertOrder
             // 
@@ -232,6 +236,7 @@
             this.btn_EndTimeSet.TabIndex = 24;
             this.btn_EndTimeSet.Text = "Ustaw";
             this.btn_EndTimeSet.UseVisualStyleBackColor = true;
+            this.btn_EndTimeSet.Click += new System.EventHandler(this.btn_EndTimeSet_Click);
             // 
             // btn_StartTimeSet
             // 
@@ -241,6 +246,7 @@
             this.btn_StartTimeSet.TabIndex = 23;
             this.btn_StartTimeSet.Text = "Ustaw";
             this.btn_StartTimeSet.UseVisualStyleBackColor = true;
+            this.btn_StartTimeSet.Click += new System.EventHandler(this.btn_StartTimeSet_Click);
             // 
             // tb_EndTime
             // 
@@ -453,28 +459,118 @@
             // 
             this.checklist_employers.CheckOnClick = true;
             this.checklist_employers.FormattingEnabled = true;
-            this.checklist_employers.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "0"});
-            this.checklist_employers.Location = new System.Drawing.Point(345, 239);
+            this.checklist_employers.Location = new System.Drawing.Point(329, 261);
             this.checklist_employers.Name = "checklist_employers";
-            this.checklist_employers.Size = new System.Drawing.Size(91, 94);
+            this.checklist_employers.Size = new System.Drawing.Size(74, 109);
             this.checklist_employers.TabIndex = 2;
             this.checklist_employers.Visible = false;
+            // 
+            // tb_employerlist
+            // 
+            this.tb_employerlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tb_employerlist.FormattingEnabled = true;
+            this.tb_employerlist.Location = new System.Drawing.Point(74, 224);
+            this.tb_employerlist.Name = "tb_employerlist";
+            this.tb_employerlist.Size = new System.Drawing.Size(107, 21);
+            this.tb_employerlist.TabIndex = 35;
+            // 
+            // tb_servicelist
+            // 
+            this.tb_servicelist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tb_servicelist.FormattingEnabled = true;
+            this.tb_servicelist.Location = new System.Drawing.Point(74, 252);
+            this.tb_servicelist.Name = "tb_servicelist";
+            this.tb_servicelist.Size = new System.Drawing.Size(107, 21);
+            this.tb_servicelist.TabIndex = 36;
+            // 
+            // checklist_services
+            // 
+            this.checklist_services.CheckOnClick = true;
+            this.checklist_services.FormattingEnabled = true;
+            this.checklist_services.Location = new System.Drawing.Point(329, 139);
+            this.checklist_services.Name = "checklist_services";
+            this.checklist_services.Size = new System.Drawing.Size(74, 109);
+            this.checklist_services.TabIndex = 3;
+            this.checklist_services.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(114, 330);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 13);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "zł";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(222, 329);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 13);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "%";
+            // 
+            // btn_okService
+            // 
+            this.btn_okService.Location = new System.Drawing.Point(255, 249);
+            this.btn_okService.Name = "btn_okService";
+            this.btn_okService.Size = new System.Drawing.Size(35, 23);
+            this.btn_okService.TabIndex = 39;
+            this.btn_okService.Text = "OK";
+            this.btn_okService.UseVisualStyleBackColor = true;
+            this.btn_okService.Visible = false;
+            this.btn_okService.Click += new System.EventHandler(this.btn_okService_Click);
+            // 
+            // btn_przelicz
+            // 
+            this.btn_przelicz.Location = new System.Drawing.Point(243, 323);
+            this.btn_przelicz.Name = "btn_przelicz";
+            this.btn_przelicz.Size = new System.Drawing.Size(61, 23);
+            this.btn_przelicz.TabIndex = 40;
+            this.btn_przelicz.Text = "Przelicz";
+            this.btn_przelicz.UseVisualStyleBackColor = true;
+            this.btn_przelicz.Click += new System.EventHandler(this.btn_przelicz_Click);
+            // 
+            // btn_undoStart
+            // 
+            this.btn_undoStart.Location = new System.Drawing.Point(235, 127);
+            this.btn_undoStart.Name = "btn_undoStart";
+            this.btn_undoStart.Size = new System.Drawing.Size(47, 23);
+            this.btn_undoStart.TabIndex = 41;
+            this.btn_undoStart.Text = "Cofnij";
+            this.btn_undoStart.UseVisualStyleBackColor = true;
+            this.btn_undoStart.Visible = false;
+            this.btn_undoStart.Click += new System.EventHandler(this.btn_undoStart_Click);
+            // 
+            // btn_undoEnd
+            // 
+            this.btn_undoEnd.Location = new System.Drawing.Point(235, 149);
+            this.btn_undoEnd.Name = "btn_undoEnd";
+            this.btn_undoEnd.Size = new System.Drawing.Size(47, 23);
+            this.btn_undoEnd.TabIndex = 42;
+            this.btn_undoEnd.Text = "Cofnij";
+            this.btn_undoEnd.UseVisualStyleBackColor = true;
+            this.btn_undoEnd.Visible = false;
+            this.btn_undoEnd.Click += new System.EventHandler(this.btn_undoEnd_Click);
+            // 
+            // lb_time_in_memory
+            // 
+            this.lb_time_in_memory.AutoSize = true;
+            this.lb_time_in_memory.Location = new System.Drawing.Point(329, 123);
+            this.lb_time_in_memory.Name = "lb_time_in_memory";
+            this.lb_time_in_memory.Size = new System.Drawing.Size(79, 13);
+            this.lb_time_in_memory.TabIndex = 43;
+            this.lb_time_in_memory.Text = "czas-w-pamieci";
+            this.lb_time_in_memory.Visible = false;
             // 
             // Form_Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 434);
+            this.ClientSize = new System.Drawing.Size(372, 434);
+            this.Controls.Add(this.lb_time_in_memory);
+            this.Controls.Add(this.checklist_services);
             this.Controls.Add(this.checklist_employers);
             this.Controls.Add(this.gb_Orders);
             this.MaximizeBox = false;
@@ -484,6 +580,7 @@
             this.gb_Orders.ResumeLayout(false);
             this.gb_Orders.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -520,12 +617,21 @@
         private System.Windows.Forms.Button btn_DeleteOrder;
         private System.Windows.Forms.Button btn_InsertOrder;
         private System.Windows.Forms.TextBox tb_Fault;
-        private System.Windows.Forms.ComboBox cb_ServiceList;
-        private System.Windows.Forms.ComboBox cb_EmployeeList;
         private System.Windows.Forms.Button btn_SetFault;
         private System.Windows.Forms.Button btn_SetService;
         private System.Windows.Forms.Button btn_SetEmployee;
         private System.Windows.Forms.CheckedListBox checklist_employers;
         public System.Windows.Forms.TextBox tb_CustomerID;
+        private System.Windows.Forms.Button btn_okEmployers;
+        private System.Windows.Forms.ComboBox tb_employerlist;
+        private System.Windows.Forms.ComboBox tb_servicelist;
+        private System.Windows.Forms.CheckedListBox checklist_services;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_okService;
+        private System.Windows.Forms.Button btn_przelicz;
+        private System.Windows.Forms.Button btn_undoEnd;
+        private System.Windows.Forms.Button btn_undoStart;
+        private System.Windows.Forms.Label lb_time_in_memory;
     }
 }

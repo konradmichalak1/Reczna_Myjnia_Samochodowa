@@ -54,6 +54,8 @@ namespace Reczna_Myjnia_Samochodowa
                 if (tb_name.Text.Length < 1) throw new Exception("Wprowadź nazwę usługi.");
 
                 connection.Open();
+                if(tb_price.Text == "" || tb_price.Text == " ") { tb_price.Text = "0,00"; }
+                if (tb_realizationtime.Text == "" || tb_realizationtime.Text == " ") { tb_realizationtime.Text = "0"; }
                 Service usluga = new Service()
                 {
                     Name = tb_name.Text,
@@ -118,6 +120,8 @@ namespace Reczna_Myjnia_Samochodowa
         {
             try
             {
+                if (tb_price.Text == "" || tb_price.Text == " ") { tb_price.Text = "0,00"; }
+                if (tb_realizationtime.Text == "" || tb_realizationtime.Text == " ") { tb_realizationtime.Text = "0"; }
                 if (tb_ServiceID.Text == "" || tb_ServiceID.Text == " ") throw new Exception("Podaj ID usługi lub zaznacz rekord z tabeli!");
                 if (tb_name.Text.Length < 1) throw new Exception("Wprowadź nazwę usługi.");
                 connection.Open();
