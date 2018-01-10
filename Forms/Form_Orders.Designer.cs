@@ -504,7 +504,6 @@
         private System.Windows.Forms.Label lb_OrderEmployee;
         private System.Windows.Forms.TextBox tb_OrderID;
         private System.Windows.Forms.TextBox tb_DocumentID;
-        private System.Windows.Forms.TextBox tb_CustomerID;
         private System.Windows.Forms.Label lb_OrderFault;
         private System.Windows.Forms.Label lb_OrderServices;
         private System.Windows.Forms.TextBox tb_CarID;
@@ -526,5 +525,6 @@
         private System.Windows.Forms.Button btn_SetService;
         private System.Windows.Forms.Button btn_SetEmployee;
         private System.Windows.Forms.CheckedListBox checklist_employers;
+        public System.Windows.Forms.TextBox tb_CustomerID;
     }
 }

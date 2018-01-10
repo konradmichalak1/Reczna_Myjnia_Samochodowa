@@ -220,18 +220,21 @@
             this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn1.HeaderText = "Imie";
             this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // surnameDataGridViewTextBoxColumn1
             // 
             this.surnameDataGridViewTextBoxColumn1.DataPropertyName = "Surname";
             this.surnameDataGridViewTextBoxColumn1.HeaderText = "Nazwisko";
             this.surnameDataGridViewTextBoxColumn1.Name = "surnameDataGridViewTextBoxColumn1";
+            this.surnameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // telephoneDataGridViewTextBoxColumn1
             // 
             this.telephoneDataGridViewTextBoxColumn1.DataPropertyName = "Telephone";
             this.telephoneDataGridViewTextBoxColumn1.HeaderText = "Telefon";
             this.telephoneDataGridViewTextBoxColumn1.Name = "telephoneDataGridViewTextBoxColumn1";
+            this.telephoneDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // myjniaDataSet1BindingSource
             // 
