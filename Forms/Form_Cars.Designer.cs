@@ -74,6 +74,7 @@
             this.CarGridView.DataSource = this.carBindingSource;
             this.CarGridView.Location = new System.Drawing.Point(289, 17);
             this.CarGridView.Name = "CarGridView";
+            this.CarGridView.ReadOnly = true;
             this.CarGridView.Size = new System.Drawing.Size(645, 351);
             this.CarGridView.TabIndex = 0;
             this.CarGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CarGridView_CellContentClick);
@@ -90,30 +91,35 @@
             this.markDataGridViewTextBoxColumn.DataPropertyName = "Mark";
             this.markDataGridViewTextBoxColumn.HeaderText = "Marka";
             this.markDataGridViewTextBoxColumn.Name = "markDataGridViewTextBoxColumn";
+            this.markDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // modelDataGridViewTextBoxColumn
             // 
             this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
             this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
             this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // licensenumberDataGridViewTextBoxColumn
             // 
             this.licensenumberDataGridViewTextBoxColumn.DataPropertyName = "License_number";
             this.licensenumberDataGridViewTextBoxColumn.HeaderText = "Rejestracja";
             this.licensenumberDataGridViewTextBoxColumn.Name = "licensenumberDataGridViewTextBoxColumn";
+            this.licensenumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // noteDataGridViewTextBoxColumn
             // 
             this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
             this.noteDataGridViewTextBoxColumn.HeaderText = "Notatka";
             this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
+            this.noteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // reportdateDataGridViewTextBoxColumn
             // 
             this.reportdateDataGridViewTextBoxColumn.DataPropertyName = "Report_date";
             this.reportdateDataGridViewTextBoxColumn.HeaderText = "Data";
             this.reportdateDataGridViewTextBoxColumn.Name = "reportdateDataGridViewTextBoxColumn";
+            this.reportdateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // carBindingSource
             // 

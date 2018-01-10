@@ -41,6 +41,8 @@
             this.employersDataSet = new Reczna_Myjnia_Samochodowa.EmployersDataSet();
             this.employeeTableAdapter = new Reczna_Myjnia_Samochodowa.EmployersDataSetTableAdapters.EmployeeTableAdapter();
             this.gb_Employers = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cb_jobtitle = new System.Windows.Forms.ComboBox();
             this.lb_salary = new System.Windows.Forms.Label();
             this.lb_jobtitle = new System.Windows.Forms.Label();
             this.lb_pesel = new System.Windows.Forms.Label();
@@ -55,8 +57,6 @@
             this.tb_surname = new System.Windows.Forms.TextBox();
             this.tb_name = new System.Windows.Forms.TextBox();
             this.tb_EmployeeID = new System.Windows.Forms.TextBox();
-            this.cb_jobtitle = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EmployersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employersDataSet)).BeginInit();
@@ -78,6 +78,7 @@
             this.EmployersGridView.Location = new System.Drawing.Point(267, 12);
             this.EmployersGridView.MultiSelect = false;
             this.EmployersGridView.Name = "EmployersGridView";
+            this.EmployersGridView.ReadOnly = true;
             this.EmployersGridView.Size = new System.Drawing.Size(646, 329);
             this.EmployersGridView.TabIndex = 0;
             this.EmployersGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EmployersGridView_CellMouseClick);
@@ -85,39 +86,44 @@
             // iDemployeeDataGridViewTextBoxColumn
             // 
             this.iDemployeeDataGridViewTextBoxColumn.DataPropertyName = "ID_employee";
-            this.iDemployeeDataGridViewTextBoxColumn.HeaderText = "ID_employee";
+            this.iDemployeeDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDemployeeDataGridViewTextBoxColumn.Name = "iDemployeeDataGridViewTextBoxColumn";
             this.iDemployeeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Imię";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // surnameDataGridViewTextBoxColumn
             // 
             this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pESELDataGridViewTextBoxColumn
             // 
             this.pESELDataGridViewTextBoxColumn.DataPropertyName = "PESEL";
             this.pESELDataGridViewTextBoxColumn.HeaderText = "PESEL";
             this.pESELDataGridViewTextBoxColumn.Name = "pESELDataGridViewTextBoxColumn";
+            this.pESELDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // jobtitleDataGridViewTextBoxColumn
             // 
             this.jobtitleDataGridViewTextBoxColumn.DataPropertyName = "Job_title";
-            this.jobtitleDataGridViewTextBoxColumn.HeaderText = "Job_title";
+            this.jobtitleDataGridViewTextBoxColumn.HeaderText = "Stanowisko";
             this.jobtitleDataGridViewTextBoxColumn.Name = "jobtitleDataGridViewTextBoxColumn";
+            this.jobtitleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // salaryDataGridViewTextBoxColumn
             // 
             this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
-            this.salaryDataGridViewTextBoxColumn.HeaderText = "Salary";
+            this.salaryDataGridViewTextBoxColumn.HeaderText = "Pensja";
             this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
+            this.salaryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // employeeBindingSource
             // 
@@ -158,6 +164,28 @@
             this.gb_Employers.TabIndex = 3;
             this.gb_Employers.TabStop = false;
             this.gb_Employers.Text = "Pracownik";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(161, 123);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "zł";
+            // 
+            // cb_jobtitle
+            // 
+            this.cb_jobtitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_jobtitle.FormattingEnabled = true;
+            this.cb_jobtitle.Items.AddRange(new object[] {
+            "Kierownik",
+            "Recepcjonista",
+            "Pracownik"});
+            this.cb_jobtitle.Location = new System.Drawing.Point(84, 152);
+            this.cb_jobtitle.Name = "cb_jobtitle";
+            this.cb_jobtitle.Size = new System.Drawing.Size(121, 21);
+            this.cb_jobtitle.TabIndex = 14;
             // 
             // lb_salary
             // 
@@ -286,28 +314,6 @@
             this.tb_EmployeeID.Size = new System.Drawing.Size(100, 20);
             this.tb_EmployeeID.TabIndex = 0;
             // 
-            // cb_jobtitle
-            // 
-            this.cb_jobtitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_jobtitle.FormattingEnabled = true;
-            this.cb_jobtitle.Items.AddRange(new object[] {
-            "Kierownik",
-            "Recepcjonista",
-            "Pracownik"});
-            this.cb_jobtitle.Location = new System.Drawing.Point(84, 152);
-            this.cb_jobtitle.Name = "cb_jobtitle";
-            this.cb_jobtitle.Size = new System.Drawing.Size(121, 21);
-            this.cb_jobtitle.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(161, 123);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "zł";
-            // 
             // Form_Employers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,7 +322,7 @@
             this.Controls.Add(this.gb_Employers);
             this.Controls.Add(this.EmployersGridView);
             this.Name = "Form_Employers";
-            this.Text = "Form_Employers";
+            this.Text = "Pracownicy";
             this.Load += new System.EventHandler(this.Form_Employers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.EmployersGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
@@ -333,12 +339,6 @@
         private EmployersDataSet employersDataSet;
         private System.Windows.Forms.BindingSource employeeBindingSource;
         private EmployersDataSetTableAdapters.EmployeeTableAdapter employeeTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDemployeeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pESELDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobtitleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn salaryDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox gb_Employers;
         private System.Windows.Forms.Button btn_UpdateEmployee;
         private System.Windows.Forms.Button btn_DeleteEmployee;
@@ -356,5 +356,11 @@
         private System.Windows.Forms.TextBox tb_name;
         private System.Windows.Forms.ComboBox cb_jobtitle;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDemployeeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pESELDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jobtitleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salaryDataGridViewTextBoxColumn;
     }
 }

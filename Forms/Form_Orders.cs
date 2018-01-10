@@ -21,5 +21,12 @@ namespace Reczna_Myjnia_Samochodowa
         {
 
         }
+
+        private void cb_EmployeeList_DropDown(object sender, EventArgs e)
+        {
+            checklist_employers.Location = new Point(cb_EmployeeList.Location.X + 30, cb_EmployeeList.Location.Y + 40);
+            
+            checklist_employers.Visible = true;
+        }
     }
 }

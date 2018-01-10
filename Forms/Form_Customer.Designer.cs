@@ -35,6 +35,9 @@
             this.gb_Customers = new System.Windows.Forms.GroupBox();
             this.lb_CustomerTelephone = new System.Windows.Forms.Label();
             this.tb_CustomerTelephone = new System.Windows.Forms.TextBox();
+            this.btn_UpdateCustomer = new System.Windows.Forms.Button();
+            this.btn_DeleteCustomer = new System.Windows.Forms.Button();
+            this.btn_InsertCustomer = new System.Windows.Forms.Button();
             this.lb_CustomerSurname = new System.Windows.Forms.Label();
             this.lb_CustomerName = new System.Windows.Forms.Label();
             this.lb_CustomerID = new System.Windows.Forms.Label();
@@ -47,10 +50,6 @@
             this.surnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telephoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.myjniaDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btn_Sort = new System.Windows.Forms.Button();
-            this.btn_UpdateCustomer = new System.Windows.Forms.Button();
-            this.btn_DeleteCustomer = new System.Windows.Forms.Button();
-            this.btn_InsertCustomer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myjniaDataSet1)).BeginInit();
             this.gb_Customers.SuspendLayout();
@@ -108,6 +107,41 @@
             this.tb_CustomerTelephone.Name = "tb_CustomerTelephone";
             this.tb_CustomerTelephone.Size = new System.Drawing.Size(100, 20);
             this.tb_CustomerTelephone.TabIndex = 13;
+            // 
+            // btn_UpdateCustomer
+            // 
+            this.btn_UpdateCustomer.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Update_Button;
+            this.btn_UpdateCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_UpdateCustomer.Location = new System.Drawing.Point(167, 143);
+            this.btn_UpdateCustomer.Name = "btn_UpdateCustomer";
+            this.btn_UpdateCustomer.Size = new System.Drawing.Size(75, 23);
+            this.btn_UpdateCustomer.TabIndex = 12;
+            this.btn_UpdateCustomer.Text = "Aktualizuj";
+            this.btn_UpdateCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_UpdateCustomer.UseVisualStyleBackColor = true;
+            this.btn_UpdateCustomer.Click += new System.EventHandler(this.btn_UpdateCustomer_Click);
+            // 
+            // btn_DeleteCustomer
+            // 
+            this.btn_DeleteCustomer.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Delete_Button;
+            this.btn_DeleteCustomer.Location = new System.Drawing.Point(86, 143);
+            this.btn_DeleteCustomer.Name = "btn_DeleteCustomer";
+            this.btn_DeleteCustomer.Size = new System.Drawing.Size(75, 23);
+            this.btn_DeleteCustomer.TabIndex = 11;
+            this.btn_DeleteCustomer.Text = "Usuń";
+            this.btn_DeleteCustomer.UseVisualStyleBackColor = true;
+            this.btn_DeleteCustomer.Click += new System.EventHandler(this.btn_DeleteCustomer_Click);
+            // 
+            // btn_InsertCustomer
+            // 
+            this.btn_InsertCustomer.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Add_Button;
+            this.btn_InsertCustomer.Location = new System.Drawing.Point(5, 143);
+            this.btn_InsertCustomer.Name = "btn_InsertCustomer";
+            this.btn_InsertCustomer.Size = new System.Drawing.Size(75, 23);
+            this.btn_InsertCustomer.TabIndex = 10;
+            this.btn_InsertCustomer.Text = "Dodaj";
+            this.btn_InsertCustomer.UseVisualStyleBackColor = true;
+            this.btn_InsertCustomer.Click += new System.EventHandler(this.btn_InsertCustomer_Click);
             // 
             // lb_CustomerSurname
             // 
@@ -169,7 +203,8 @@
             this.CustomerGridView.DataSource = this.customerBindingSource;
             this.CustomerGridView.Location = new System.Drawing.Point(276, 12);
             this.CustomerGridView.Name = "CustomerGridView";
-            this.CustomerGridView.Size = new System.Drawing.Size(458, 404);
+            this.CustomerGridView.ReadOnly = true;
+            this.CustomerGridView.Size = new System.Drawing.Size(450, 404);
             this.CustomerGridView.TabIndex = 3;
             this.CustomerGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CustomerGridView_CellContentClick);
             // 
@@ -203,57 +238,11 @@
             this.myjniaDataSet1BindingSource.DataSource = this.myjniaDataSet1;
             this.myjniaDataSet1BindingSource.Position = 0;
             // 
-            // btn_Sort
-            // 
-            this.btn_Sort.Location = new System.Drawing.Point(95, 355);
-            this.btn_Sort.Name = "btn_Sort";
-            this.btn_Sort.Size = new System.Drawing.Size(75, 23);
-            this.btn_Sort.TabIndex = 4;
-            this.btn_Sort.Text = "Sortuj";
-            this.btn_Sort.UseVisualStyleBackColor = true;
-            this.btn_Sort.Click += new System.EventHandler(this.btn_Sort_Click);
-            // 
-            // btn_UpdateCustomer
-            // 
-            this.btn_UpdateCustomer.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Update_Button;
-            this.btn_UpdateCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_UpdateCustomer.Location = new System.Drawing.Point(167, 143);
-            this.btn_UpdateCustomer.Name = "btn_UpdateCustomer";
-            this.btn_UpdateCustomer.Size = new System.Drawing.Size(75, 23);
-            this.btn_UpdateCustomer.TabIndex = 12;
-            this.btn_UpdateCustomer.Text = "Aktualizuj";
-            this.btn_UpdateCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_UpdateCustomer.UseVisualStyleBackColor = true;
-            this.btn_UpdateCustomer.Click += new System.EventHandler(this.btn_UpdateCustomer_Click);
-            // 
-            // btn_DeleteCustomer
-            // 
-            this.btn_DeleteCustomer.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Delete_Button;
-            this.btn_DeleteCustomer.Location = new System.Drawing.Point(86, 143);
-            this.btn_DeleteCustomer.Name = "btn_DeleteCustomer";
-            this.btn_DeleteCustomer.Size = new System.Drawing.Size(75, 23);
-            this.btn_DeleteCustomer.TabIndex = 11;
-            this.btn_DeleteCustomer.Text = "Usuń";
-            this.btn_DeleteCustomer.UseVisualStyleBackColor = true;
-            this.btn_DeleteCustomer.Click += new System.EventHandler(this.btn_DeleteCustomer_Click);
-            // 
-            // btn_InsertCustomer
-            // 
-            this.btn_InsertCustomer.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Add_Button;
-            this.btn_InsertCustomer.Location = new System.Drawing.Point(5, 143);
-            this.btn_InsertCustomer.Name = "btn_InsertCustomer";
-            this.btn_InsertCustomer.Size = new System.Drawing.Size(75, 23);
-            this.btn_InsertCustomer.TabIndex = 10;
-            this.btn_InsertCustomer.Text = "Dodaj";
-            this.btn_InsertCustomer.UseVisualStyleBackColor = true;
-            this.btn_InsertCustomer.Click += new System.EventHandler(this.btn_InsertCustomer_Click);
-            // 
             // Form_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 427);
-            this.Controls.Add(this.btn_Sort);
+            this.ClientSize = new System.Drawing.Size(734, 427);
             this.Controls.Add(this.CustomerGridView);
             this.Controls.Add(this.gb_Customers);
             this.Name = "Form_Customer";
@@ -288,7 +277,6 @@
         private System.Windows.Forms.TextBox tb_CustomerTelephone;
         private System.Windows.Forms.DataGridView CustomerGridView;
         private System.Windows.Forms.BindingSource myjniaDataSet1BindingSource;
-        private System.Windows.Forms.Button btn_Sort;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDcustomerDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn1;

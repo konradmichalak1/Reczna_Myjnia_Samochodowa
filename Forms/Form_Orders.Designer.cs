@@ -65,6 +65,7 @@
             this.lb_OrdersIDCustomer = new System.Windows.Forms.Label();
             this.lb_OrderEmployee = new System.Windows.Forms.Label();
             this.lb_id_order = new System.Windows.Forms.Label();
+            this.checklist_employers = new System.Windows.Forms.CheckedListBox();
             this.gb_Orders.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,17 +142,12 @@
             // 
             this.cb_EmployeeList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_EmployeeList.FormattingEnabled = true;
-            this.cb_EmployeeList.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
             this.cb_EmployeeList.Location = new System.Drawing.Point(74, 222);
             this.cb_EmployeeList.Name = "cb_EmployeeList";
             this.cb_EmployeeList.Size = new System.Drawing.Size(91, 21);
             this.cb_EmployeeList.Sorted = true;
             this.cb_EmployeeList.TabIndex = 30;
+            this.cb_EmployeeList.DropDown += new System.EventHandler(this.cb_EmployeeList_DropDown);
             // 
             // btn_SetFault
             // 
@@ -452,12 +448,35 @@
             this.lb_id_order.TabIndex = 0;
             this.lb_id_order.Text = "ID";
             // 
+            // checklist_employers
+            // 
+            this.checklist_employers.CheckOnClick = true;
+            this.checklist_employers.FormattingEnabled = true;
+            this.checklist_employers.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "0"});
+            this.checklist_employers.Location = new System.Drawing.Point(345, 239);
+            this.checklist_employers.Name = "checklist_employers";
+            this.checklist_employers.Size = new System.Drawing.Size(91, 94);
+            this.checklist_employers.TabIndex = 2;
+            this.checklist_employers.Visible = false;
+            // 
             // Form_Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 434);
+            this.ClientSize = new System.Drawing.Size(448, 434);
+            this.Controls.Add(this.checklist_employers);
             this.Controls.Add(this.gb_Orders);
+            this.MaximizeBox = false;
             this.Name = "Form_Orders";
             this.Text = "Zamówienia";
             this.Load += new System.EventHandler(this.Form_Orders_Load);
@@ -506,5 +525,6 @@
         private System.Windows.Forms.Button btn_SetFault;
         private System.Windows.Forms.Button btn_SetService;
         private System.Windows.Forms.Button btn_SetEmployee;
+        private System.Windows.Forms.CheckedListBox checklist_employers;
     }
 }

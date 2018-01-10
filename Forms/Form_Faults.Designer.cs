@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Faults));
             this.faultGridView = new System.Windows.Forms.DataGridView();
-            this.iDfaultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reportdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.faultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.faultsDataSet = new Reczna_Myjnia_Samochodowa.FaultsDataSet();
             this.faultsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -46,6 +43,9 @@
             this.lb_FaultID = new System.Windows.Forms.Label();
             this.tb_CarNote = new System.Windows.Forms.TextBox();
             this.tb_FaultID = new System.Windows.Forms.TextBox();
+            this.iDfaultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.faultGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.faultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.faultsDataSet)).BeginInit();
@@ -64,28 +64,10 @@
             this.faultGridView.DataSource = this.faultBindingSource;
             this.faultGridView.Location = new System.Drawing.Point(277, 12);
             this.faultGridView.Name = "faultGridView";
-            this.faultGridView.Size = new System.Drawing.Size(350, 269);
+            this.faultGridView.ReadOnly = true;
+            this.faultGridView.Size = new System.Drawing.Size(379, 269);
             this.faultGridView.TabIndex = 0;
             this.faultGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.faultGridView_CellMouseClick);
-            // 
-            // iDfaultDataGridViewTextBoxColumn
-            // 
-            this.iDfaultDataGridViewTextBoxColumn.DataPropertyName = "ID_fault";
-            this.iDfaultDataGridViewTextBoxColumn.HeaderText = "ID_fault";
-            this.iDfaultDataGridViewTextBoxColumn.Name = "iDfaultDataGridViewTextBoxColumn";
-            this.iDfaultDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // reportdateDataGridViewTextBoxColumn
-            // 
-            this.reportdateDataGridViewTextBoxColumn.DataPropertyName = "Report_date";
-            this.reportdateDataGridViewTextBoxColumn.HeaderText = "Report_date";
-            this.reportdateDataGridViewTextBoxColumn.Name = "reportdateDataGridViewTextBoxColumn";
             // 
             // faultBindingSource
             // 
@@ -191,11 +173,33 @@
             this.tb_FaultID.Size = new System.Drawing.Size(100, 20);
             this.tb_FaultID.TabIndex = 0;
             // 
+            // iDfaultDataGridViewTextBoxColumn
+            // 
+            this.iDfaultDataGridViewTextBoxColumn.DataPropertyName = "ID_fault";
+            this.iDfaultDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDfaultDataGridViewTextBoxColumn.Name = "iDfaultDataGridViewTextBoxColumn";
+            this.iDfaultDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Opis usterki";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // reportdateDataGridViewTextBoxColumn
+            // 
+            this.reportdateDataGridViewTextBoxColumn.DataPropertyName = "Report_date";
+            this.reportdateDataGridViewTextBoxColumn.HeaderText = "Data zgłoszenia";
+            this.reportdateDataGridViewTextBoxColumn.Name = "reportdateDataGridViewTextBoxColumn";
+            this.reportdateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reportdateDataGridViewTextBoxColumn.Width = 130;
+            // 
             // Form_Faults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 293);
+            this.ClientSize = new System.Drawing.Size(664, 293);
             this.Controls.Add(this.gb_Faults);
             this.Controls.Add(this.faultGridView);
             this.Name = "Form_Faults";
@@ -218,9 +222,6 @@
         private FaultsDataSet faultsDataSet;
         private System.Windows.Forms.BindingSource faultBindingSource;
         private FaultsDataSetTableAdapters.FaultTableAdapter faultTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDfaultDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reportdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox gb_Faults;
         private System.Windows.Forms.Button btn_UpdateFault;
         private System.Windows.Forms.Button btn_DeleteFault;
@@ -229,5 +230,8 @@
         private System.Windows.Forms.Label lb_FaultID;
         private System.Windows.Forms.TextBox tb_CarNote;
         private System.Windows.Forms.TextBox tb_FaultID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDfaultDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reportdateDataGridViewTextBoxColumn;
     }
 }

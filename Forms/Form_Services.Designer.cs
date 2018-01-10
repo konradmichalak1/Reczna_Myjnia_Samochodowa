@@ -31,30 +31,30 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Services));
             this.ServiceGridView = new System.Windows.Forms.DataGridView();
-            this.servicesDataSet = new Reczna_Myjnia_Samochodowa.ServicesDataSet();
             this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.servicesDataSet = new Reczna_Myjnia_Samochodowa.ServicesDataSet();
             this.serviceTableAdapter = new Reczna_Myjnia_Samochodowa.ServicesDataSetTableAdapters.ServiceTableAdapter();
-            this.iDserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.realizationtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_Services = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lb_price = new System.Windows.Forms.Label();
             this.lb_realizationtime = new System.Windows.Forms.Label();
             this.lb_name = new System.Windows.Forms.Label();
+            this.btn_UpdateService = new System.Windows.Forms.Button();
+            this.btn_DeleteService = new System.Windows.Forms.Button();
+            this.btn_InsertService = new System.Windows.Forms.Button();
             this.lb_ServiceID = new System.Windows.Forms.Label();
             this.tb_price = new System.Windows.Forms.TextBox();
             this.tb_realizationtime = new System.Windows.Forms.TextBox();
             this.tb_name = new System.Windows.Forms.TextBox();
             this.tb_ServiceID = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btn_UpdateService = new System.Windows.Forms.Button();
-            this.btn_DeleteService = new System.Windows.Forms.Button();
-            this.btn_InsertService = new System.Windows.Forms.Button();
+            this.iDserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.realizationtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesDataSet)).BeginInit();
             this.gb_Services.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,48 +70,24 @@
             this.ServiceGridView.DataSource = this.serviceBindingSource;
             this.ServiceGridView.Location = new System.Drawing.Point(276, 12);
             this.ServiceGridView.Name = "ServiceGridView";
+            this.ServiceGridView.ReadOnly = true;
             this.ServiceGridView.Size = new System.Drawing.Size(448, 342);
             this.ServiceGridView.TabIndex = 0;
             this.ServiceGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ServiceGridView_CellMouseClick);
-            // 
-            // servicesDataSet
-            // 
-            this.servicesDataSet.DataSetName = "ServicesDataSet";
-            this.servicesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // serviceBindingSource
             // 
             this.serviceBindingSource.DataMember = "Service";
             this.serviceBindingSource.DataSource = this.servicesDataSet;
             // 
+            // servicesDataSet
+            // 
+            this.servicesDataSet.DataSetName = "ServicesDataSet";
+            this.servicesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // serviceTableAdapter
             // 
             this.serviceTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDserviceDataGridViewTextBoxColumn
-            // 
-            this.iDserviceDataGridViewTextBoxColumn.DataPropertyName = "ID_service";
-            this.iDserviceDataGridViewTextBoxColumn.HeaderText = "ID_service";
-            this.iDserviceDataGridViewTextBoxColumn.Name = "iDserviceDataGridViewTextBoxColumn";
-            this.iDserviceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // realizationtimeDataGridViewTextBoxColumn
-            // 
-            this.realizationtimeDataGridViewTextBoxColumn.DataPropertyName = "Realization_time";
-            this.realizationtimeDataGridViewTextBoxColumn.HeaderText = "Realization_time";
-            this.realizationtimeDataGridViewTextBoxColumn.Name = "realizationtimeDataGridViewTextBoxColumn";
             // 
             // gb_Services
             // 
@@ -135,6 +111,15 @@
             this.gb_Services.TabIndex = 4;
             this.gb_Services.TabStop = false;
             this.gb_Services.Text = "Usługa";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(153, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "min";
             // 
             // label1
             // 
@@ -171,6 +156,41 @@
             this.lb_name.Size = new System.Drawing.Size(43, 13);
             this.lb_name.TabIndex = 13;
             this.lb_name.Text = "Nazwa:";
+            // 
+            // btn_UpdateService
+            // 
+            this.btn_UpdateService.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_UpdateService.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_UpdateService.BackgroundImage")));
+            this.btn_UpdateService.Location = new System.Drawing.Point(168, 131);
+            this.btn_UpdateService.Name = "btn_UpdateService";
+            this.btn_UpdateService.Size = new System.Drawing.Size(75, 23);
+            this.btn_UpdateService.TabIndex = 12;
+            this.btn_UpdateService.Text = "Aktualizuj";
+            this.btn_UpdateService.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_UpdateService.UseVisualStyleBackColor = false;
+            this.btn_UpdateService.Click += new System.EventHandler(this.btn_UpdateService_Click);
+            // 
+            // btn_DeleteService
+            // 
+            this.btn_DeleteService.Image = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Delete_Button;
+            this.btn_DeleteService.Location = new System.Drawing.Point(87, 131);
+            this.btn_DeleteService.Name = "btn_DeleteService";
+            this.btn_DeleteService.Size = new System.Drawing.Size(75, 23);
+            this.btn_DeleteService.TabIndex = 11;
+            this.btn_DeleteService.Text = "Usuń";
+            this.btn_DeleteService.UseVisualStyleBackColor = true;
+            this.btn_DeleteService.Click += new System.EventHandler(this.btn_DeleteService_Click);
+            // 
+            // btn_InsertService
+            // 
+            this.btn_InsertService.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Add_Button;
+            this.btn_InsertService.Location = new System.Drawing.Point(6, 131);
+            this.btn_InsertService.Name = "btn_InsertService";
+            this.btn_InsertService.Size = new System.Drawing.Size(75, 23);
+            this.btn_InsertService.TabIndex = 10;
+            this.btn_InsertService.Text = "Dodaj";
+            this.btn_InsertService.UseVisualStyleBackColor = true;
+            this.btn_InsertService.Click += new System.EventHandler(this.btn_InsertService_Click);
             // 
             // lb_ServiceID
             // 
@@ -211,49 +231,33 @@
             this.tb_ServiceID.Size = new System.Drawing.Size(100, 20);
             this.tb_ServiceID.TabIndex = 0;
             // 
-            // label2
+            // iDserviceDataGridViewTextBoxColumn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(153, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "min";
+            this.iDserviceDataGridViewTextBoxColumn.DataPropertyName = "ID_service";
+            this.iDserviceDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDserviceDataGridViewTextBoxColumn.Name = "iDserviceDataGridViewTextBoxColumn";
+            this.iDserviceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // btn_UpdateService
+            // nameDataGridViewTextBoxColumn
             // 
-            this.btn_UpdateService.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_UpdateService.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_UpdateService.BackgroundImage")));
-            this.btn_UpdateService.Location = new System.Drawing.Point(168, 131);
-            this.btn_UpdateService.Name = "btn_UpdateService";
-            this.btn_UpdateService.Size = new System.Drawing.Size(75, 23);
-            this.btn_UpdateService.TabIndex = 12;
-            this.btn_UpdateService.Text = "Aktualizuj";
-            this.btn_UpdateService.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_UpdateService.UseVisualStyleBackColor = false;
-            this.btn_UpdateService.Click += new System.EventHandler(this.btn_UpdateService_Click);
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Nazwa";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // btn_DeleteService
+            // priceDataGridViewTextBoxColumn
             // 
-            this.btn_DeleteService.Image = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Delete_Button;
-            this.btn_DeleteService.Location = new System.Drawing.Point(87, 131);
-            this.btn_DeleteService.Name = "btn_DeleteService";
-            this.btn_DeleteService.Size = new System.Drawing.Size(75, 23);
-            this.btn_DeleteService.TabIndex = 11;
-            this.btn_DeleteService.Text = "Usuń";
-            this.btn_DeleteService.UseVisualStyleBackColor = true;
-            this.btn_DeleteService.Click += new System.EventHandler(this.btn_DeleteService_Click);
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Cena";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // btn_InsertService
+            // realizationtimeDataGridViewTextBoxColumn
             // 
-            this.btn_InsertService.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Add_Button;
-            this.btn_InsertService.Location = new System.Drawing.Point(6, 131);
-            this.btn_InsertService.Name = "btn_InsertService";
-            this.btn_InsertService.Size = new System.Drawing.Size(75, 23);
-            this.btn_InsertService.TabIndex = 10;
-            this.btn_InsertService.Text = "Dodaj";
-            this.btn_InsertService.UseVisualStyleBackColor = true;
-            this.btn_InsertService.Click += new System.EventHandler(this.btn_InsertService_Click);
+            this.realizationtimeDataGridViewTextBoxColumn.DataPropertyName = "Realization_time";
+            this.realizationtimeDataGridViewTextBoxColumn.HeaderText = "Czas realizacji";
+            this.realizationtimeDataGridViewTextBoxColumn.Name = "realizationtimeDataGridViewTextBoxColumn";
+            this.realizationtimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Form_Services
             // 
@@ -266,8 +270,8 @@
             this.Text = "Usługi";
             this.Load += new System.EventHandler(this.Form_Services_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesDataSet)).EndInit();
             this.gb_Services.ResumeLayout(false);
             this.gb_Services.PerformLayout();
             this.ResumeLayout(false);
@@ -280,10 +284,6 @@
         private ServicesDataSet servicesDataSet;
         private System.Windows.Forms.BindingSource serviceBindingSource;
         private ServicesDataSetTableAdapters.ServiceTableAdapter serviceTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDserviceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn realizationtimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox gb_Services;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_price;
@@ -298,5 +298,9 @@
         private System.Windows.Forms.TextBox tb_name;
         private System.Windows.Forms.TextBox tb_ServiceID;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDserviceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn realizationtimeDataGridViewTextBoxColumn;
     }
 }
