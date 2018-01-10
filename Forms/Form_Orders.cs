@@ -21,5 +21,12 @@ namespace Reczna_Myjnia_Samochodowa
         {
 
         }
+
+        private void btn_CustomerIDChoose_Click(object sender, EventArgs e)
+        {
+            Form_Customer frm = new Form_Customer();
+            frm.send_OrdersObject(this);
+            frm.Show();
+        }
     }
 }
