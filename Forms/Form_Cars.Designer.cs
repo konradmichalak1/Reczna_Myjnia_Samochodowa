@@ -54,6 +54,7 @@
             this.tb_CarLicense = new System.Windows.Forms.TextBox();
             this.tb_CarMark = new System.Windows.Forms.TextBox();
             this.tb_CarID = new System.Windows.Forms.TextBox();
+            this.btn_OkCar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myjniaDataSet)).BeginInit();
@@ -274,12 +275,23 @@
             this.tb_CarID.Size = new System.Drawing.Size(100, 20);
             this.tb_CarID.TabIndex = 0;
             // 
+            // btn_OkCar
+            // 
+            this.btn_OkCar.Location = new System.Drawing.Point(107, 322);
+            this.btn_OkCar.Name = "btn_OkCar";
+            this.btn_OkCar.Size = new System.Drawing.Size(75, 23);
+            this.btn_OkCar.TabIndex = 2;
+            this.btn_OkCar.Text = "Ok";
+            this.btn_OkCar.UseVisualStyleBackColor = true;
+            this.btn_OkCar.Click += new System.EventHandler(this.btn_OkCar_Click);
+            // 
             // Form_Cars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(949, 380);
+            this.Controls.Add(this.btn_OkCar);
             this.Controls.Add(this.gb_Cars);
             this.Controls.Add(this.CarGridView);
             this.Name = "Form_Cars";
@@ -320,5 +332,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn licensenumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn reportdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_OkCar;
     }
 }

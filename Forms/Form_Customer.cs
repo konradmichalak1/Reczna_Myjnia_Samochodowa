@@ -152,5 +152,17 @@ namespace Reczna_Myjnia_Samochodowa
             else
                 this.Close();
         }
+
+        private void tb_CustomerName_TextChanged(object sender, EventArgs e)
+        {
+            connection.Open();
+            //IQueryable<Customer> show = myjnia.Customer.Where(n => (n.Name == tb_CustomerName.Text));
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT ID_Customer, Name, Surname FROM Customer WHERE Name LIKE'"+tb_CustomerName.Text+"%'", connection);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            CustomerGridView.DataSource = dt;
+           // CustomerGridView.DataSource = show.ToList();
+            connection.Close();
+        }
     }
 }
