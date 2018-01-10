@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="MyjniaModel.Car" Width="1.5" PointX="1" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MyjniaModel.Customer" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MyjniaModel.Employee" Width="1.5" PointX="8.875" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyjniaModel.Fault" Width="1.5" PointX="3.375" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyjniaModel.Fault" Width="1.5" PointX="2.5" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MyjniaModel.Order" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="MyjniaModel.Service" Width="1.5" PointX="9.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="MyjniaModel.Order_detail" Width="1.5" PointX="7.375" PointY="3.875" IsExpanded="true" />

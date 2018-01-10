@@ -196,6 +196,8 @@ namespace Reczna_Myjnia_Samochodowa
 
         private void btn_EndTimeSet_Click(object sender, EventArgs e)
         {
+            string x = cb_OrderPaymenttype.CheckState.ToString();
+
             if (lb_time_in_memory.Text == "czas-w-pamieci")
             {
                 lb_time_in_memory.Text = tb_EndTime.Text;
@@ -221,7 +223,5 @@ namespace Reczna_Myjnia_Samochodowa
             tb_EndTime.Text = lb_time_in_memory.Text;
             btn_undoEnd.Visible = false;
         }
-
-
     }
 }

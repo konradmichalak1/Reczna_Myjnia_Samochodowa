@@ -75,11 +75,12 @@ namespace Reczna_Myjnia_Samochodowa
                 {
                     myjnia.Car.Remove(p);
                 }
+                
                 myjnia.SaveChanges();
                 connection.Close();
                 display_samochod();
             }
-
+            
             catch (Exception ex)
             {
                 if (ex.InnerException == null) MessageBox.Show(ex.Message);

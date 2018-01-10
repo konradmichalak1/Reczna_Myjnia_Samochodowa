@@ -39,6 +39,7 @@ namespace Reczna_Myjnia_Samochodowa
                     CommandType = CommandType.StoredProcedure
                 })
                 {
+                    
                     connection.Open();
                     command.Parameters.Add("@Name", SqlDbType.VarChar).Value = tb_CustomerName.Text;
                     command.Parameters.Add("@Surname", SqlDbType.VarChar).Value = tb_CustomerSurname.Text;
