@@ -14,6 +14,7 @@ namespace Reczna_Myjnia_Samochodowa
     {
         SqlConnection connection = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Myjnia; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         MyjniaEntities1 myjnia = new MyjniaEntities1();
+        public static Form_Orders frmOrders;
         public Form_Customer()
         {
             InitializeComponent();
@@ -133,6 +134,21 @@ namespace Reczna_Myjnia_Samochodowa
                 tb_CustomerTelephone.Text = CustomerGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
             }
             catch (Exception ex) { }
+        }
+
+        private void btn_Ok_Click(object sender, EventArgs e)
+        {
+            if (frmOrders != null)
+            {
+                frmOrders.tb_CustomerID.Text = CustomerGridView.CurrentRow.Cells[0].Value.ToString();
+                this.Close();
+            }
+            else
+                this.Close();
+        }
+        public void send_OrdersObject(Form_Orders frm)
+        {
+            frmOrders = frm;
         }
     }
 }
