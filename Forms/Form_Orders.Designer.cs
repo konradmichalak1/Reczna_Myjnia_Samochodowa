@@ -568,7 +568,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 434);
+            this.ClientSize = new System.Drawing.Size(333, 434);
             this.Controls.Add(this.lb_time_in_memory);
             this.Controls.Add(this.checklist_services);
             this.Controls.Add(this.checklist_employers);
