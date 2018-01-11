@@ -223,8 +223,7 @@ namespace Reczna_Myjnia_Samochodowa
             tb_EndTime.Text = lb_time_in_memory.Text;
             btn_undoEnd.Visible = false;
         }
-<<<<<<< HEAD
-=======
+
 
         private void btn_InsertOrder_Click(object sender, EventArgs e)
         {
@@ -286,13 +285,12 @@ namespace Reczna_Myjnia_Samochodowa
                     {
                         try
                         {
-                            using (var command = new SqlCommand("AddToRealization", connection)
+                            using (var command = new SqlCommand("InsertRealization", connection)
                             {
                                 CommandType = CommandType.StoredProcedure
                             })
                             {
                                 connection.Open();
-                                MessageBox.Show(index);
                                 command.Parameters.Add("@ID_order", SqlDbType.VarChar).Value = order.ID_order;
                                 command.Parameters.Add("@ID_Employee", SqlDbType.VarChar).Value = Convert.ToInt32(index);
                                 index = "";
@@ -319,6 +317,6 @@ namespace Reczna_Myjnia_Samochodowa
 
 
         }
->>>>>>> 12f3e54d567da0a56d16391dca113b4c2b57906f
+
     }
 }

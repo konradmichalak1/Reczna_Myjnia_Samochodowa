@@ -34,6 +34,7 @@
             this.btn_Employers = new System.Windows.Forms.Button();
             this.btn_services = new System.Windows.Forms.Button();
             this.btn_faults = new System.Windows.Forms.Button();
+            this.btn_raport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_cars
@@ -96,11 +97,22 @@
             this.btn_faults.UseVisualStyleBackColor = true;
             this.btn_faults.Click += new System.EventHandler(this.btn_faults_Click);
             // 
+            // btn_raport
+            // 
+            this.btn_raport.Location = new System.Drawing.Point(94, 239);
+            this.btn_raport.Name = "btn_raport";
+            this.btn_raport.Size = new System.Drawing.Size(75, 23);
+            this.btn_raport.TabIndex = 6;
+            this.btn_raport.Text = "Raport";
+            this.btn_raport.UseVisualStyleBackColor = true;
+            this.btn_raport.Click += new System.EventHandler(this.btn_raport_Click);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 261);
+            this.ClientSize = new System.Drawing.Size(271, 284);
+            this.Controls.Add(this.btn_raport);
             this.Controls.Add(this.btn_faults);
             this.Controls.Add(this.btn_services);
             this.Controls.Add(this.btn_Employers);
@@ -122,6 +134,7 @@
         private System.Windows.Forms.Button btn_Employers;
         private System.Windows.Forms.Button btn_services;
         private System.Windows.Forms.Button btn_faults;
+        private System.Windows.Forms.Button btn_raport;
     }
 }
 
