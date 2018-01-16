@@ -102,7 +102,7 @@ namespace Reczna_Myjnia_Samochodowa
                         id = dt.Rows[i]["ID_service"].ToString();
                         name = dt.Rows[i]["Name"].ToString();
                         price = dt.Rows[i]["Price"].ToString();
-                        checklist_services.Items.Add(id + "\t "  + name + "\t Cena: " + price+"zł");
+                        checklist_services.Items.Add(id + " "  + name + " Cena: " + price+"zł");
                     }
                 }
             }
@@ -137,7 +137,7 @@ namespace Reczna_Myjnia_Samochodowa
                 {
                     if (s[i] == 32) counter++;
 
-                    if (counter == 3 && i < s.Length - 2) { liczba += s[i]; }
+                    if (counter == 4 && i < s.Length - 2) { liczba += s[i]; }
                 }
                 counter = 0;
                 suma += Convert.ToDecimal(liczba);
