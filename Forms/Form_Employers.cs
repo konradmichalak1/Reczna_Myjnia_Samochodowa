@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MongoDB;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.IdGenerators;
+using MongoDB.Bson;
+using MongoDB.Driver;
 namespace Reczna_Myjnia_Samochodowa
 {
     public partial class Form_Employers : Form
@@ -62,6 +67,17 @@ namespace Reczna_Myjnia_Samochodowa
                     else MessageBox.Show(ex.InnerException.InnerException.Message);
                     connection.Close();
                 }
+            var client = new MongoClient("mongodb://localhost:27017");
+            var database = client.GetDatabase("Myjnia");
+            var collec = database.GetCollection<BsonDocument>("Employees");
+
+            var document = new BsonDocument
+            {
+                {"Name", tb_name.Text },
+                {"PESEL", tb_pesel.Text }
+            };
+
+            collec.InsertOneAsync(document);
         }
 
 
@@ -89,6 +105,11 @@ namespace Reczna_Myjnia_Samochodowa
                 if (ex.InnerException == null) MessageBox.Show(ex.Message);
                 else MessageBox.Show(ex.InnerException.InnerException.Message);
             }
+            var client = new MongoClient("mongodb://localhost:27017");
+            var database = client.GetDatabase("Myjnia");
+            var collec = database.GetCollection<BsonDocument>("Employees");
+            collec.DeleteOneAsync(Builders<BsonDocument>.Filter.Eq("PESEL", tb_pesel.Text));
+
         }
 
         private void EmployersGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
