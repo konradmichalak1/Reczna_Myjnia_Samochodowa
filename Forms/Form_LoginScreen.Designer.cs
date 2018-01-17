@@ -99,7 +99,7 @@
             // 
             this.lb_info.AutoSize = true;
             this.lb_info.ForeColor = System.Drawing.Color.Red;
-            this.lb_info.Location = new System.Drawing.Point(71, 113);
+            this.lb_info.Location = new System.Drawing.Point(61, 130);
             this.lb_info.Name = "lb_info";
             this.lb_info.Size = new System.Drawing.Size(152, 13);
             this.lb_info.TabIndex = 4;

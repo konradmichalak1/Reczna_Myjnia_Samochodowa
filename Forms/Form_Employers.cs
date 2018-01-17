@@ -60,6 +60,20 @@ namespace Reczna_Myjnia_Samochodowa
                     myjnia.SaveChanges();
                     connection.Close();
                     display_employers();
+
+                    /*Dodawanie klienta do MongoDB*/
+                    var client = new MongoClient("mongodb://localhost:27017");
+                    var database = client.GetDatabase("Myjnia");
+                    var collec = database.GetCollection<BsonDocument>("Employees");
+
+                    var document = new BsonDocument
+                    {
+                        {"Name", tb_name.Text },
+                        {"PESEL", tb_pesel.Text }
+                    };
+
+                    collec.InsertOneAsync(document);
+
                 }
                 catch (Exception ex)
                 {
@@ -67,20 +81,7 @@ namespace Reczna_Myjnia_Samochodowa
                     else MessageBox.Show(ex.InnerException.InnerException.Message);
                     connection.Close();
                 }
-            var client = new MongoClient("mongodb://localhost:27017");
-            var database = client.GetDatabase("Myjnia");
-            var collec = database.GetCollection<BsonDocument>("Employees");
-
-            var document = new BsonDocument
-            {
-                {"Name", tb_name.Text },
-                {"PESEL", tb_pesel.Text }
-            };
-
-            collec.InsertOneAsync(document);
         }
-
-
 
         private void btn_DeleteEmployee_Click(object sender, EventArgs e)
         {
@@ -98,18 +99,17 @@ namespace Reczna_Myjnia_Samochodowa
                 myjnia.SaveChanges();
                 connection.Close();
                 display_employers();
-            }
 
+                var client = new MongoClient("mongodb://localhost:27017");
+                var database = client.GetDatabase("Myjnia");
+                var collec = database.GetCollection<BsonDocument>("Employees");
+                collec.DeleteOneAsync(Builders<BsonDocument>.Filter.Eq("PESEL", tb_pesel.Text));
+            }
             catch (Exception ex)
             {
                 if (ex.InnerException == null) MessageBox.Show(ex.Message);
                 else MessageBox.Show(ex.InnerException.InnerException.Message);
             }
-            var client = new MongoClient("mongodb://localhost:27017");
-            var database = client.GetDatabase("Myjnia");
-            var collec = database.GetCollection<BsonDocument>("Employees");
-            collec.DeleteOneAsync(Builders<BsonDocument>.Filter.Eq("PESEL", tb_pesel.Text));
-
         }
 
         private void EmployersGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

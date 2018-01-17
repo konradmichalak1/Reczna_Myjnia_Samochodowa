@@ -107,7 +107,7 @@
             this.tb_CustomerTelephone.Location = new System.Drawing.Point(104, 97);
             this.tb_CustomerTelephone.Name = "tb_CustomerTelephone";
             this.tb_CustomerTelephone.Size = new System.Drawing.Size(100, 20);
-            this.tb_CustomerTelephone.TabIndex = 13;
+            this.tb_CustomerTelephone.TabIndex = 3;
             // 
             // btn_UpdateCustomer
             // 
@@ -116,7 +116,7 @@
             this.btn_UpdateCustomer.Location = new System.Drawing.Point(167, 143);
             this.btn_UpdateCustomer.Name = "btn_UpdateCustomer";
             this.btn_UpdateCustomer.Size = new System.Drawing.Size(75, 23);
-            this.btn_UpdateCustomer.TabIndex = 12;
+            this.btn_UpdateCustomer.TabIndex = 6;
             this.btn_UpdateCustomer.Text = "Aktualizuj";
             this.btn_UpdateCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_UpdateCustomer.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@
             this.btn_DeleteCustomer.Location = new System.Drawing.Point(86, 143);
             this.btn_DeleteCustomer.Name = "btn_DeleteCustomer";
             this.btn_DeleteCustomer.Size = new System.Drawing.Size(75, 23);
-            this.btn_DeleteCustomer.TabIndex = 11;
+            this.btn_DeleteCustomer.TabIndex = 5;
             this.btn_DeleteCustomer.Text = "Usuń";
             this.btn_DeleteCustomer.UseVisualStyleBackColor = true;
             this.btn_DeleteCustomer.Click += new System.EventHandler(this.btn_DeleteCustomer_Click);
@@ -139,7 +139,7 @@
             this.btn_InsertCustomer.Location = new System.Drawing.Point(5, 143);
             this.btn_InsertCustomer.Name = "btn_InsertCustomer";
             this.btn_InsertCustomer.Size = new System.Drawing.Size(75, 23);
-            this.btn_InsertCustomer.TabIndex = 10;
+            this.btn_InsertCustomer.TabIndex = 4;
             this.btn_InsertCustomer.Text = "Dodaj";
             this.btn_InsertCustomer.UseVisualStyleBackColor = true;
             this.btn_InsertCustomer.Click += new System.EventHandler(this.btn_InsertCustomer_Click);
@@ -176,7 +176,7 @@
             this.tb_CustomerName.Location = new System.Drawing.Point(104, 45);
             this.tb_CustomerName.Name = "tb_CustomerName";
             this.tb_CustomerName.Size = new System.Drawing.Size(100, 20);
-            this.tb_CustomerName.TabIndex = 3;
+            this.tb_CustomerName.TabIndex = 1;
             // 
             // tb_CustomerSurname
             // 
@@ -247,7 +247,7 @@
             this.btn_Ok.Location = new System.Drawing.Point(98, 328);
             this.btn_Ok.Name = "btn_Ok";
             this.btn_Ok.Size = new System.Drawing.Size(75, 23);
-            this.btn_Ok.TabIndex = 4;
+            this.btn_Ok.TabIndex = 7;
             this.btn_Ok.Text = "Ok";
             this.btn_Ok.UseVisualStyleBackColor = true;
             this.btn_Ok.Click += new System.EventHandler(this.btn_Ok_Click);
