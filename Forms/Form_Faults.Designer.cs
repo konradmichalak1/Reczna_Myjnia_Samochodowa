@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Faults));
             this.faultGridView = new System.Windows.Forms.DataGridView();
+            this.iDfaultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.faultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.faultsDataSet = new Reczna_Myjnia_Samochodowa.FaultsDataSet();
             this.faultsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -43,9 +46,6 @@
             this.lb_FaultID = new System.Windows.Forms.Label();
             this.tb_CarNote = new System.Windows.Forms.TextBox();
             this.tb_FaultID = new System.Windows.Forms.TextBox();
-            this.iDfaultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reportdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.faultGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.faultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.faultsDataSet)).BeginInit();
@@ -68,6 +68,28 @@
             this.faultGridView.Size = new System.Drawing.Size(379, 269);
             this.faultGridView.TabIndex = 0;
             this.faultGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.faultGridView_CellMouseClick);
+            // 
+            // iDfaultDataGridViewTextBoxColumn
+            // 
+            this.iDfaultDataGridViewTextBoxColumn.DataPropertyName = "ID_fault";
+            this.iDfaultDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDfaultDataGridViewTextBoxColumn.Name = "iDfaultDataGridViewTextBoxColumn";
+            this.iDfaultDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Opis usterki";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // reportdateDataGridViewTextBoxColumn
+            // 
+            this.reportdateDataGridViewTextBoxColumn.DataPropertyName = "Report_date";
+            this.reportdateDataGridViewTextBoxColumn.HeaderText = "Data zgłoszenia";
+            this.reportdateDataGridViewTextBoxColumn.Name = "reportdateDataGridViewTextBoxColumn";
+            this.reportdateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reportdateDataGridViewTextBoxColumn.Width = 130;
             // 
             // faultBindingSource
             // 
@@ -112,7 +134,7 @@
             this.btn_UpdateFault.Location = new System.Drawing.Point(165, 223);
             this.btn_UpdateFault.Name = "btn_UpdateFault";
             this.btn_UpdateFault.Size = new System.Drawing.Size(75, 23);
-            this.btn_UpdateFault.TabIndex = 12;
+            this.btn_UpdateFault.TabIndex = 5;
             this.btn_UpdateFault.Text = "Aktualizuj";
             this.btn_UpdateFault.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_UpdateFault.UseVisualStyleBackColor = false;
@@ -124,7 +146,7 @@
             this.btn_DeleteFault.Location = new System.Drawing.Point(84, 223);
             this.btn_DeleteFault.Name = "btn_DeleteFault";
             this.btn_DeleteFault.Size = new System.Drawing.Size(75, 23);
-            this.btn_DeleteFault.TabIndex = 11;
+            this.btn_DeleteFault.TabIndex = 4;
             this.btn_DeleteFault.Text = "Usuń";
             this.btn_DeleteFault.UseVisualStyleBackColor = true;
             this.btn_DeleteFault.Click += new System.EventHandler(this.btn_DeleteFault_Click);
@@ -135,7 +157,7 @@
             this.btn_InsertFault.Location = new System.Drawing.Point(3, 223);
             this.btn_InsertFault.Name = "btn_InsertFault";
             this.btn_InsertFault.Size = new System.Drawing.Size(75, 23);
-            this.btn_InsertFault.TabIndex = 10;
+            this.btn_InsertFault.TabIndex = 3;
             this.btn_InsertFault.Text = "Dodaj";
             this.btn_InsertFault.UseVisualStyleBackColor = true;
             this.btn_InsertFault.Click += new System.EventHandler(this.btn_InsertFault_Click);
@@ -164,36 +186,14 @@
             this.tb_CarNote.Multiline = true;
             this.tb_CarNote.Name = "tb_CarNote";
             this.tb_CarNote.Size = new System.Drawing.Size(234, 80);
-            this.tb_CarNote.TabIndex = 4;
+            this.tb_CarNote.TabIndex = 1;
             // 
             // tb_FaultID
             // 
             this.tb_FaultID.Location = new System.Drawing.Point(128, 197);
             this.tb_FaultID.Name = "tb_FaultID";
             this.tb_FaultID.Size = new System.Drawing.Size(100, 20);
-            this.tb_FaultID.TabIndex = 0;
-            // 
-            // iDfaultDataGridViewTextBoxColumn
-            // 
-            this.iDfaultDataGridViewTextBoxColumn.DataPropertyName = "ID_fault";
-            this.iDfaultDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDfaultDataGridViewTextBoxColumn.Name = "iDfaultDataGridViewTextBoxColumn";
-            this.iDfaultDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Opis usterki";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // reportdateDataGridViewTextBoxColumn
-            // 
-            this.reportdateDataGridViewTextBoxColumn.DataPropertyName = "Report_date";
-            this.reportdateDataGridViewTextBoxColumn.HeaderText = "Data zgłoszenia";
-            this.reportdateDataGridViewTextBoxColumn.Name = "reportdateDataGridViewTextBoxColumn";
-            this.reportdateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reportdateDataGridViewTextBoxColumn.Width = 130;
+            this.tb_FaultID.TabIndex = 2;
             // 
             // Form_Faults
             // 

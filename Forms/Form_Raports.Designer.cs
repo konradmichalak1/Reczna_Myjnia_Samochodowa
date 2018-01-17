@@ -47,7 +47,7 @@
             this.btn_generalRaport.Location = new System.Drawing.Point(25, 168);
             this.btn_generalRaport.Name = "btn_generalRaport";
             this.btn_generalRaport.Size = new System.Drawing.Size(137, 41);
-            this.btn_generalRaport.TabIndex = 0;
+            this.btn_generalRaport.TabIndex = 7;
             this.btn_generalRaport.Text = "Raport ogólny";
             this.btn_generalRaport.UseVisualStyleBackColor = true;
             this.btn_generalRaport.Click += new System.EventHandler(this.btn_createRaport_Click);
@@ -58,7 +58,7 @@
             this.dtp_dateFrom.Name = "dtp_dateFrom";
             this.dtp_dateFrom.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtp_dateFrom.Size = new System.Drawing.Size(189, 20);
-            this.dtp_dateFrom.TabIndex = 1;
+            this.dtp_dateFrom.TabIndex = 0;
             // 
             // dtp_timeFrom
             // 
@@ -68,7 +68,7 @@
             this.dtp_timeFrom.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtp_timeFrom.ShowUpDown = true;
             this.dtp_timeFrom.Size = new System.Drawing.Size(81, 20);
-            this.dtp_timeFrom.TabIndex = 2;
+            this.dtp_timeFrom.TabIndex = 1;
             // 
             // dtp_timeTo
             // 
@@ -78,7 +78,7 @@
             this.dtp_timeTo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtp_timeTo.ShowUpDown = true;
             this.dtp_timeTo.Size = new System.Drawing.Size(81, 20);
-            this.dtp_timeTo.TabIndex = 4;
+            this.dtp_timeTo.TabIndex = 3;
             // 
             // dtp_dateTo
             // 
@@ -86,7 +86,7 @@
             this.dtp_dateTo.Name = "dtp_dateTo";
             this.dtp_dateTo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtp_dateTo.Size = new System.Drawing.Size(189, 20);
-            this.dtp_dateTo.TabIndex = 3;
+            this.dtp_dateTo.TabIndex = 2;
             // 
             // lb_text1
             // 
@@ -123,7 +123,7 @@
             this.btn_daily.Location = new System.Drawing.Point(57, 103);
             this.btn_daily.Name = "btn_daily";
             this.btn_daily.Size = new System.Drawing.Size(75, 27);
-            this.btn_daily.TabIndex = 8;
+            this.btn_daily.TabIndex = 4;
             this.btn_daily.Text = "Dzienny";
             this.btn_daily.UseVisualStyleBackColor = true;
             // 
@@ -132,7 +132,7 @@
             this.btn_weekly.Location = new System.Drawing.Point(138, 103);
             this.btn_weekly.Name = "btn_weekly";
             this.btn_weekly.Size = new System.Drawing.Size(75, 27);
-            this.btn_weekly.TabIndex = 9;
+            this.btn_weekly.TabIndex = 5;
             this.btn_weekly.Text = "Tygodniowy";
             this.btn_weekly.UseVisualStyleBackColor = true;
             // 
@@ -141,7 +141,7 @@
             this.btn_monthly.Location = new System.Drawing.Point(219, 103);
             this.btn_monthly.Name = "btn_monthly";
             this.btn_monthly.Size = new System.Drawing.Size(75, 27);
-            this.btn_monthly.TabIndex = 10;
+            this.btn_monthly.TabIndex = 6;
             this.btn_monthly.Text = "Miesięczny";
             this.btn_monthly.UseVisualStyleBackColor = true;
             // 
@@ -150,7 +150,7 @@
             this.btn_detailedRaport.Location = new System.Drawing.Point(168, 168);
             this.btn_detailedRaport.Name = "btn_detailedRaport";
             this.btn_detailedRaport.Size = new System.Drawing.Size(137, 41);
-            this.btn_detailedRaport.TabIndex = 11;
+            this.btn_detailedRaport.TabIndex = 8;
             this.btn_detailedRaport.Text = "Raport szczegółowy";
             this.btn_detailedRaport.UseVisualStyleBackColor = true;
             // 

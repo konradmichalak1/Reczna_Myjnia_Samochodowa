@@ -166,7 +166,7 @@
             this.btn_UpdateCar.Location = new System.Drawing.Point(165, 223);
             this.btn_UpdateCar.Name = "btn_UpdateCar";
             this.btn_UpdateCar.Size = new System.Drawing.Size(75, 23);
-            this.btn_UpdateCar.TabIndex = 12;
+            this.btn_UpdateCar.TabIndex = 7;
             this.btn_UpdateCar.Text = "Aktualizuj";
             this.btn_UpdateCar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_UpdateCar.UseVisualStyleBackColor = false;
@@ -178,7 +178,7 @@
             this.btn_DeleteCar.Location = new System.Drawing.Point(84, 223);
             this.btn_DeleteCar.Name = "btn_DeleteCar";
             this.btn_DeleteCar.Size = new System.Drawing.Size(75, 23);
-            this.btn_DeleteCar.TabIndex = 11;
+            this.btn_DeleteCar.TabIndex = 6;
             this.btn_DeleteCar.Text = "Usuń";
             this.btn_DeleteCar.UseVisualStyleBackColor = true;
             this.btn_DeleteCar.Click += new System.EventHandler(this.btn_DeleteCar_Click);
@@ -189,7 +189,7 @@
             this.btn_InsertCar.Location = new System.Drawing.Point(3, 223);
             this.btn_InsertCar.Name = "btn_InsertCar";
             this.btn_InsertCar.Size = new System.Drawing.Size(75, 23);
-            this.btn_InsertCar.TabIndex = 10;
+            this.btn_InsertCar.TabIndex = 5;
             this.btn_InsertCar.Text = "Dodaj";
             this.btn_InsertCar.UseVisualStyleBackColor = true;
             this.btn_InsertCar.Click += new System.EventHandler(this.btn_CreateCar_Click);
@@ -252,14 +252,14 @@
             this.tb_CarModel.Location = new System.Drawing.Point(84, 73);
             this.tb_CarModel.Name = "tb_CarModel";
             this.tb_CarModel.Size = new System.Drawing.Size(100, 20);
-            this.tb_CarModel.TabIndex = 3;
+            this.tb_CarModel.TabIndex = 2;
             // 
             // tb_CarLicense
             // 
             this.tb_CarLicense.Location = new System.Drawing.Point(84, 99);
             this.tb_CarLicense.Name = "tb_CarLicense";
             this.tb_CarLicense.Size = new System.Drawing.Size(100, 20);
-            this.tb_CarLicense.TabIndex = 2;
+            this.tb_CarLicense.TabIndex = 3;
             // 
             // tb_CarMark
             // 
@@ -280,7 +280,7 @@
             this.btn_OkCar.Location = new System.Drawing.Point(107, 322);
             this.btn_OkCar.Name = "btn_OkCar";
             this.btn_OkCar.Size = new System.Drawing.Size(75, 23);
-            this.btn_OkCar.TabIndex = 2;
+            this.btn_OkCar.TabIndex = 8;
             this.btn_OkCar.Text = "Ok";
             this.btn_OkCar.UseVisualStyleBackColor = true;
             this.btn_OkCar.Click += new System.EventHandler(this.btn_OkCar_Click);

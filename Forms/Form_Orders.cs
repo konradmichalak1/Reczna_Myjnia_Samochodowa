@@ -262,7 +262,7 @@ namespace Reczna_Myjnia_Samochodowa
                     document = true;
                 else
                     document = false;
-                MessageBox.Show(index);
+          
                 Order order = new Order()
                 {
                     ID_employee = Convert.ToInt32(index),

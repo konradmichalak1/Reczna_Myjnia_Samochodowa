@@ -44,7 +44,7 @@
             this.btn_login.Location = new System.Drawing.Point(97, 155);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(75, 23);
-            this.btn_login.TabIndex = 0;
+            this.btn_login.TabIndex = 2;
             this.btn_login.Text = "Zaloguj";
             this.btn_login.UseVisualStyleBackColor = true;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
@@ -55,7 +55,7 @@
             this.tb_login.MaxLength = 16;
             this.tb_login.Name = "tb_login";
             this.tb_login.Size = new System.Drawing.Size(133, 20);
-            this.tb_login.TabIndex = 1;
+            this.tb_login.TabIndex = 0;
             // 
             // tb_password
             // 
@@ -63,7 +63,7 @@
             this.tb_password.MaxLength = 16;
             this.tb_password.Name = "tb_password";
             this.tb_password.Size = new System.Drawing.Size(133, 20);
-            this.tb_password.TabIndex = 2;
+            this.tb_password.TabIndex = 1;
             this.tb_password.UseSystemPasswordChar = true;
             // 
             // label1

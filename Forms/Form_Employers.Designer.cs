@@ -185,7 +185,7 @@
             this.cb_jobtitle.Location = new System.Drawing.Point(84, 152);
             this.cb_jobtitle.Name = "cb_jobtitle";
             this.cb_jobtitle.Size = new System.Drawing.Size(121, 21);
-            this.cb_jobtitle.TabIndex = 14;
+            this.cb_jobtitle.TabIndex = 4;
             // 
             // lb_salary
             // 
@@ -239,7 +239,7 @@
             this.btn_UpdateEmployee.Location = new System.Drawing.Point(165, 233);
             this.btn_UpdateEmployee.Name = "btn_UpdateEmployee";
             this.btn_UpdateEmployee.Size = new System.Drawing.Size(75, 23);
-            this.btn_UpdateEmployee.TabIndex = 12;
+            this.btn_UpdateEmployee.TabIndex = 8;
             this.btn_UpdateEmployee.Text = "Aktualizuj";
             this.btn_UpdateEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_UpdateEmployee.UseVisualStyleBackColor = false;
@@ -251,7 +251,7 @@
             this.btn_DeleteEmployee.Location = new System.Drawing.Point(84, 233);
             this.btn_DeleteEmployee.Name = "btn_DeleteEmployee";
             this.btn_DeleteEmployee.Size = new System.Drawing.Size(75, 23);
-            this.btn_DeleteEmployee.TabIndex = 11;
+            this.btn_DeleteEmployee.TabIndex = 7;
             this.btn_DeleteEmployee.Text = "Usuń";
             this.btn_DeleteEmployee.UseVisualStyleBackColor = true;
             this.btn_DeleteEmployee.Click += new System.EventHandler(this.btn_DeleteEmployee_Click);
@@ -262,7 +262,7 @@
             this.btn_InsertEmployee.Location = new System.Drawing.Point(3, 233);
             this.btn_InsertEmployee.Name = "btn_InsertEmployee";
             this.btn_InsertEmployee.Size = new System.Drawing.Size(75, 23);
-            this.btn_InsertEmployee.TabIndex = 10;
+            this.btn_InsertEmployee.TabIndex = 6;
             this.btn_InsertEmployee.Text = "Dodaj";
             this.btn_InsertEmployee.UseVisualStyleBackColor = true;
             this.btn_InsertEmployee.Click += new System.EventHandler(this.btn_InsertEmployee_Click);
@@ -281,7 +281,7 @@
             this.tb_salary.Location = new System.Drawing.Point(73, 119);
             this.tb_salary.Name = "tb_salary";
             this.tb_salary.Size = new System.Drawing.Size(86, 20);
-            this.tb_salary.TabIndex = 0;
+            this.tb_salary.TabIndex = 3;
             this.tb_salary.Text = "0,00";
             this.tb_salary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_salary_KeyPress);
             // 
@@ -290,7 +290,7 @@
             this.tb_pesel.Location = new System.Drawing.Point(73, 89);
             this.tb_pesel.Name = "tb_pesel";
             this.tb_pesel.Size = new System.Drawing.Size(132, 20);
-            this.tb_pesel.TabIndex = 0;
+            this.tb_pesel.TabIndex = 2;
             this.tb_pesel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_pesel_KeyPress);
             // 
             // tb_surname
@@ -298,7 +298,7 @@
             this.tb_surname.Location = new System.Drawing.Point(73, 59);
             this.tb_surname.Name = "tb_surname";
             this.tb_surname.Size = new System.Drawing.Size(132, 20);
-            this.tb_surname.TabIndex = 0;
+            this.tb_surname.TabIndex = 1;
             // 
             // tb_name
             // 
@@ -312,7 +312,7 @@
             this.tb_EmployeeID.Location = new System.Drawing.Point(120, 198);
             this.tb_EmployeeID.Name = "tb_EmployeeID";
             this.tb_EmployeeID.Size = new System.Drawing.Size(100, 20);
-            this.tb_EmployeeID.TabIndex = 0;
+            this.tb_EmployeeID.TabIndex = 5;
             // 
             // Form_Employers
             // 

@@ -42,7 +42,7 @@
             this.btn_cars.Location = new System.Drawing.Point(16, 156);
             this.btn_cars.Name = "btn_cars";
             this.btn_cars.Size = new System.Drawing.Size(112, 55);
-            this.btn_cars.TabIndex = 2;
+            this.btn_cars.TabIndex = 1;
             this.btn_cars.Text = "Samochody";
             this.btn_cars.UseVisualStyleBackColor = true;
             this.btn_cars.Click += new System.EventHandler(this.btn_cars_Click);
@@ -52,7 +52,7 @@
             this.btn_customers.Location = new System.Drawing.Point(16, 217);
             this.btn_customers.Name = "btn_customers";
             this.btn_customers.Size = new System.Drawing.Size(112, 55);
-            this.btn_customers.TabIndex = 1;
+            this.btn_customers.TabIndex = 2;
             this.btn_customers.Text = "Klienci";
             this.btn_customers.UseVisualStyleBackColor = true;
             this.btn_customers.Click += new System.EventHandler(this.btn_customers_Click);

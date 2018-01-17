@@ -153,7 +153,7 @@
             this.btn_przelicz.Location = new System.Drawing.Point(243, 323);
             this.btn_przelicz.Name = "btn_przelicz";
             this.btn_przelicz.Size = new System.Drawing.Size(61, 23);
-            this.btn_przelicz.TabIndex = 40;
+            this.btn_przelicz.TabIndex = 18;
             this.btn_przelicz.Text = "Przelicz";
             this.btn_przelicz.UseVisualStyleBackColor = true;
             this.btn_przelicz.Click += new System.EventHandler(this.btn_przelicz_Click);
@@ -194,7 +194,7 @@
             this.tb_servicelist.Location = new System.Drawing.Point(74, 252);
             this.tb_servicelist.Name = "tb_servicelist";
             this.tb_servicelist.Size = new System.Drawing.Size(107, 21);
-            this.tb_servicelist.TabIndex = 36;
+            this.tb_servicelist.TabIndex = 12;
             // 
             // tb_employerlist
             // 
@@ -203,7 +203,7 @@
             this.tb_employerlist.Location = new System.Drawing.Point(74, 224);
             this.tb_employerlist.Name = "tb_employerlist";
             this.tb_employerlist.Size = new System.Drawing.Size(107, 21);
-            this.tb_employerlist.TabIndex = 35;
+            this.tb_employerlist.TabIndex = 10;
             // 
             // btn_okEmployers
             // 
@@ -222,14 +222,14 @@
             this.tb_Fault.Location = new System.Drawing.Point(74, 281);
             this.tb_Fault.Name = "tb_Fault";
             this.tb_Fault.Size = new System.Drawing.Size(92, 20);
-            this.tb_Fault.TabIndex = 32;
+            this.tb_Fault.TabIndex = 14;
             // 
             // btn_SetFault
             // 
             this.btn_SetFault.Location = new System.Drawing.Point(187, 278);
             this.btn_SetFault.Name = "btn_SetFault";
             this.btn_SetFault.Size = new System.Drawing.Size(62, 23);
-            this.btn_SetFault.TabIndex = 29;
+            this.btn_SetFault.TabIndex = 15;
             this.btn_SetFault.Text = "Przypisz";
             this.btn_SetFault.UseVisualStyleBackColor = true;
             // 
@@ -238,7 +238,7 @@
             this.btn_SetService.Location = new System.Drawing.Point(187, 250);
             this.btn_SetService.Name = "btn_SetService";
             this.btn_SetService.Size = new System.Drawing.Size(62, 23);
-            this.btn_SetService.TabIndex = 28;
+            this.btn_SetService.TabIndex = 13;
             this.btn_SetService.Text = "Przypisz";
             this.btn_SetService.UseVisualStyleBackColor = true;
             this.btn_SetService.Click += new System.EventHandler(this.btn_SetService_Click);
@@ -248,7 +248,7 @@
             this.btn_SetEmployee.Location = new System.Drawing.Point(187, 222);
             this.btn_SetEmployee.Name = "btn_SetEmployee";
             this.btn_SetEmployee.Size = new System.Drawing.Size(62, 23);
-            this.btn_SetEmployee.TabIndex = 27;
+            this.btn_SetEmployee.TabIndex = 11;
             this.btn_SetEmployee.Text = "Przypisz";
             this.btn_SetEmployee.UseVisualStyleBackColor = true;
             this.btn_SetEmployee.Click += new System.EventHandler(this.btn_SetEmployee_Click);
@@ -260,7 +260,7 @@
             this.btn_UpdateOrder.Location = new System.Drawing.Point(174, 381);
             this.btn_UpdateOrder.Name = "btn_UpdateOrder";
             this.btn_UpdateOrder.Size = new System.Drawing.Size(75, 23);
-            this.btn_UpdateOrder.TabIndex = 15;
+            this.btn_UpdateOrder.TabIndex = 23;
             this.btn_UpdateOrder.Text = "Aktualizuj";
             this.btn_UpdateOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_UpdateOrder.UseVisualStyleBackColor = true;
@@ -270,7 +270,7 @@
             this.tb_Discount.Location = new System.Drawing.Point(182, 325);
             this.tb_Discount.Name = "tb_Discount";
             this.tb_Discount.Size = new System.Drawing.Size(34, 20);
-            this.tb_Discount.TabIndex = 26;
+            this.tb_Discount.TabIndex = 17;
             this.tb_Discount.Text = "0";
             this.tb_Discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Discount_KeyPress);
             // 
@@ -280,7 +280,7 @@
             this.btn_DeleteOrder.Location = new System.Drawing.Point(93, 381);
             this.btn_DeleteOrder.Name = "btn_DeleteOrder";
             this.btn_DeleteOrder.Size = new System.Drawing.Size(75, 23);
-            this.btn_DeleteOrder.TabIndex = 14;
+            this.btn_DeleteOrder.TabIndex = 22;
             this.btn_DeleteOrder.Text = "Usuń";
             this.btn_DeleteOrder.UseVisualStyleBackColor = true;
             // 
@@ -290,7 +290,7 @@
             this.tb_Price.Location = new System.Drawing.Point(38, 326);
             this.tb_Price.Name = "tb_Price";
             this.tb_Price.Size = new System.Drawing.Size(74, 20);
-            this.tb_Price.TabIndex = 25;
+            this.tb_Price.TabIndex = 16;
             this.tb_Price.Text = "0,00";
             // 
             // btn_InsertOrder
@@ -299,7 +299,7 @@
             this.btn_InsertOrder.Location = new System.Drawing.Point(12, 381);
             this.btn_InsertOrder.Name = "btn_InsertOrder";
             this.btn_InsertOrder.Size = new System.Drawing.Size(75, 23);
-            this.btn_InsertOrder.TabIndex = 13;
+            this.btn_InsertOrder.TabIndex = 21;
             this.btn_InsertOrder.Text = "Dodaj";
             this.btn_InsertOrder.UseVisualStyleBackColor = true;
             this.btn_InsertOrder.Click += new System.EventHandler(this.btn_InsertOrder_Click);
@@ -309,7 +309,7 @@
             this.btn_EndTimeSet.Location = new System.Drawing.Point(182, 149);
             this.btn_EndTimeSet.Name = "btn_EndTimeSet";
             this.btn_EndTimeSet.Size = new System.Drawing.Size(47, 23);
-            this.btn_EndTimeSet.TabIndex = 24;
+            this.btn_EndTimeSet.TabIndex = 8;
             this.btn_EndTimeSet.Text = "Ustaw";
             this.btn_EndTimeSet.UseVisualStyleBackColor = true;
             this.btn_EndTimeSet.Click += new System.EventHandler(this.btn_EndTimeSet_Click);
@@ -319,7 +319,7 @@
             this.btn_StartTimeSet.Location = new System.Drawing.Point(182, 127);
             this.btn_StartTimeSet.Name = "btn_StartTimeSet";
             this.btn_StartTimeSet.Size = new System.Drawing.Size(47, 23);
-            this.btn_StartTimeSet.TabIndex = 23;
+            this.btn_StartTimeSet.TabIndex = 6;
             this.btn_StartTimeSet.Text = "Ustaw";
             this.btn_StartTimeSet.UseVisualStyleBackColor = true;
             this.btn_StartTimeSet.Click += new System.EventHandler(this.btn_StartTimeSet_Click);
@@ -330,7 +330,7 @@
             this.tb_EndTime.Location = new System.Drawing.Point(84, 151);
             this.tb_EndTime.Name = "tb_EndTime";
             this.tb_EndTime.Size = new System.Drawing.Size(92, 20);
-            this.tb_EndTime.TabIndex = 22;
+            this.tb_EndTime.TabIndex = 7;
             // 
             // tb_StartTime
             // 
@@ -338,14 +338,14 @@
             this.tb_StartTime.Location = new System.Drawing.Point(84, 128);
             this.tb_StartTime.Name = "tb_StartTime";
             this.tb_StartTime.Size = new System.Drawing.Size(92, 20);
-            this.tb_StartTime.TabIndex = 21;
+            this.tb_StartTime.TabIndex = 5;
             // 
             // btn_CarIDChoose
             // 
             this.btn_CarIDChoose.Location = new System.Drawing.Point(182, 84);
             this.btn_CarIDChoose.Name = "btn_CarIDChoose";
             this.btn_CarIDChoose.Size = new System.Drawing.Size(75, 23);
-            this.btn_CarIDChoose.TabIndex = 20;
+            this.btn_CarIDChoose.TabIndex = 4;
             this.btn_CarIDChoose.Text = "Wyszukaj";
             this.btn_CarIDChoose.UseVisualStyleBackColor = true;
             this.btn_CarIDChoose.Click += new System.EventHandler(this.btn_CarIDChoose_Click);
@@ -355,7 +355,7 @@
             this.btn_CustomerIDChoose.Location = new System.Drawing.Point(182, 58);
             this.btn_CustomerIDChoose.Name = "btn_CustomerIDChoose";
             this.btn_CustomerIDChoose.Size = new System.Drawing.Size(75, 23);
-            this.btn_CustomerIDChoose.TabIndex = 19;
+            this.btn_CustomerIDChoose.TabIndex = 2;
             this.btn_CustomerIDChoose.Text = "Wyszukaj";
             this.btn_CustomerIDChoose.UseVisualStyleBackColor = true;
             this.btn_CustomerIDChoose.Click += new System.EventHandler(this.btn_CustomerIDChoose_Click);
@@ -365,14 +365,14 @@
             this.tb_CarID.Location = new System.Drawing.Point(88, 84);
             this.tb_CarID.Name = "tb_CarID";
             this.tb_CarID.Size = new System.Drawing.Size(88, 20);
-            this.tb_CarID.TabIndex = 18;
+            this.tb_CarID.TabIndex = 3;
             // 
             // tb_CustomerID
             // 
             this.tb_CustomerID.Location = new System.Drawing.Point(88, 60);
             this.tb_CustomerID.Name = "tb_CustomerID";
             this.tb_CustomerID.Size = new System.Drawing.Size(88, 20);
-            this.tb_CustomerID.TabIndex = 17;
+            this.tb_CustomerID.TabIndex = 1;
             // 
             // lb_OrderFault
             // 
@@ -397,7 +397,7 @@
             this.tb_OrderID.Location = new System.Drawing.Point(27, 25);
             this.tb_OrderID.Name = "tb_OrderID";
             this.tb_OrderID.Size = new System.Drawing.Size(76, 20);
-            this.tb_OrderID.TabIndex = 13;
+            this.tb_OrderID.TabIndex = 0;
             // 
             // cb_orderWorkspaceNr
             // 
@@ -413,7 +413,7 @@
             this.cb_orderWorkspaceNr.Name = "cb_orderWorkspaceNr";
             this.cb_orderWorkspaceNr.Size = new System.Drawing.Size(36, 21);
             this.cb_orderWorkspaceNr.Sorted = true;
-            this.cb_orderWorkspaceNr.TabIndex = 12;
+            this.cb_orderWorkspaceNr.TabIndex = 9;
             // 
             // cb_OrderDocumenttype
             // 
@@ -421,7 +421,7 @@
             this.cb_OrderDocumenttype.Location = new System.Drawing.Point(114, 352);
             this.cb_OrderDocumenttype.Name = "cb_OrderDocumenttype";
             this.cb_OrderDocumenttype.Size = new System.Drawing.Size(62, 17);
-            this.cb_OrderDocumenttype.TabIndex = 11;
+            this.cb_OrderDocumenttype.TabIndex = 20;
             this.cb_OrderDocumenttype.Text = "Faktura";
             this.cb_OrderDocumenttype.UseVisualStyleBackColor = true;
             // 
@@ -431,7 +431,7 @@
             this.cb_OrderPaymenttype.Location = new System.Drawing.Point(7, 352);
             this.cb_OrderPaymenttype.Name = "cb_OrderPaymenttype";
             this.cb_OrderPaymenttype.Size = new System.Drawing.Size(96, 17);
-            this.cb_OrderPaymenttype.TabIndex = 10;
+            this.cb_OrderPaymenttype.TabIndex = 19;
             this.cb_OrderPaymenttype.Text = "Płatność kartą";
             this.cb_OrderPaymenttype.UseVisualStyleBackColor = true;
             // 

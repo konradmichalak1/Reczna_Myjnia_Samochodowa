@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Services));
             this.ServiceGridView = new System.Windows.Forms.DataGridView();
+            this.iDserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.realizationtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.servicesDataSet = new Reczna_Myjnia_Samochodowa.ServicesDataSet();
             this.serviceTableAdapter = new Reczna_Myjnia_Samochodowa.ServicesDataSetTableAdapters.ServiceTableAdapter();
@@ -48,10 +52,6 @@
             this.tb_realizationtime = new System.Windows.Forms.TextBox();
             this.tb_name = new System.Windows.Forms.TextBox();
             this.tb_ServiceID = new System.Windows.Forms.TextBox();
-            this.iDserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.realizationtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesDataSet)).BeginInit();
@@ -74,6 +74,34 @@
             this.ServiceGridView.Size = new System.Drawing.Size(448, 342);
             this.ServiceGridView.TabIndex = 0;
             this.ServiceGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ServiceGridView_CellMouseClick);
+            // 
+            // iDserviceDataGridViewTextBoxColumn
+            // 
+            this.iDserviceDataGridViewTextBoxColumn.DataPropertyName = "ID_service";
+            this.iDserviceDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDserviceDataGridViewTextBoxColumn.Name = "iDserviceDataGridViewTextBoxColumn";
+            this.iDserviceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Nazwa";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Cena";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // realizationtimeDataGridViewTextBoxColumn
+            // 
+            this.realizationtimeDataGridViewTextBoxColumn.DataPropertyName = "Realization_time";
+            this.realizationtimeDataGridViewTextBoxColumn.HeaderText = "Czas realizacji";
+            this.realizationtimeDataGridViewTextBoxColumn.Name = "realizationtimeDataGridViewTextBoxColumn";
+            this.realizationtimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // serviceBindingSource
             // 
@@ -164,7 +192,7 @@
             this.btn_UpdateService.Location = new System.Drawing.Point(168, 131);
             this.btn_UpdateService.Name = "btn_UpdateService";
             this.btn_UpdateService.Size = new System.Drawing.Size(75, 23);
-            this.btn_UpdateService.TabIndex = 12;
+            this.btn_UpdateService.TabIndex = 6;
             this.btn_UpdateService.Text = "Aktualizuj";
             this.btn_UpdateService.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_UpdateService.UseVisualStyleBackColor = false;
@@ -176,7 +204,7 @@
             this.btn_DeleteService.Location = new System.Drawing.Point(87, 131);
             this.btn_DeleteService.Name = "btn_DeleteService";
             this.btn_DeleteService.Size = new System.Drawing.Size(75, 23);
-            this.btn_DeleteService.TabIndex = 11;
+            this.btn_DeleteService.TabIndex = 5;
             this.btn_DeleteService.Text = "Usuń";
             this.btn_DeleteService.UseVisualStyleBackColor = true;
             this.btn_DeleteService.Click += new System.EventHandler(this.btn_DeleteService_Click);
@@ -187,7 +215,7 @@
             this.btn_InsertService.Location = new System.Drawing.Point(6, 131);
             this.btn_InsertService.Name = "btn_InsertService";
             this.btn_InsertService.Size = new System.Drawing.Size(75, 23);
-            this.btn_InsertService.TabIndex = 10;
+            this.btn_InsertService.TabIndex = 4;
             this.btn_InsertService.Text = "Dodaj";
             this.btn_InsertService.UseVisualStyleBackColor = true;
             this.btn_InsertService.Click += new System.EventHandler(this.btn_InsertService_Click);
@@ -206,7 +234,7 @@
             this.tb_price.Location = new System.Drawing.Point(82, 71);
             this.tb_price.Name = "tb_price";
             this.tb_price.Size = new System.Drawing.Size(68, 20);
-            this.tb_price.TabIndex = 0;
+            this.tb_price.TabIndex = 2;
             this.tb_price.Text = "0,00";
             this.tb_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_salary_KeyPress);
             // 
@@ -215,7 +243,7 @@
             this.tb_realizationtime.Location = new System.Drawing.Point(91, 45);
             this.tb_realizationtime.Name = "tb_realizationtime";
             this.tb_realizationtime.Size = new System.Drawing.Size(59, 20);
-            this.tb_realizationtime.TabIndex = 0;
+            this.tb_realizationtime.TabIndex = 1;
             // 
             // tb_name
             // 
@@ -229,35 +257,7 @@
             this.tb_ServiceID.Location = new System.Drawing.Point(130, 105);
             this.tb_ServiceID.Name = "tb_ServiceID";
             this.tb_ServiceID.Size = new System.Drawing.Size(100, 20);
-            this.tb_ServiceID.TabIndex = 0;
-            // 
-            // iDserviceDataGridViewTextBoxColumn
-            // 
-            this.iDserviceDataGridViewTextBoxColumn.DataPropertyName = "ID_service";
-            this.iDserviceDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDserviceDataGridViewTextBoxColumn.Name = "iDserviceDataGridViewTextBoxColumn";
-            this.iDserviceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Nazwa";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Cena";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // realizationtimeDataGridViewTextBoxColumn
-            // 
-            this.realizationtimeDataGridViewTextBoxColumn.DataPropertyName = "Realization_time";
-            this.realizationtimeDataGridViewTextBoxColumn.HeaderText = "Czas realizacji";
-            this.realizationtimeDataGridViewTextBoxColumn.Name = "realizationtimeDataGridViewTextBoxColumn";
-            this.realizationtimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tb_ServiceID.TabIndex = 3;
             // 
             // Form_Services
             // 
