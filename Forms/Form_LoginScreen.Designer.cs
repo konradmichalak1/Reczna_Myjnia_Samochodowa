@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lb_info = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_login
@@ -93,16 +93,16 @@
             this.label3.Text = "Logowanie do serwera";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label4
+            // lb_info
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(71, 113);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Nieprawidłowy login lub hasło!";
-            this.label4.Visible = false;
+            this.lb_info.AutoSize = true;
+            this.lb_info.ForeColor = System.Drawing.Color.Red;
+            this.lb_info.Location = new System.Drawing.Point(71, 113);
+            this.lb_info.Name = "lb_info";
+            this.lb_info.Size = new System.Drawing.Size(152, 13);
+            this.lb_info.TabIndex = 4;
+            this.lb_info.Text = "Nieprawidłowy login lub hasło!";
+            this.lb_info.Visible = false;
             // 
             // Form_LoginScreen
             // 
@@ -110,7 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(276, 201);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lb_info);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -133,6 +133,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lb_info;
     }
 }

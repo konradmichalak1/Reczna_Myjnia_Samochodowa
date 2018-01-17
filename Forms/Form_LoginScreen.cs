@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,7 @@ namespace Reczna_Myjnia_Samochodowa
     public partial class Form_LoginScreen : Form
     {
         public static Form_Main frmMain;
+     
         public Form_LoginScreen()
         {
             InitializeComponent();
@@ -35,6 +38,7 @@ namespace Reczna_Myjnia_Samochodowa
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+
             frmMain.btn_orders.Enabled = true;
             frmMain.btn_cars.Enabled = true;
             frmMain.btn_customers.Enabled = true;
@@ -43,6 +47,7 @@ namespace Reczna_Myjnia_Samochodowa
             frmMain.btn_raport.Enabled = true;
             frmMain.btn_services.Enabled = true;
             this.Visible = false;
+
         }
     }
 }

@@ -39,7 +39,7 @@
             // 
             // btn_cars
             // 
-            this.btn_cars.Location = new System.Drawing.Point(12, 156);
+            this.btn_cars.Location = new System.Drawing.Point(16, 156);
             this.btn_cars.Name = "btn_cars";
             this.btn_cars.Size = new System.Drawing.Size(112, 55);
             this.btn_cars.TabIndex = 2;
@@ -49,7 +49,7 @@
             // 
             // btn_customers
             // 
-            this.btn_customers.Location = new System.Drawing.Point(12, 217);
+            this.btn_customers.Location = new System.Drawing.Point(16, 217);
             this.btn_customers.Name = "btn_customers";
             this.btn_customers.Size = new System.Drawing.Size(112, 55);
             this.btn_customers.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // btn_orders
             // 
-            this.btn_orders.Location = new System.Drawing.Point(12, 95);
+            this.btn_orders.Location = new System.Drawing.Point(16, 95);
             this.btn_orders.Name = "btn_orders";
             this.btn_orders.Size = new System.Drawing.Size(112, 55);
             this.btn_orders.TabIndex = 0;
@@ -69,7 +69,7 @@
             // 
             // btn_Employers
             // 
-            this.btn_Employers.Location = new System.Drawing.Point(139, 95);
+            this.btn_Employers.Location = new System.Drawing.Point(143, 95);
             this.btn_Employers.Name = "btn_Employers";
             this.btn_Employers.Size = new System.Drawing.Size(112, 55);
             this.btn_Employers.TabIndex = 3;
@@ -79,7 +79,7 @@
             // 
             // btn_services
             // 
-            this.btn_services.Location = new System.Drawing.Point(139, 156);
+            this.btn_services.Location = new System.Drawing.Point(143, 156);
             this.btn_services.Name = "btn_services";
             this.btn_services.Size = new System.Drawing.Size(112, 55);
             this.btn_services.TabIndex = 4;
@@ -89,7 +89,7 @@
             // 
             // btn_faults
             // 
-            this.btn_faults.Location = new System.Drawing.Point(139, 217);
+            this.btn_faults.Location = new System.Drawing.Point(143, 217);
             this.btn_faults.Name = "btn_faults";
             this.btn_faults.Size = new System.Drawing.Size(112, 55);
             this.btn_faults.TabIndex = 5;
@@ -99,7 +99,7 @@
             // 
             // btn_raport
             // 
-            this.btn_raport.Location = new System.Drawing.Point(73, 287);
+            this.btn_raport.Location = new System.Drawing.Point(77, 287);
             this.btn_raport.Name = "btn_raport";
             this.btn_raport.Size = new System.Drawing.Size(112, 55);
             this.btn_raport.TabIndex = 6;
