@@ -59,6 +59,17 @@ namespace Reczna_Myjnia_Samochodowa
                     myjnia.Employee.Add(pracownik);
                     myjnia.SaveChanges();
                     connection.Close();
+                    var client = new MongoClient("mongodb://localhost:27017");
+                    var database = client.GetDatabase("Myjnia");
+                    var collec = database.GetCollection<BsonDocument>("Employees");
+
+                    var document = new BsonDocument
+                    {
+                        {"Name", tb_name.Text },
+                        {"PESEL", tb_pesel.Text }
+                    };
+
+                    collec.InsertOneAsync(document);
                     display_employers();
 
                     /*Dodawanie klienta do MongoDB*/
@@ -81,6 +92,10 @@ namespace Reczna_Myjnia_Samochodowa
                     else MessageBox.Show(ex.InnerException.InnerException.Message);
                     connection.Close();
                 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 223791c9a2f683dbffbff56e6f615ab2e1295225
         }
 
         private void btn_DeleteEmployee_Click(object sender, EventArgs e)
@@ -88,6 +103,9 @@ namespace Reczna_Myjnia_Samochodowa
             try
             {
                 if (tb_EmployeeID.Text == "" || tb_EmployeeID.Text == " ") throw new Exception("Podaj ID pracownika lub zaznacz rekord z tabeli!");
+                var client = new MongoClient("mongodb://localhost:27017");
+                var database = client.GetDatabase("Myjnia");
+                var collec = database.GetCollection<BsonDocument>("Employees");
                 connection.Open();
                 int id = Convert.ToInt32(tb_EmployeeID.Text);
                 List<Employee> usun = myjnia.Employee.Where
@@ -95,7 +113,10 @@ namespace Reczna_Myjnia_Samochodowa
                 foreach (var p in usun)
                 {
                     myjnia.Employee.Remove(p);
+                    collec.DeleteOneAsync(Builders<BsonDocument>.Filter.Eq("PESEL", p.PESEL.ToString()));
                 }
+                
+                
                 myjnia.SaveChanges();
                 connection.Close();
                 display_employers();
@@ -110,6 +131,12 @@ namespace Reczna_Myjnia_Samochodowa
                 if (ex.InnerException == null) MessageBox.Show(ex.Message);
                 else MessageBox.Show(ex.InnerException.InnerException.Message);
             }
+<<<<<<< HEAD
+=======
+
+            
+
+>>>>>>> 223791c9a2f683dbffbff56e6f615ab2e1295225
         }
 
         private void EmployersGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
