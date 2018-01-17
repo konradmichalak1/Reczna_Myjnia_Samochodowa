@@ -99,9 +99,9 @@
             // 
             // btn_raport
             // 
-            this.btn_raport.Location = new System.Drawing.Point(94, 239);
+            this.btn_raport.Location = new System.Drawing.Point(73, 217);
             this.btn_raport.Name = "btn_raport";
-            this.btn_raport.Size = new System.Drawing.Size(75, 23);
+            this.btn_raport.Size = new System.Drawing.Size(112, 55);
             this.btn_raport.TabIndex = 6;
             this.btn_raport.Text = "Raport";
             this.btn_raport.UseVisualStyleBackColor = true;

@@ -177,7 +177,6 @@
             this.tb_CustomerName.Name = "tb_CustomerName";
             this.tb_CustomerName.Size = new System.Drawing.Size(100, 20);
             this.tb_CustomerName.TabIndex = 3;
-            this.tb_CustomerName.TextChanged += new System.EventHandler(this.tb_CustomerName_TextChanged);
             // 
             // tb_CustomerSurname
             // 
