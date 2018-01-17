@@ -72,7 +72,6 @@ namespace Reczna_Myjnia_Samochodowa
                     collec.InsertOneAsync(document);
                     display_employers();
 
-                    collec.InsertOneAsync(document);
 
                 }
                 catch (Exception ex)
@@ -134,6 +133,9 @@ namespace Reczna_Myjnia_Samochodowa
         {
             try
             {
+                var client = new MongoClient("mongodb://localhost:27017");
+                var database = client.GetDatabase("Myjnia");
+                var collec = database.GetCollection<BsonDocument>("Employees");
                 if (tb_name.Text.Length < 1) throw new Exception("Wprowadź imię pracownika.");
                 if (tb_surname.Text.Length < 1) throw new Exception("Wprowadź nazwisko pracownika.");
                 if (tb_pesel.Text.Length < 1) throw new Exception("Wprowadź PESEL pracownika.");
@@ -141,6 +143,7 @@ namespace Reczna_Myjnia_Samochodowa
                 connection.Open();
                 int id = Convert.ToInt32(tb_EmployeeID.Text);
                 var query = myjnia.Employee.Where(p => (p.ID_employee == id)).FirstOrDefault();
+                var MongoUpdate = Builders<BsonDocument>.Filter.Eq("PESEL", query.PESEL.ToString());
                 query.Name = tb_name.Text;
                 query.Surname = tb_surname.Text;
                 query.PESEL = tb_pesel.Text;
@@ -150,6 +153,14 @@ namespace Reczna_Myjnia_Samochodowa
                 myjnia.SaveChanges();
                 connection.Close();
                 display_employers();
+                var document = new BsonDocument
+                    {
+                        {"Name", tb_name.Text },
+                        {"PESEL", tb_pesel.Text }
+                    };
+                collec.ReplaceOne(MongoUpdate, document);
+
+
             }
             catch (Exception ex)
             {
