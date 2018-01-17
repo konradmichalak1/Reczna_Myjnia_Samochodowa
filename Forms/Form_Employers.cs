@@ -70,10 +70,8 @@ namespace Reczna_Myjnia_Samochodowa
                     };
 
                     collec.InsertOneAsync(document);
+
                     display_employers();
-
-                    collec.InsertOneAsync(document);
-
                 }
                 catch (Exception ex)
                 {
