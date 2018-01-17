@@ -45,13 +45,10 @@ namespace Reczna_Myjnia_Samochodowa
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            timer1.Start();
             login = tb_login.Text;
             password = tb_password.Text;
             Login();
-
-          
-
+            timer1.Start();
         }
 
 
@@ -90,6 +87,7 @@ namespace Reczna_Myjnia_Samochodowa
         {
             if (flag == 1)
             {
+                lb_info.Visible = false;
                 frmMain.btn_orders.Enabled = true;
                 frmMain.btn_cars.Enabled = true;
                 frmMain.btn_customers.Enabled = true;
@@ -98,11 +96,12 @@ namespace Reczna_Myjnia_Samochodowa
                 frmMain.btn_raport.Enabled = true;
                 frmMain.btn_services.Enabled = true;
                 this.Visible = false;
-
+                timer1.Stop();
             }
             else if (flag == 0)
             {
                 lb_info.Visible = true;
+                timer1.Stop();
             }
         }
     }
