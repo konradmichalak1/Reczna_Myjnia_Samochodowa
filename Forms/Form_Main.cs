@@ -12,8 +12,7 @@ namespace Reczna_Myjnia_Samochodowa
 {
     public partial class Form_Main : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Myjnia; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-        MyjniaEntities1 myjnia = new MyjniaEntities1();
+        Form_LoginScreen ls = new Form_LoginScreen();
         public Form_Main()
         {
             InitializeComponent();
@@ -21,7 +20,8 @@ namespace Reczna_Myjnia_Samochodowa
 
         private void Form_Main_Load(object sender, EventArgs e)
         {
-
+            ls.Show();
+            ls.send_MainObject(this);
         }
 
         private void btn_cars_Click(object sender, EventArgs e)

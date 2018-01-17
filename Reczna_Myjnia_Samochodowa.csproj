@@ -124,6 +124,12 @@
     <Compile Include="Forms\Form_Raports.Designer.cs">
       <DependentUpon>Form_Raports.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_LoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_LoginScreen.Designer.cs">
+      <DependentUpon>Form_LoginScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyjniaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -175,6 +181,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\Form_Customer.resx">
       <DependentUpon>Form_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_LoginScreen.resx">
+      <DependentUpon>Form_LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Main.resx">
       <DependentUpon>Form_Main.cs</DependentUpon>

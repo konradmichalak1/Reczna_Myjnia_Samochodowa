@@ -23,10 +23,7 @@ namespace Reczna_Myjnia_Samochodowa
         {
             cb_orderWorkspaceNr.SelectedIndex = 0;
         }
-
-
-
-
+        
         private void btn_CustomerIDChoose_Click(object sender, EventArgs e)
         {
             Form_Customer frm = new Form_Customer();
@@ -40,8 +37,7 @@ namespace Reczna_Myjnia_Samochodowa
             frm.sendOrdersObjectToCar(this);
             frm.Show();
         }
-
-
+        
         private void btn_SetEmployee_Click(object sender, EventArgs e)
         {
             connection.Open();
