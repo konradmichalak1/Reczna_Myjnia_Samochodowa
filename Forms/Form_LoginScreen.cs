@@ -19,13 +19,10 @@ namespace Reczna_Myjnia_Samochodowa
     public partial class Form_LoginScreen : Form
     {
         public static Form_Main frmMain;
-<<<<<<< HEAD
-     
-=======
+
         private static string login = String.Empty;
         private static string password = String.Empty;
         public static int flag = 0;
->>>>>>> fe13040c6df0834b193209461f3267fcb750d879
         public Form_LoginScreen()
         {
             InitializeComponent();
@@ -48,39 +45,12 @@ namespace Reczna_Myjnia_Samochodowa
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-            frmMain.btn_orders.Enabled = true;
-            frmMain.btn_cars.Enabled = true;
-            frmMain.btn_customers.Enabled = true;
-            frmMain.btn_Employers.Enabled = true;
-            frmMain.btn_faults.Enabled = true;
-            frmMain.btn_raport.Enabled = true;
-            frmMain.btn_services.Enabled = true;
-            this.Visible = false;
-=======
+            timer1.Start();
             login = tb_login.Text;
             password = tb_password.Text;
             Login();
 
-
-
-            if (flag == 1)
-            {
-                frmMain.btn_orders.Enabled = true;
-                frmMain.btn_cars.Enabled = true;
-                frmMain.btn_customers.Enabled = true;
-                frmMain.btn_Employers.Enabled = true;
-                frmMain.btn_faults.Enabled = true;
-                frmMain.btn_raport.Enabled = true;
-                frmMain.btn_services.Enabled = true;
-                this.Visible = false;
-            }
-            
-
-            
-
->>>>>>> fe13040c6df0834b193209461f3267fcb750d879
+          
 
         }
 
@@ -89,7 +59,7 @@ namespace Reczna_Myjnia_Samochodowa
         {
             try
             {
-                MongoClient client = new MongoClient();
+                MongoClient client = new MongoClient("mongodb://localhost:27017");
                 var db = client.GetDatabase("Myjnia");
                 var collection = db.GetCollection<BsonDocument>("Employees");
                 var builder = Builders<BsonDocument>.Filter;
@@ -104,11 +74,11 @@ namespace Reczna_Myjnia_Samochodowa
                             if (login == document[1].ToString() && password == document[2].ToString())
                                 flag = 1;
                             else
-                                flag = 0;
-                                                     
+                                flag = 0;                
                         }
                     }
                 }
+                
             }
             catch (Exception ex)
             {
@@ -116,6 +86,24 @@ namespace Reczna_Myjnia_Samochodowa
             }
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (flag == 1)
+            {
+                frmMain.btn_orders.Enabled = true;
+                frmMain.btn_cars.Enabled = true;
+                frmMain.btn_customers.Enabled = true;
+                frmMain.btn_Employers.Enabled = true;
+                frmMain.btn_faults.Enabled = true;
+                frmMain.btn_raport.Enabled = true;
+                frmMain.btn_services.Enabled = true;
+                this.Visible = false;
 
+            }
+            else if (flag == 0)
+            {
+                lb_info.Visible = true;
+            }
+        }
     }
 }

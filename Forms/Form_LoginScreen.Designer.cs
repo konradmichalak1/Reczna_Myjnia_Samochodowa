@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_login = new System.Windows.Forms.Button();
             this.tb_login = new System.Windows.Forms.TextBox();
             this.tb_password = new System.Windows.Forms.TextBox();
@@ -35,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lb_info = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btn_login
@@ -104,6 +106,11 @@
             this.lb_info.Text = "Nieprawidłowy login lub hasło!";
             this.lb_info.Visible = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 200;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form_LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,5 +141,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lb_info;
+        private System.Windows.Forms.Timer timer1;
     }
 }
