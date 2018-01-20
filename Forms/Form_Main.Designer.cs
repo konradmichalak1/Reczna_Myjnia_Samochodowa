@@ -35,6 +35,7 @@
             this.btn_services = new System.Windows.Forms.Button();
             this.btn_faults = new System.Windows.Forms.Button();
             this.btn_raport = new System.Windows.Forms.Button();
+            this.btn_loginScreen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_cars
@@ -107,12 +108,23 @@
             this.btn_raport.UseVisualStyleBackColor = true;
             this.btn_raport.Click += new System.EventHandler(this.btn_raport_Click);
             // 
+            // btn_loginScreen
+            // 
+            this.btn_loginScreen.Location = new System.Drawing.Point(183, 12);
+            this.btn_loginScreen.Name = "btn_loginScreen";
+            this.btn_loginScreen.Size = new System.Drawing.Size(72, 41);
+            this.btn_loginScreen.TabIndex = 7;
+            this.btn_loginScreen.Text = "Ekran logowania";
+            this.btn_loginScreen.UseVisualStyleBackColor = true;
+            this.btn_loginScreen.Click += new System.EventHandler(this.btn_loginScreen_Click);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(271, 358);
+            this.Controls.Add(this.btn_loginScreen);
             this.Controls.Add(this.btn_raport);
             this.Controls.Add(this.btn_faults);
             this.Controls.Add(this.btn_services);
@@ -135,6 +147,7 @@
         public System.Windows.Forms.Button btn_services;
         public System.Windows.Forms.Button btn_faults;
         public System.Windows.Forms.Button btn_raport;
+        private System.Windows.Forms.Button btn_loginScreen;
     }
 }
 

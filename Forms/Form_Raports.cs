@@ -70,9 +70,7 @@ namespace Reczna_Myjnia_Samochodowa
                     }
                 }
                 connection.Close();
-
-
-
+                
                 using (var command = new SqlCommand("WriteToFile", connection)
                 {
                     CommandType = CommandType.StoredProcedure
@@ -91,6 +89,38 @@ namespace Reczna_Myjnia_Samochodowa
                 else MessageBox.Show(ex.InnerException.InnerException.Message);
                 connection.Close();
             }
+        }
+
+        private void btn_daily_Click(object sender, EventArgs e)
+        {
+            dtp_timeFrom.Value = DateTime.Now.Date;
+            dtp_dateFrom.Value = DateTime.Now.Date;
+            dtp_timeTo.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
+            dtp_dateTo.Value = DateTime.Now;
+        }
+
+        private void btn_weekly_Click(object sender, EventArgs e)
+        {
+            dtp_timeFrom.Value = DateTime.Now.Date;
+            dtp_dateFrom.Value = DateTime
+                          .Today
+                          .AddDays(-(DateTime.Today.DayOfWeek - DayOfWeek.Monday))
+                          .AddHours(10);
+            dtp_timeTo.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
+            dtp_dateTo.Value = DateTime
+              .Today
+              .AddDays(-(DateTime.Today.DayOfWeek - DayOfWeek.Monday)+6)
+              .AddHours(10);
+        }
+
+        private void btn_monthly_Click(object sender, EventArgs e)
+        {
+            var firstDayOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+            dtp_timeFrom.Value = DateTime.Now.Date;
+            dtp_dateFrom.Value = firstDayOfMonth;
+            dtp_dateTo.Value = lastDayOfMonth;
+            dtp_timeTo.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
         }
     }
 }

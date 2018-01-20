@@ -38,7 +38,7 @@ namespace Reczna_Myjnia_Samochodowa
         {
             try
             {
-                if (tb_CarLicense.Text == "") throw new Exception("Podaj numer rejestracyjny!");
+                if (tb_CarLicense.Text == null) throw new Exception("Podaj numer rejestracyjny!");
                 else if (tb_CarLicense.Text.Length < 7) { throw new Exception("Nieprawidłowy numer rejestracyjny!"); }
 
                 connection.Open();

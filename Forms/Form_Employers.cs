@@ -70,13 +70,8 @@ namespace Reczna_Myjnia_Samochodowa
                     };
 
                     collec.InsertOneAsync(document);
-<<<<<<< HEAD
-=======
                     display_employers();
 
->>>>>>> 6f9b0f2554be63e657a4c6e773545565ced0aaf1
-
-                    display_employers();
                 }
                 catch (Exception ex)
                 {
@@ -140,6 +135,7 @@ namespace Reczna_Myjnia_Samochodowa
                 var client = new MongoClient("mongodb://localhost:27017");
                 var database = client.GetDatabase("Myjnia");
                 var collec = database.GetCollection<BsonDocument>("Employees");
+
                 if (tb_name.Text.Length < 1) throw new Exception("Wprowadź imię pracownika.");
                 if (tb_surname.Text.Length < 1) throw new Exception("Wprowadź nazwisko pracownika.");
                 if (tb_pesel.Text.Length < 1) throw new Exception("Wprowadź PESEL pracownika.");
@@ -163,8 +159,6 @@ namespace Reczna_Myjnia_Samochodowa
                         {"PESEL", tb_pesel.Text }
                     };
                 collec.ReplaceOne(MongoUpdate, document);
-
-
             }
             catch (Exception ex)
             {
@@ -187,9 +181,7 @@ namespace Reczna_Myjnia_Samochodowa
             {
                 e.Handled = true;
             }
-
         }
-
         private void tb_salary_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;

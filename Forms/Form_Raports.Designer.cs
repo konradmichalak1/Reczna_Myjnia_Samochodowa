@@ -126,6 +126,7 @@
             this.btn_daily.TabIndex = 4;
             this.btn_daily.Text = "Dzienny";
             this.btn_daily.UseVisualStyleBackColor = true;
+            this.btn_daily.Click += new System.EventHandler(this.btn_daily_Click);
             // 
             // btn_weekly
             // 
@@ -135,6 +136,7 @@
             this.btn_weekly.TabIndex = 5;
             this.btn_weekly.Text = "Tygodniowy";
             this.btn_weekly.UseVisualStyleBackColor = true;
+            this.btn_weekly.Click += new System.EventHandler(this.btn_weekly_Click);
             // 
             // btn_monthly
             // 
@@ -144,6 +146,7 @@
             this.btn_monthly.TabIndex = 6;
             this.btn_monthly.Text = "Miesięczny";
             this.btn_monthly.UseVisualStyleBackColor = true;
+            this.btn_monthly.Click += new System.EventHandler(this.btn_monthly_Click);
             // 
             // btn_detailedRaport
             // 

@@ -66,5 +66,13 @@ namespace Reczna_Myjnia_Samochodowa
             rap.Show();
 
         }
+
+        private void btn_loginScreen_Click(object sender, EventArgs e)
+        {
+            ls.Close();
+            Form_LoginScreen ls2 = new Form_LoginScreen();
+            ls2.Show();
+            ls2.send_MainObject(this);
+        }
     }
 }
