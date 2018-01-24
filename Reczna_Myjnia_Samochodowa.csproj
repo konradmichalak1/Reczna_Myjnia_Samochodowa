@@ -329,6 +329,27 @@
     <None Include="Ikony\Update Button.png" />
     <None Include="Ikony\Delete Button.png" />
     <None Include="Ikony\Add Button.png" />
+    <None Include="Ikony\Background.jpg" />
+    <None Include="Ikony\Klienci.png" />
+    <None Include="Ikony\KlientIcon.png" />
+    <None Include="Ikony\LogowanieTlo.png" />
+    <None Include="Ikony\MenuTlo.png" />
+    <None Include="Ikony\Pracownicy.png" />
+    <None Include="Ikony\PracownicyIcon.png" />
+    <None Include="Ikony\Raport.png" />
+    <None Include="Ikony\RaportIcon.PNG" />
+    <None Include="Ikony\SamochodIcon.png" />
+    <None Include="Ikony\Samochody.png" />
+    <None Include="Ikony\Tło groupboxa.jpg" />
+    <None Include="Ikony\Update.png" />
+    <None Include="Ikony\UslugiIcon.png" />
+    <None Include="Ikony\Usługi.png" />
+    <None Include="Ikony\Usterki.png" />
+    <None Include="Ikony\UsterkiIcon.png" />
+    <None Include="Ikony\Wyloguj.png" />
+    <None Include="Ikony\Zaloguj.png" />
+    <None Include="Ikony\Zamowienie.png" />
+    <None Include="Ikony\ZamowienieIcon.png" />
     <Content Include="MyjniaModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MyjniaModel.edmx</DependentUpon>

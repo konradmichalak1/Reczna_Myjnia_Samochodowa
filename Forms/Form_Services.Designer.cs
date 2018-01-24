@@ -61,6 +61,7 @@
             // ServiceGridView
             // 
             this.ServiceGridView.AutoGenerateColumns = false;
+            this.ServiceGridView.BackgroundColor = System.Drawing.Color.LemonChiffon;
             this.ServiceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDserviceDataGridViewTextBoxColumn,
@@ -120,6 +121,7 @@
             // gb_Services
             // 
             this.gb_Services.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.gb_Services.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Tło_groupboxa;
             this.gb_Services.Controls.Add(this.label2);
             this.gb_Services.Controls.Add(this.label1);
             this.gb_Services.Controls.Add(this.lb_price);
@@ -143,6 +145,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(153, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 13);
@@ -152,6 +155,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(156, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(16, 13);
@@ -161,6 +165,7 @@
             // lb_price
             // 
             this.lb_price.AutoSize = true;
+            this.lb_price.BackColor = System.Drawing.SystemColors.Control;
             this.lb_price.Location = new System.Drawing.Point(41, 74);
             this.lb_price.Name = "lb_price";
             this.lb_price.Size = new System.Drawing.Size(35, 13);
@@ -170,6 +175,7 @@
             // lb_realizationtime
             // 
             this.lb_realizationtime.AutoSize = true;
+            this.lb_realizationtime.BackColor = System.Drawing.SystemColors.Control;
             this.lb_realizationtime.Location = new System.Drawing.Point(13, 48);
             this.lb_realizationtime.Name = "lb_realizationtime";
             this.lb_realizationtime.Size = new System.Drawing.Size(76, 13);
@@ -179,6 +185,7 @@
             // lb_name
             // 
             this.lb_name.AutoSize = true;
+            this.lb_name.BackColor = System.Drawing.SystemColors.Control;
             this.lb_name.Location = new System.Drawing.Point(18, 22);
             this.lb_name.Name = "lb_name";
             this.lb_name.Size = new System.Drawing.Size(43, 13);
@@ -223,6 +230,7 @@
             // lb_ServiceID
             // 
             this.lb_ServiceID.AutoSize = true;
+            this.lb_ServiceID.BackColor = System.Drawing.SystemColors.Control;
             this.lb_ServiceID.Location = new System.Drawing.Point(106, 109);
             this.lb_ServiceID.Name = "lb_ServiceID";
             this.lb_ServiceID.Size = new System.Drawing.Size(18, 13);
@@ -263,9 +271,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(734, 366);
             this.Controls.Add(this.gb_Services);
             this.Controls.Add(this.ServiceGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Services";
             this.Text = "Usługi";
             this.Load += new System.EventHandler(this.Form_Services_Load);

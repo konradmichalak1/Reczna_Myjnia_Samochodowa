@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Orders));
             this.gb_Orders = new System.Windows.Forms.GroupBox();
             this.btn_undoEnd = new System.Windows.Forms.Button();
             this.btn_undoStart = new System.Windows.Forms.Button();
@@ -522,7 +523,7 @@
             // 
             this.checklist_employers.CheckOnClick = true;
             this.checklist_employers.FormattingEnabled = true;
-            this.checklist_employers.Location = new System.Drawing.Point(329, 261);
+            this.checklist_employers.Location = new System.Drawing.Point(337, 261);
             this.checklist_employers.Name = "checklist_employers";
             this.checklist_employers.Size = new System.Drawing.Size(74, 109);
             this.checklist_employers.TabIndex = 2;
@@ -532,7 +533,7 @@
             // 
             this.checklist_services.CheckOnClick = true;
             this.checklist_services.FormattingEnabled = true;
-            this.checklist_services.Location = new System.Drawing.Point(329, 139);
+            this.checklist_services.Location = new System.Drawing.Point(337, 139);
             this.checklist_services.Name = "checklist_services";
             this.checklist_services.Size = new System.Drawing.Size(74, 109);
             this.checklist_services.TabIndex = 3;
@@ -541,7 +542,7 @@
             // lb_time_in_memory
             // 
             this.lb_time_in_memory.AutoSize = true;
-            this.lb_time_in_memory.Location = new System.Drawing.Point(329, 123);
+            this.lb_time_in_memory.Location = new System.Drawing.Point(338, 123);
             this.lb_time_in_memory.Name = "lb_time_in_memory";
             this.lb_time_in_memory.Size = new System.Drawing.Size(79, 13);
             this.lb_time_in_memory.TabIndex = 43;
@@ -552,11 +553,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 434);
+            this.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Background;
+            this.ClientSize = new System.Drawing.Size(333, 434);
             this.Controls.Add(this.lb_time_in_memory);
             this.Controls.Add(this.checklist_services);
             this.Controls.Add(this.checklist_employers);
             this.Controls.Add(this.gb_Orders);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form_Orders";
             this.Text = "Zamówienia";

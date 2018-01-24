@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Raport));
             this.btn_generalRaport = new System.Windows.Forms.Button();
             this.dtp_dateFrom = new System.Windows.Forms.DateTimePicker();
             this.dtp_timeFrom = new System.Windows.Forms.DateTimePicker();
@@ -174,6 +175,7 @@
             this.Controls.Add(this.dtp_timeFrom);
             this.Controls.Add(this.dtp_dateFrom);
             this.Controls.Add(this.btn_generalRaport);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Raport";
             this.Text = "Raporty";
             this.Load += new System.EventHandler(this.Form_Raport_Load);

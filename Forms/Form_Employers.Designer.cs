@@ -66,6 +66,7 @@
             // EmployersGridView
             // 
             this.EmployersGridView.AutoGenerateColumns = false;
+            this.EmployersGridView.BackgroundColor = System.Drawing.Color.LemonChiffon;
             this.EmployersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDemployeeDataGridViewTextBoxColumn,
@@ -142,6 +143,7 @@
             // gb_Employers
             // 
             this.gb_Employers.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.gb_Employers.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Tło_groupboxa;
             this.gb_Employers.Controls.Add(this.label1);
             this.gb_Employers.Controls.Add(this.cb_jobtitle);
             this.gb_Employers.Controls.Add(this.lb_salary);
@@ -168,6 +170,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(161, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(16, 13);
@@ -190,6 +193,7 @@
             // lb_salary
             // 
             this.lb_salary.AutoSize = true;
+            this.lb_salary.BackColor = System.Drawing.SystemColors.Control;
             this.lb_salary.Location = new System.Drawing.Point(24, 122);
             this.lb_salary.Name = "lb_salary";
             this.lb_salary.Size = new System.Drawing.Size(42, 13);
@@ -199,6 +203,7 @@
             // lb_jobtitle
             // 
             this.lb_jobtitle.AutoSize = true;
+            this.lb_jobtitle.BackColor = System.Drawing.SystemColors.Control;
             this.lb_jobtitle.Location = new System.Drawing.Point(13, 155);
             this.lb_jobtitle.Name = "lb_jobtitle";
             this.lb_jobtitle.Size = new System.Drawing.Size(65, 13);
@@ -208,6 +213,7 @@
             // lb_pesel
             // 
             this.lb_pesel.AutoSize = true;
+            this.lb_pesel.BackColor = System.Drawing.SystemColors.Control;
             this.lb_pesel.Location = new System.Drawing.Point(24, 93);
             this.lb_pesel.Name = "lb_pesel";
             this.lb_pesel.Size = new System.Drawing.Size(44, 13);
@@ -217,6 +223,7 @@
             // lb_surname
             // 
             this.lb_surname.AutoSize = true;
+            this.lb_surname.BackColor = System.Drawing.SystemColors.Control;
             this.lb_surname.Location = new System.Drawing.Point(11, 62);
             this.lb_surname.Name = "lb_surname";
             this.lb_surname.Size = new System.Drawing.Size(56, 13);
@@ -226,6 +233,7 @@
             // lb_name
             // 
             this.lb_name.AutoSize = true;
+            this.lb_name.BackColor = System.Drawing.SystemColors.Control;
             this.lb_name.Location = new System.Drawing.Point(38, 33);
             this.lb_name.Name = "lb_name";
             this.lb_name.Size = new System.Drawing.Size(29, 13);
@@ -270,6 +278,7 @@
             // lb_EmployeeID
             // 
             this.lb_EmployeeID.AutoSize = true;
+            this.lb_EmployeeID.BackColor = System.Drawing.SystemColors.Control;
             this.lb_EmployeeID.Location = new System.Drawing.Point(96, 202);
             this.lb_EmployeeID.Name = "lb_EmployeeID";
             this.lb_EmployeeID.Size = new System.Drawing.Size(18, 13);
@@ -318,9 +327,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(920, 348);
             this.Controls.Add(this.gb_Employers);
             this.Controls.Add(this.EmployersGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Employers";
             this.Text = "Pracownicy";
             this.Load += new System.EventHandler(this.Form_Employers_Load);

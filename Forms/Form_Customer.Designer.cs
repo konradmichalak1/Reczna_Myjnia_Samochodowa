@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Customer));
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.myjniaDataSet1 = new Reczna_Myjnia_Samochodowa.MyjniaDataSet1();
             this.customerTableAdapter = new Reczna_Myjnia_Samochodowa.MyjniaDataSet1TableAdapters.CustomerTableAdapter();
@@ -75,6 +76,7 @@
             // gb_Customers
             // 
             this.gb_Customers.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.gb_Customers.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Tło_groupboxa;
             this.gb_Customers.Controls.Add(this.lb_CustomerTelephone);
             this.gb_Customers.Controls.Add(this.tb_CustomerTelephone);
             this.gb_Customers.Controls.Add(this.btn_UpdateCustomer);
@@ -96,6 +98,7 @@
             // lb_CustomerTelephone
             // 
             this.lb_CustomerTelephone.AutoSize = true;
+            this.lb_CustomerTelephone.BackColor = System.Drawing.SystemColors.Control;
             this.lb_CustomerTelephone.Location = new System.Drawing.Point(54, 101);
             this.lb_CustomerTelephone.Name = "lb_CustomerTelephone";
             this.lb_CustomerTelephone.Size = new System.Drawing.Size(43, 13);
@@ -147,6 +150,7 @@
             // lb_CustomerSurname
             // 
             this.lb_CustomerSurname.AutoSize = true;
+            this.lb_CustomerSurname.BackColor = System.Drawing.SystemColors.Control;
             this.lb_CustomerSurname.Location = new System.Drawing.Point(44, 75);
             this.lb_CustomerSurname.Name = "lb_CustomerSurname";
             this.lb_CustomerSurname.Size = new System.Drawing.Size(53, 13);
@@ -156,6 +160,7 @@
             // lb_CustomerName
             // 
             this.lb_CustomerName.AutoSize = true;
+            this.lb_CustomerName.BackColor = System.Drawing.SystemColors.Control;
             this.lb_CustomerName.Location = new System.Drawing.Point(71, 49);
             this.lb_CustomerName.Name = "lb_CustomerName";
             this.lb_CustomerName.Size = new System.Drawing.Size(26, 13);
@@ -165,6 +170,7 @@
             // lb_CustomerID
             // 
             this.lb_CustomerID.AutoSize = true;
+            this.lb_CustomerID.BackColor = System.Drawing.SystemColors.Control;
             this.lb_CustomerID.Location = new System.Drawing.Point(80, 22);
             this.lb_CustomerID.Name = "lb_CustomerID";
             this.lb_CustomerID.Size = new System.Drawing.Size(18, 13);
@@ -195,6 +201,7 @@
             // CustomerGridView
             // 
             this.CustomerGridView.AutoGenerateColumns = false;
+            this.CustomerGridView.BackgroundColor = System.Drawing.Color.LemonChiffon;
             this.CustomerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CustomerGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDcustomerDataGridViewTextBoxColumn1,
@@ -256,10 +263,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(734, 427);
             this.Controls.Add(this.btn_Ok);
             this.Controls.Add(this.CustomerGridView);
             this.Controls.Add(this.gb_Customers);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Customer";
             this.Text = "Klient";
             this.Load += new System.EventHandler(this.Form_Customer_Load);

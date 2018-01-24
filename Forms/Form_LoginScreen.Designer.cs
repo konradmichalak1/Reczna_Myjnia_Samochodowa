@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_LoginScreen));
             this.btn_login = new System.Windows.Forms.Button();
             this.tb_login = new System.Windows.Forms.TextBox();
             this.tb_password = new System.Windows.Forms.TextBox();
@@ -41,11 +42,13 @@
             // 
             // btn_login
             // 
+            this.btn_login.Image = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Zaloguj;
             this.btn_login.Location = new System.Drawing.Point(97, 155);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(75, 23);
             this.btn_login.TabIndex = 2;
-            this.btn_login.Text = "Zaloguj";
+            this.btn_login.Text = "  Zaloguj";
+            this.btn_login.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_login.UseVisualStyleBackColor = true;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
@@ -69,6 +72,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.GhostWhite;
             this.label1.Location = new System.Drawing.Point(44, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
@@ -78,6 +82,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.GhostWhite;
             this.label2.Location = new System.Drawing.Point(44, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
@@ -87,6 +92,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label3.Location = new System.Drawing.Point(63, 21);
             this.label3.Name = "label3";
@@ -98,10 +104,12 @@
             // lb_info
             // 
             this.lb_info.AutoSize = true;
+            this.lb_info.BackColor = System.Drawing.Color.GhostWhite;
+            this.lb_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.lb_info.ForeColor = System.Drawing.Color.Red;
-            this.lb_info.Location = new System.Drawing.Point(61, 130);
+            this.lb_info.Location = new System.Drawing.Point(44, 122);
             this.lb_info.Name = "lb_info";
-            this.lb_info.Size = new System.Drawing.Size(152, 13);
+            this.lb_info.Size = new System.Drawing.Size(194, 16);
             this.lb_info.TabIndex = 4;
             this.lb_info.Text = "Nieprawidłowy login lub hasło!";
             this.lb_info.Visible = false;
@@ -116,6 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.LogowanieTlo;
             this.ClientSize = new System.Drawing.Size(276, 201);
             this.Controls.Add(this.lb_info);
             this.Controls.Add(this.label2);
@@ -124,6 +133,7 @@
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.tb_login);
             this.Controls.Add(this.btn_login);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_LoginScreen";
             this.Text = "Logowanie";
             this.Load += new System.EventHandler(this.Form_LoginScreen_Load);

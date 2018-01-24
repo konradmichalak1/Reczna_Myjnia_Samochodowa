@@ -64,6 +64,7 @@
             // CarGridView
             // 
             this.CarGridView.AutoGenerateColumns = false;
+            this.CarGridView.BackgroundColor = System.Drawing.Color.LemonChiffon;
             this.CarGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CarGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDcarDataGridViewTextBoxColumn,
@@ -139,6 +140,7 @@
             // gb_Cars
             // 
             this.gb_Cars.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.gb_Cars.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Tło_groupboxa;
             this.gb_Cars.Controls.Add(this.btn_UpdateCar);
             this.gb_Cars.Controls.Add(this.btn_DeleteCar);
             this.gb_Cars.Controls.Add(this.btn_InsertCar);
@@ -197,6 +199,7 @@
             // lb_CarNote
             // 
             this.lb_CarNote.AutoSize = true;
+            this.lb_CarNote.BackColor = System.Drawing.SystemColors.Control;
             this.lb_CarNote.Location = new System.Drawing.Point(3, 131);
             this.lb_CarNote.Name = "lb_CarNote";
             this.lb_CarNote.Size = new System.Drawing.Size(40, 13);
@@ -206,6 +209,7 @@
             // lb_CarLicense
             // 
             this.lb_CarLicense.AutoSize = true;
+            this.lb_CarLicense.BackColor = System.Drawing.SystemColors.Control;
             this.lb_CarLicense.Location = new System.Drawing.Point(18, 99);
             this.lb_CarLicense.Name = "lb_CarLicense";
             this.lb_CarLicense.Size = new System.Drawing.Size(60, 13);
@@ -215,6 +219,7 @@
             // lb_CarModel
             // 
             this.lb_CarModel.AutoSize = true;
+            this.lb_CarModel.BackColor = System.Drawing.SystemColors.Control;
             this.lb_CarModel.Location = new System.Drawing.Point(42, 76);
             this.lb_CarModel.Name = "lb_CarModel";
             this.lb_CarModel.Size = new System.Drawing.Size(36, 13);
@@ -224,6 +229,7 @@
             // lb_CarMark
             // 
             this.lb_CarMark.AutoSize = true;
+            this.lb_CarMark.BackColor = System.Drawing.SystemColors.Control;
             this.lb_CarMark.Location = new System.Drawing.Point(41, 50);
             this.lb_CarMark.Name = "lb_CarMark";
             this.lb_CarMark.Size = new System.Drawing.Size(37, 13);
@@ -233,6 +239,7 @@
             // lb_CarID
             // 
             this.lb_CarID.AutoSize = true;
+            this.lb_CarID.BackColor = System.Drawing.SystemColors.Control;
             this.lb_CarID.Location = new System.Drawing.Point(60, 28);
             this.lb_CarID.Name = "lb_CarID";
             this.lb_CarID.Size = new System.Drawing.Size(18, 13);
@@ -277,12 +284,13 @@
             // 
             // btn_OkCar
             // 
+            this.btn_OkCar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_OkCar.Location = new System.Drawing.Point(107, 322);
             this.btn_OkCar.Name = "btn_OkCar";
             this.btn_OkCar.Size = new System.Drawing.Size(75, 23);
             this.btn_OkCar.TabIndex = 8;
             this.btn_OkCar.Text = "Ok";
-            this.btn_OkCar.UseVisualStyleBackColor = true;
+            this.btn_OkCar.UseVisualStyleBackColor = false;
             this.btn_OkCar.Click += new System.EventHandler(this.btn_OkCar_Click);
             // 
             // Form_Cars
@@ -290,10 +298,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(949, 380);
             this.Controls.Add(this.btn_OkCar);
             this.Controls.Add(this.gb_Cars);
             this.Controls.Add(this.CarGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Cars";
             this.Text = "Samochody";
             this.Load += new System.EventHandler(this.Form_Cars_Load);

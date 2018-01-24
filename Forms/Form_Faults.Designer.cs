@@ -56,6 +56,7 @@
             // faultGridView
             // 
             this.faultGridView.AutoGenerateColumns = false;
+            this.faultGridView.BackgroundColor = System.Drawing.Color.LemonChiffon;
             this.faultGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.faultGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDfaultDataGridViewTextBoxColumn,
@@ -113,6 +114,7 @@
             // gb_Faults
             // 
             this.gb_Faults.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.gb_Faults.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Tło_groupboxa;
             this.gb_Faults.Controls.Add(this.btn_UpdateFault);
             this.gb_Faults.Controls.Add(this.btn_DeleteFault);
             this.gb_Faults.Controls.Add(this.btn_InsertFault);
@@ -165,6 +167,7 @@
             // lb_FaultNote
             // 
             this.lb_FaultNote.AutoSize = true;
+            this.lb_FaultNote.BackColor = System.Drawing.SystemColors.Control;
             this.lb_FaultNote.Location = new System.Drawing.Point(6, 32);
             this.lb_FaultNote.Name = "lb_FaultNote";
             this.lb_FaultNote.Size = new System.Drawing.Size(65, 13);
@@ -174,6 +177,7 @@
             // lb_FaultID
             // 
             this.lb_FaultID.AutoSize = true;
+            this.lb_FaultID.BackColor = System.Drawing.SystemColors.Control;
             this.lb_FaultID.Location = new System.Drawing.Point(104, 201);
             this.lb_FaultID.Name = "lb_FaultID";
             this.lb_FaultID.Size = new System.Drawing.Size(18, 13);
@@ -185,7 +189,7 @@
             this.tb_CarNote.Location = new System.Drawing.Point(9, 48);
             this.tb_CarNote.Multiline = true;
             this.tb_CarNote.Name = "tb_CarNote";
-            this.tb_CarNote.Size = new System.Drawing.Size(234, 80);
+            this.tb_CarNote.Size = new System.Drawing.Size(234, 114);
             this.tb_CarNote.TabIndex = 1;
             // 
             // tb_FaultID
@@ -199,9 +203,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(664, 293);
             this.Controls.Add(this.gb_Faults);
             this.Controls.Add(this.faultGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Faults";
             this.Text = "Usterki";
             this.Load += new System.EventHandler(this.Form_Faults_Load);
