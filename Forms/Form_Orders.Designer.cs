@@ -264,6 +264,7 @@
             this.btn_UpdateOrder.Text = "Aktualizuj";
             this.btn_UpdateOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_UpdateOrder.UseVisualStyleBackColor = true;
+            this.btn_UpdateOrder.Click += new System.EventHandler(this.btn_UpdateOrder_Click);
             // 
             // tb_Discount
             // 
@@ -283,6 +284,7 @@
             this.btn_DeleteOrder.TabIndex = 22;
             this.btn_DeleteOrder.Text = "Usuń";
             this.btn_DeleteOrder.UseVisualStyleBackColor = true;
+            this.btn_DeleteOrder.Click += new System.EventHandler(this.btn_DeleteOrder_Click);
             // 
             // tb_Price
             // 
