@@ -127,4 +127,76 @@
   <data name="Add Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Ikony\Add Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Add Button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Add Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete Button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Delete Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Klienci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Klienci.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KlientIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\KlientIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogowanieTlo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\LogowanieTlo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuTlo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\MenuTlo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pracownicy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Pracownicy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PracownicyIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\PracownicyIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Raport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Raport.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RaportIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\RaportIcon.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SamochodIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\SamochodIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Samochody" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Samochody.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tło groupboxa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Tło groupboxa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Update Button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Update Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Update" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UslugiIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\UslugiIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Usługi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Usługi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Usterki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Usterki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UsterkiIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\UsterkiIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wyloguj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Wyloguj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zaloguj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Zaloguj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zamowienie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\Zamowienie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ZamowienieIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ikony\ZamowienieIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
