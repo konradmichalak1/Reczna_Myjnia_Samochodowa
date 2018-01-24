@@ -20,6 +20,7 @@ namespace Reczna_Myjnia_Samochodowa
 
         private void Form_Main_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             ls.Show();
             ls.send_MainObject(this);
         }

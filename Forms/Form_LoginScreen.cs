@@ -41,6 +41,7 @@ namespace Reczna_Myjnia_Samochodowa
         private void Form_LoginScreen_Load(object sender, EventArgs e)
         {
             this.TopMost = true;
+            this.CenterToScreen();
         }
 
         private void btn_login_Click(object sender, EventArgs e)
