@@ -69,16 +69,23 @@ namespace Reczna_Myjnia_Samochodowa
 
         private void btn_okEmployers_Click(object sender, EventArgs e)
         {
-            btn_okEmployers.Visible = false;
-            checklist_employers.Visible = false;
-            tb_employerlist.Items.Clear();
-            foreach(string s in checklist_employers.CheckedItems)
+            try
             {
-                tb_employerlist.Items.Add(s); 
-            }
+                btn_okEmployers.Visible = false;
+                checklist_employers.Visible = false;
+                tb_employerlist.Items.Clear();
+                foreach (string s in checklist_employers.CheckedItems)
+                {
+                    tb_employerlist.Items.Add(s);
+                }
 
-            checklist_employers.Items.Clear();
-            tb_employerlist.SelectedIndex = 0;
+                checklist_employers.Items.Clear();
+                tb_employerlist.SelectedIndex = 0;
+            }
+            catch(Exception ex)
+            {
+                if (ex.InnerException == null) MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_SetService_Click(object sender, EventArgs e)
@@ -112,13 +119,20 @@ namespace Reczna_Myjnia_Samochodowa
 
         private void btn_okService_Click(object sender, EventArgs e)
         {
-            btn_okService.Visible = false;
-            checklist_services.Visible = false;
-            tb_servicelist.Items.Clear();
+            try
+            {
+                btn_okService.Visible = false;
+                checklist_services.Visible = false;
+                tb_servicelist.Items.Clear();
 
-            przelicz_zamowienie();
-            checklist_services.Items.Clear();
-            tb_servicelist.SelectedIndex = 0;
+                przelicz_zamowienie();
+                checklist_services.Items.Clear();
+                tb_servicelist.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException == null) MessageBox.Show(ex.Message);
+            }
         }
 
         private void przelicz_zamowienie()
