@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Orders));
             this.gb_Orders = new System.Windows.Forms.GroupBox();
+            this.btn_rozwin_liste = new System.Windows.Forms.Button();
             this.btn_undoEnd = new System.Windows.Forms.Button();
             this.btn_undoStart = new System.Windows.Forms.Button();
             this.btn_przelicz = new System.Windows.Forms.Button();
@@ -71,14 +73,34 @@
             this.lb_OrdersIDCustomer = new System.Windows.Forms.Label();
             this.lb_OrderEmployee = new System.Windows.Forms.Label();
             this.lb_id_order = new System.Windows.Forms.Label();
-            this.checklist_employers = new System.Windows.Forms.CheckedListBox();
             this.checklist_services = new System.Windows.Forms.CheckedListBox();
             this.lb_time_in_memory = new System.Windows.Forms.Label();
+            this.checklist_employers = new System.Windows.Forms.CheckedListBox();
+            this.orderGridView = new System.Windows.Forms.DataGridView();
+            this.iDorderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.starttimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workplacenrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymenttypeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.documenttypeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.iDcustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDcarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.myjniaDataSet2 = new Reczna_Myjnia_Samochodowa.MyjniaDataSet2();
+            this.myjniaDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderTableAdapter = new Reczna_Myjnia_Samochodowa.MyjniaDataSet2TableAdapters.OrderTableAdapter();
             this.gb_Orders.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myjniaDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myjniaDataSet2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gb_Orders
             // 
+            this.gb_Orders.Controls.Add(this.btn_rozwin_liste);
             this.gb_Orders.Controls.Add(this.btn_undoEnd);
             this.gb_Orders.Controls.Add(this.btn_undoStart);
             this.gb_Orders.Controls.Add(this.btn_przelicz);
@@ -126,6 +148,16 @@
             this.gb_Orders.TabIndex = 1;
             this.gb_Orders.TabStop = false;
             this.gb_Orders.Text = "Zamówienie";
+            // 
+            // btn_rozwin_liste
+            // 
+            this.btn_rozwin_liste.Location = new System.Drawing.Point(275, 18);
+            this.btn_rozwin_liste.Name = "btn_rozwin_liste";
+            this.btn_rozwin_liste.Size = new System.Drawing.Size(29, 23);
+            this.btn_rozwin_liste.TabIndex = 43;
+            this.btn_rozwin_liste.Text = ">";
+            this.btn_rozwin_liste.UseVisualStyleBackColor = true;
+            this.btn_rozwin_liste.Click += new System.EventHandler(this.btn_rozwin_liste_Click);
             // 
             // btn_undoEnd
             // 
@@ -519,21 +551,11 @@
             this.lb_id_order.TabIndex = 0;
             this.lb_id_order.Text = "ID";
             // 
-            // checklist_employers
-            // 
-            this.checklist_employers.CheckOnClick = true;
-            this.checklist_employers.FormattingEnabled = true;
-            this.checklist_employers.Location = new System.Drawing.Point(337, 261);
-            this.checklist_employers.Name = "checklist_employers";
-            this.checklist_employers.Size = new System.Drawing.Size(74, 109);
-            this.checklist_employers.TabIndex = 2;
-            this.checklist_employers.Visible = false;
-            // 
             // checklist_services
             // 
             this.checklist_services.CheckOnClick = true;
             this.checklist_services.FormattingEnabled = true;
-            this.checklist_services.Location = new System.Drawing.Point(337, 139);
+            this.checklist_services.Location = new System.Drawing.Point(10, 428);
             this.checklist_services.Name = "checklist_services";
             this.checklist_services.Size = new System.Drawing.Size(74, 109);
             this.checklist_services.TabIndex = 3;
@@ -542,19 +564,150 @@
             // lb_time_in_memory
             // 
             this.lb_time_in_memory.AutoSize = true;
-            this.lb_time_in_memory.Location = new System.Drawing.Point(338, 123);
+            this.lb_time_in_memory.Location = new System.Drawing.Point(182, 444);
             this.lb_time_in_memory.Name = "lb_time_in_memory";
             this.lb_time_in_memory.Size = new System.Drawing.Size(79, 13);
             this.lb_time_in_memory.TabIndex = 43;
             this.lb_time_in_memory.Text = "czas-w-pamieci";
             this.lb_time_in_memory.Visible = false;
             // 
+            // checklist_employers
+            // 
+            this.checklist_employers.CheckOnClick = true;
+            this.checklist_employers.FormattingEnabled = true;
+            this.checklist_employers.Location = new System.Drawing.Point(90, 428);
+            this.checklist_employers.Name = "checklist_employers";
+            this.checklist_employers.Size = new System.Drawing.Size(74, 109);
+            this.checklist_employers.TabIndex = 2;
+            this.checklist_employers.Visible = false;
+            // 
+            // orderGridView
+            // 
+            this.orderGridView.AutoGenerateColumns = false;
+            this.orderGridView.BackgroundColor = System.Drawing.Color.LemonChiffon;
+            this.orderGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.orderGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDorderDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.starttimeDataGridViewTextBoxColumn,
+            this.endtimeDataGridViewTextBoxColumn,
+            this.orderdateDataGridViewTextBoxColumn,
+            this.workplacenrDataGridViewTextBoxColumn,
+            this.paymenttypeDataGridViewCheckBoxColumn,
+            this.documenttypeDataGridViewCheckBoxColumn,
+            this.iDcustomerDataGridViewTextBoxColumn,
+            this.iDcarDataGridViewTextBoxColumn});
+            this.orderGridView.DataSource = this.orderBindingSource;
+            this.orderGridView.Location = new System.Drawing.Point(338, 10);
+            this.orderGridView.Name = "orderGridView";
+            this.orderGridView.ReadOnly = true;
+            this.orderGridView.Size = new System.Drawing.Size(767, 412);
+            this.orderGridView.TabIndex = 44;
+            this.orderGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.orderGridView_CellMouseClick);
+            // 
+            // iDorderDataGridViewTextBoxColumn
+            // 
+            this.iDorderDataGridViewTextBoxColumn.DataPropertyName = "ID_order";
+            this.iDorderDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDorderDataGridViewTextBoxColumn.Name = "iDorderDataGridViewTextBoxColumn";
+            this.iDorderDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDorderDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Cena";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // starttimeDataGridViewTextBoxColumn
+            // 
+            this.starttimeDataGridViewTextBoxColumn.DataPropertyName = "Start_time";
+            this.starttimeDataGridViewTextBoxColumn.HeaderText = "Rozpoczęcie";
+            this.starttimeDataGridViewTextBoxColumn.Name = "starttimeDataGridViewTextBoxColumn";
+            this.starttimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // endtimeDataGridViewTextBoxColumn
+            // 
+            this.endtimeDataGridViewTextBoxColumn.DataPropertyName = "End_time";
+            this.endtimeDataGridViewTextBoxColumn.HeaderText = "Zakończenie";
+            this.endtimeDataGridViewTextBoxColumn.Name = "endtimeDataGridViewTextBoxColumn";
+            this.endtimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // orderdateDataGridViewTextBoxColumn
+            // 
+            this.orderdateDataGridViewTextBoxColumn.DataPropertyName = "Order_date";
+            this.orderdateDataGridViewTextBoxColumn.HeaderText = "Data zamówienia";
+            this.orderdateDataGridViewTextBoxColumn.Name = "orderdateDataGridViewTextBoxColumn";
+            this.orderdateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // workplacenrDataGridViewTextBoxColumn
+            // 
+            this.workplacenrDataGridViewTextBoxColumn.DataPropertyName = "Workplace_nr";
+            this.workplacenrDataGridViewTextBoxColumn.HeaderText = "Nr stanowiska";
+            this.workplacenrDataGridViewTextBoxColumn.Name = "workplacenrDataGridViewTextBoxColumn";
+            this.workplacenrDataGridViewTextBoxColumn.ReadOnly = true;
+            this.workplacenrDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // paymenttypeDataGridViewCheckBoxColumn
+            // 
+            this.paymenttypeDataGridViewCheckBoxColumn.DataPropertyName = "Payment_type";
+            this.paymenttypeDataGridViewCheckBoxColumn.HeaderText = "Płatność kartą";
+            this.paymenttypeDataGridViewCheckBoxColumn.Name = "paymenttypeDataGridViewCheckBoxColumn";
+            this.paymenttypeDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.paymenttypeDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // documenttypeDataGridViewCheckBoxColumn
+            // 
+            this.documenttypeDataGridViewCheckBoxColumn.DataPropertyName = "Document_type";
+            this.documenttypeDataGridViewCheckBoxColumn.HeaderText = "Faktura";
+            this.documenttypeDataGridViewCheckBoxColumn.Name = "documenttypeDataGridViewCheckBoxColumn";
+            this.documenttypeDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.documenttypeDataGridViewCheckBoxColumn.Width = 45;
+            // 
+            // iDcustomerDataGridViewTextBoxColumn
+            // 
+            this.iDcustomerDataGridViewTextBoxColumn.DataPropertyName = "ID_customer";
+            this.iDcustomerDataGridViewTextBoxColumn.HeaderText = "ID Klienta";
+            this.iDcustomerDataGridViewTextBoxColumn.Name = "iDcustomerDataGridViewTextBoxColumn";
+            this.iDcustomerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDcustomerDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // iDcarDataGridViewTextBoxColumn
+            // 
+            this.iDcarDataGridViewTextBoxColumn.DataPropertyName = "ID_car";
+            this.iDcarDataGridViewTextBoxColumn.HeaderText = "ID Samochodu";
+            this.iDcarDataGridViewTextBoxColumn.Name = "iDcarDataGridViewTextBoxColumn";
+            this.iDcarDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDcarDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataMember = "Order";
+            this.orderBindingSource.DataSource = this.myjniaDataSet2;
+            // 
+            // myjniaDataSet2
+            // 
+            this.myjniaDataSet2.DataSetName = "MyjniaDataSet2";
+            this.myjniaDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // myjniaDataSet2BindingSource
+            // 
+            this.myjniaDataSet2BindingSource.DataSource = this.myjniaDataSet2;
+            this.myjniaDataSet2BindingSource.Position = 0;
+            // 
+            // orderTableAdapter
+            // 
+            this.orderTableAdapter.ClearBeforeFill = true;
+            // 
             // Form_Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Reczna_Myjnia_Samochodowa.Properties.Resources.Background;
-            this.ClientSize = new System.Drawing.Size(333, 434);
+            this.ClientSize = new System.Drawing.Size(335, 428);
+            this.Controls.Add(this.orderGridView);
             this.Controls.Add(this.lb_time_in_memory);
             this.Controls.Add(this.checklist_services);
             this.Controls.Add(this.checklist_employers);
@@ -566,6 +719,10 @@
             this.Load += new System.EventHandler(this.Form_Orders_Load);
             this.gb_Orders.ResumeLayout(false);
             this.gb_Orders.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myjniaDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myjniaDataSet2BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,7 +761,6 @@
         private System.Windows.Forms.Button btn_SetFault;
         private System.Windows.Forms.Button btn_SetService;
         private System.Windows.Forms.Button btn_SetEmployee;
-        private System.Windows.Forms.CheckedListBox checklist_employers;
         public System.Windows.Forms.TextBox tb_CustomerID;
         private System.Windows.Forms.Button btn_okEmployers;
         private System.Windows.Forms.ComboBox tb_employerlist;
@@ -618,5 +774,22 @@
         private System.Windows.Forms.Button btn_undoStart;
         private System.Windows.Forms.Label lb_time_in_memory;
         public System.Windows.Forms.TextBox tb_CarID;
+        private System.Windows.Forms.Button btn_rozwin_liste;
+        private System.Windows.Forms.CheckedListBox checklist_employers;
+        private System.Windows.Forms.DataGridView orderGridView;
+        private System.Windows.Forms.BindingSource myjniaDataSet2BindingSource;
+        private MyjniaDataSet2 myjniaDataSet2;
+        private System.Windows.Forms.BindingSource orderBindingSource;
+        private MyjniaDataSet2TableAdapters.OrderTableAdapter orderTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDorderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn starttimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endtimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workplacenrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn paymenttypeDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn documenttypeDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDcustomerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDcarDataGridViewTextBoxColumn;
     }
 }

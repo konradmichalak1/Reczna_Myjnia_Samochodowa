@@ -21,9 +21,17 @@ namespace Reczna_Myjnia_Samochodowa
 
         private void Form_Orders_Load(object sender, EventArgs e)
         {
-            cb_orderWorkspaceNr.SelectedIndex = 0;
+            display_orders();
         }
-        
+
+        private void display_orders()
+        {
+            connection.Open();
+            IQueryable<Order> show = myjnia.Order.Select(n => n);
+            orderGridView.DataSource = show.ToList();
+            connection.Close();
+        }
+
         private void btn_CustomerIDChoose_Click(object sender, EventArgs e)
         {
             Form_Customer frm = new Form_Customer();
@@ -363,6 +371,8 @@ namespace Reczna_Myjnia_Samochodowa
                     else MessageBox.Show(ex.InnerException.InnerException.Message);
                     connection.Close();
                 }
+                display_orders();
+
             }
             catch(Exception ex){
                 if (ex.InnerException == null) MessageBox.Show(ex.Message);
@@ -376,9 +386,6 @@ namespace Reczna_Myjnia_Samochodowa
             try
             {
                 string index = "";
-
-
-
                 foreach (var x in tb_employerlist.Items)
                 {
                     string pom = x.ToString();
@@ -457,7 +464,7 @@ namespace Reczna_Myjnia_Samochodowa
                 myjnia.SaveChanges();
                 connection.Close();
 
-
+                display_orders();
 
             }
             catch (Exception ex)
@@ -466,8 +473,6 @@ namespace Reczna_Myjnia_Samochodowa
                 else MessageBox.Show(ex.InnerException.InnerException.Message);
                 connection.Close();
             }
-
-
         }
 
         private void btn_UpdateOrder_Click(object sender, EventArgs e)
@@ -498,6 +503,7 @@ namespace Reczna_Myjnia_Samochodowa
                 query.Document_type = document;
                 myjnia.SaveChanges();
                 connection.Close();
+                display_orders();
             }
             catch(Exception ex)
             {
@@ -506,6 +512,28 @@ namespace Reczna_Myjnia_Samochodowa
                 connection.Close();
             }
         }
-    }
 
+        private void btn_rozwin_liste_Click(object sender, EventArgs e)
+        {
+            if (btn_rozwin_liste.Text == ">") { this.Width = 1125; btn_rozwin_liste.Text = "<"; }
+            else if (btn_rozwin_liste.Text == "<") { this.Width = 350; btn_rozwin_liste.Text = ">"; }
+        }
+
+        private void orderGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                object value = orderGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+
+                tb_OrderID.Text = orderGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                tb_Price.Text = orderGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                tb_StartTime.Text = orderGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                tb_EndTime.Text = orderGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                cb_orderWorkspaceNr.Text = orderGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                tb_CustomerID.Text = orderGridView.Rows[e.RowIndex].Cells[8].Value.ToString();
+                tb_CarID.Text = orderGridView.Rows[e.RowIndex].Cells[9].Value.ToString();
+            }
+            catch (Exception ex) { }
+        }
+    }
 }

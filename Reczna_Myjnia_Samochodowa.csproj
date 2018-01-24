@@ -162,6 +162,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MyjniaDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MyjniaDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyjniaDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MyjniaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -283,6 +288,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MyjniaModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="MyjniaDataSet2.xsc">
+      <DependentUpon>MyjniaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="MyjniaDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MyjniaDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MyjniaDataSet2.xss">
+      <DependentUpon>MyjniaDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="MyjniaModel.edmx.diagram">
       <DependentUpon>MyjniaModel.edmx</DependentUpon>
     </None>
