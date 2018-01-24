@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 namespace Reczna_Myjnia_Samochodowa
 {
     public partial class Form_Raport : Form
@@ -26,61 +27,63 @@ namespace Reczna_Myjnia_Samochodowa
 
         private void btn_createRaport_Click(object sender, EventArgs e)
         {
-            string idorder, idcustomer, idcar, orderdate, starttime, endtime, price, workplacenr, paymenttype, documenttype;
-            paymenttype = "";
-            documenttype = "";
             try
             {
+                string idorder, idcustomer, idcar, orderdate, starttime, endtime, price, workplacenr, paymenttype, documenttype;
+                paymenttype = "";
+                documenttype = "";
+                var from = dtp_dateFrom.Value;
+                var to = dtp_dateTo.Value;
                 string text = "";
-
                 connection.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT [ID_order],[ID_customer],[ID_car], [Order_date]," +
-                    "  [Start_time], [End_time], [Price], [Workplace_nr], [Payment_type], [Document_type] FROM [Order]", connection))
+
+                IQueryable<Order> list = myjnia.Order.Where(x => (x.Order_date >= from) && (x.Order_date <= to));
+
+                foreach (var x in list)
                 {
-                    cmd.CommandType = CommandType.Text;
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        DataTable dt = new DataTable();
-                        sda.Fill(dt);
+                    idorder = x.ID_order.ToString();
+                    idcustomer = x.ID_customer.ToString();
+                    idcar = x.ID_car.ToString();
+                    orderdate = x.Order_date.ToString();
+                    starttime = x.Start_time.ToString();
+                    endtime = x.End_time.ToString();
+                    price = x.Price.ToString();
+                    workplacenr = x.Workplace_nr.ToString();
+                    paymenttype = x.Payment_type.ToString();
+                    documenttype = x.Document_type.ToString();
 
-                        for (int i = 0; i < dt.Rows.Count; i++)
-                        {
-                            idorder = dt.Rows[i]["ID_order"].ToString();
-                            idcustomer = dt.Rows[i]["ID_customer"].ToString();
-                            idcar = dt.Rows[i]["ID_car"].ToString();
-                            orderdate = dt.Rows[i]["Order_date"].ToString();
-                            starttime = dt.Rows[i]["Start_time"].ToString();
-                            endtime = dt.Rows[i]["End_time"].ToString();
-                            price = dt.Rows[i]["Price"].ToString();
-                            workplacenr = dt.Rows[i]["Workplace_nr"].ToString();
-                            paymenttype = dt.Rows[i]["Payment_type"].ToString();
-                            documenttype = dt.Rows[i]["Document_type"].ToString();
+                    if (paymenttype == "True") paymenttype = "Karta";
+                    else if (paymenttype == "False") paymenttype = "Gotowka";
 
-                            if (paymenttype == "True") paymenttype = "Karta";
-                            else if (paymenttype == "False") paymenttype = "Gotowka";
+                    if (documenttype == "True") documenttype = "Faktura";
+                    else if (documenttype == "False") documenttype = "Paragon";
 
-                            if (documenttype == "True") documenttype = "Faktura";
-                            else if (documenttype == "False") documenttype = "Paragon";
+                    text += "ID: " + idorder + " | Nr stanowiska: \t" + workplacenr + Environment.NewLine + "Cena: \t" + price + " | " + "Typ platnosci: \t" +
+                                    paymenttype + " | Typ dokumentu: \t" + documenttype + Environment.NewLine +
+                                    "Godz. rozpoczecia: \t" + starttime + " | Godz. zakonczenia: \t" + endtime + " | Data: \t" + orderdate + Environment.NewLine + Environment.NewLine;
 
 
-                            text += "ID: " + idorder + " | Nr stanowiska: \t" + workplacenr + "\n" + "Cena: \t" + price + " | " + "Typ platnosci:\t" +
-                            paymenttype + " | Typ dokumentu: \t" + documenttype + "\n" +
-                            "Godz. rozpoczecia: \t" + starttime + " | Godz. zakonczenia: \t" + endtime + "Data: \t" + orderdate + "\n\n";
-                        }
-                    }
-                }
-                connection.Close();
-                
-                using (var command = new SqlCommand("WriteToFile", connection)
-                {
-                    CommandType = CommandType.StoredProcedure
-                })
-                {
-                    connection.Open();
-                    command.Parameters.Add("@File", SqlDbType.VarChar).Value = @"C:\Users\Konrad\source\repos\Reczna_Myjnia_Samochodowa\test.txt";
-                    command.Parameters.Add("@Text", SqlDbType.VarChar).Value = text;
-                    command.ExecuteNonQuery();
                     connection.Close();
+
+                    using (var command = new SqlCommand("WriteToFile", connection)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    })
+                    {
+                        connection.Open();
+                        var pomFrom = from.ToShortDateString();
+                        var pomTo = to.ToShortDateString();
+                        string path = @"C:\Users\Hubert\source\repos\Reczna_Myjnia_Samochodowa\bin\Debug\";
+                        string raport = "Raport_" + pomFrom + "-" + pomTo + ".txt";
+
+                        string combination = Path.Combine(path, raport);
+                        command.Parameters.Add("@File", SqlDbType.VarChar).Value = combination;
+                        command.Parameters.Add("@Text", SqlDbType.VarChar).Value = text;
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                        text = String.Empty;
+
+                    }
                 }
             }
             catch (Exception ex)
@@ -89,7 +92,31 @@ namespace Reczna_Myjnia_Samochodowa
                 else MessageBox.Show(ex.InnerException.InnerException.Message);
                 connection.Close();
             }
+            
         }
+        private static void CombinePaths(string p1, string p2)
+        {
+
+            try
+            {
+                string combination = Path.Combine(p1, p2);
+
+                Console.WriteLine("When you combine '{0}' and '{1}', the result is: {2}'{3}'",
+                            p1, p2, Environment.NewLine, combination);
+            }
+            catch (Exception e)
+            {
+                if (p1 == null)
+                    p1 = "null";
+                if (p2 == null)
+                    p2 = "null";
+                Console.WriteLine("You cannot combine '{0}' and '{1}' because: {2}{3}",
+                            p1, p2, Environment.NewLine, e.Message);
+            }
+
+            Console.WriteLine();
+        }
+
 
         private void btn_daily_Click(object sender, EventArgs e)
         {
@@ -122,5 +149,7 @@ namespace Reczna_Myjnia_Samochodowa
             dtp_dateTo.Value = lastDayOfMonth;
             dtp_timeTo.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
         }
+
+
     }
 }

@@ -40,16 +40,15 @@
             this.btn_daily = new System.Windows.Forms.Button();
             this.btn_weekly = new System.Windows.Forms.Button();
             this.btn_monthly = new System.Windows.Forms.Button();
-            this.btn_detailedRaport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_generalRaport
             // 
-            this.btn_generalRaport.Location = new System.Drawing.Point(25, 168);
+            this.btn_generalRaport.Location = new System.Drawing.Point(108, 169);
             this.btn_generalRaport.Name = "btn_generalRaport";
             this.btn_generalRaport.Size = new System.Drawing.Size(137, 41);
             this.btn_generalRaport.TabIndex = 7;
-            this.btn_generalRaport.Text = "Raport ogólny";
+            this.btn_generalRaport.Text = "Drukuj raport";
             this.btn_generalRaport.UseVisualStyleBackColor = true;
             this.btn_generalRaport.Click += new System.EventHandler(this.btn_createRaport_Click);
             // 
@@ -149,21 +148,11 @@
             this.btn_monthly.UseVisualStyleBackColor = true;
             this.btn_monthly.Click += new System.EventHandler(this.btn_monthly_Click);
             // 
-            // btn_detailedRaport
-            // 
-            this.btn_detailedRaport.Location = new System.Drawing.Point(168, 168);
-            this.btn_detailedRaport.Name = "btn_detailedRaport";
-            this.btn_detailedRaport.Size = new System.Drawing.Size(137, 41);
-            this.btn_detailedRaport.TabIndex = 8;
-            this.btn_detailedRaport.Text = "Raport szczegółowy";
-            this.btn_detailedRaport.UseVisualStyleBackColor = true;
-            // 
             // Form_Raport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(329, 235);
-            this.Controls.Add(this.btn_detailedRaport);
             this.Controls.Add(this.btn_monthly);
             this.Controls.Add(this.btn_weekly);
             this.Controls.Add(this.btn_daily);
@@ -197,6 +186,5 @@
         private System.Windows.Forms.Button btn_daily;
         private System.Windows.Forms.Button btn_weekly;
         private System.Windows.Forms.Button btn_monthly;
-        private System.Windows.Forms.Button btn_detailedRaport;
     }
 }
