@@ -357,6 +357,141 @@ namespace Reczna_Myjnia_Samochodowa
             }
         }
 
+        private void btn_DeleteOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string index = "";
+
+
+
+                foreach (var x in tb_employerlist.Items)
+                {
+                    string pom = x.ToString();
+                    for (int i = 0; i < pom.Length; i++)
+                    {
+                        if (pom[i] == 32)
+                        {
+                            try
+                            {
+                                using (var command = new SqlCommand("DeleteRealization", connection)
+                                {
+                                    CommandType = CommandType.StoredProcedure
+                                })
+                                {
+                                    connection.Open();
+                                    command.Parameters.Add("@id", SqlDbType.VarChar).Value = Convert.ToInt32(tb_OrderID.Text);
+                                    index = "";
+                                    command.ExecuteNonQuery();
+                                    connection.Close();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                if (ex.InnerException == null) MessageBox.Show(ex.Message);
+                                else MessageBox.Show(ex.InnerException.InnerException.Message);
+                                connection.Close();
+                            }
+                            break;
+                        }
+                        else index += pom[i];
+                    }
+                }
+                index = "";
+                foreach (var x in tb_servicelist.Items)
+                {
+                    string pom = x.ToString();
+                    for (int i = 0; i < pom.Length; i++)
+                    {
+                        if (pom[i] == 32)
+                        {
+                            try
+                            {
+                                using (var command = new SqlCommand("DeleteOrderDetail", connection)
+                                {
+                                    CommandType = CommandType.StoredProcedure
+                                })
+                                {
+                                    connection.Open();
+                                    command.Parameters.Add("@id", SqlDbType.VarChar).Value = Convert.ToInt32(tb_OrderID.Text);
+                                    index = "";
+                                    command.ExecuteNonQuery();
+                                    connection.Close();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                if (ex.InnerException == null) MessageBox.Show(ex.Message);
+                                else MessageBox.Show(ex.InnerException.InnerException.Message);
+                                connection.Close();
+                            }
+                            break;
+                        }
+                        else index += pom[i];
+                    }
+                }
+
+                connection.Open();
+                int id = Convert.ToInt32(tb_OrderID.Text);
+                List<Order> usun = myjnia.Order.Where
+                                      (p => (p.ID_order == id)).ToList();
+                foreach (var p in usun)
+                {
+                    myjnia.Order.Remove(p);
+                    //collec.DeleteOneAsync(Builders<BsonDocument>.Filter.Eq("PESEL", p.PESEL.ToString()));
+                }
+                myjnia.SaveChanges();
+                connection.Close();
+
+
+
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException == null) MessageBox.Show(ex.Message);
+                else MessageBox.Show(ex.InnerException.InnerException.Message);
+                connection.Close();
+            }
+
+
+        }
+
+        private void btn_UpdateOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connection.Open();
+                bool payment;
+                string p = cb_OrderPaymenttype.CheckState.ToString();
+                if (p == "Checked")
+                    payment = true;
+                else
+                    payment = false;
+
+                bool document;
+                string d = cb_OrderDocumenttype.CheckState.ToString();
+                if (d == "Checked")
+                    document = true;
+                else
+                    document = false;
+                int id = Convert.ToInt32(tb_OrderID.Text);
+                var query = myjnia.Order.Where(x => (x.ID_order == id)).FirstOrDefault();
+                query.ID_car = Convert.ToInt32(tb_CarID.Text);
+                query.ID_customer = Convert.ToInt32(tb_CustomerID.Text);
+                query.Price = Convert.ToDecimal(tb_Price.Text);
+                query.Workplace_nr = Convert.ToInt32(cb_orderWorkspaceNr.Text);
+                query.Payment_type = payment;
+                query.Document_type = document;
+                myjnia.SaveChanges();
+                connection.Close();
+            }
+            catch(Exception ex)
+            {
+                if (ex.InnerException == null) MessageBox.Show(ex.Message);
+                else MessageBox.Show(ex.InnerException.InnerException.Message);
+                connection.Close();
+            }
+        }
     }
 
 }

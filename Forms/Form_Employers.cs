@@ -164,8 +164,9 @@ namespace Reczna_Myjnia_Samochodowa
             {
                 if (ex.InnerException == null) MessageBox.Show(ex.Message);
                 else MessageBox.Show(ex.InnerException.InnerException.Message);
+                connection.Close();
             }
-            connection.Close();
+
         }
 
         private void tb_pesel_KeyPress(object sender, KeyPressEventArgs e)
